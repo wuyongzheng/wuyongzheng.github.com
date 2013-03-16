@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>4 Years of Suiyang</title>
+</head>
+<body>
+
+<script type="text/javascript" src="beforeafter/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="beforeafter/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="beforeafter/jquery.beforeafter-1.4.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#bacont1').beforeAfter({beforeLinkText: 'Show only 2009', afterLinkText: 'Show only 2013'});
+	$('#bacont2').beforeAfter({beforeLinkText: 'Show only 2009', afterLinkText: 'Show only 2013'});
+	$('#bacont3').beforeAfter({beforeLinkText: 'Show only 2009', afterLinkText: 'Show only 2013'});
+	$('#bacont4').beforeAfter({beforeLinkText: 'Show only 2009', afterLinkText: 'Show only 2013'});
+	$('#bacont5').beforeAfter({beforeLinkText: 'Show only 2009', afterLinkText: 'Show only 2013'});
+	$('#bacont6').beforeAfter({beforeLinkText: 'Show only 2009', afterLinkText: 'Show only 2013'});
+	$('#bacont7').beforeAfter({beforeLinkText: 'Show only 2009', afterLinkText: 'Show only 2013'});
+	$('#bacont8').beforeAfter({beforeLinkText: 'Show only 2009', afterLinkText: 'Show only 2013'});
+});
+</script>
+
+<h1>4 Years of Suiyang</h1>
+
+<p>
+I had the opportunity to take two panoramas of <a href="http://en.wikipedia.org/wiki/Suiyang_County">Suiyang</a> in February 2009 and February 2013.
+They were taken from the <a href="http://maps.google.com/?q=27.948621,107.199177">same location</a> so I could stack them perfectly (read below for the details of the stacking process).
+It shows how fast a typical <a href="http://en.wikipedia.org/wiki/Counties_of_the_People%27s_Republic_of_China">country</a> in China develops. Drag the slider to compare.
+</p>
+
+<p>
+1. The overall picture. The horizontal field of view is about 100&deg;.
+<div id="bacont1">
+ <div><img alt="2009" src="p11.jpg" width="800" height="206" /></div>
+ <div><img alt="2013" src="p12.jpg" width="800" height="206" /></div>
+</div>
+</p>
+
+<p>
+2. A highway has been constructed in the background.
+<div id="bacont2">
+ <div><img alt="2009" src="p21.jpg" width="800" height="267" /></div>
+ <div><img alt="2013" src="p22.jpg" width="800" height="267" /></div>
+</div>
+</p>
+
+<p>
+3. Residential area has been renovated.
+<div id="bacont3">
+ <div><img alt="2009" src="p31.jpg" width="800" height="600" /></div>
+ <div><img alt="2013" src="p32.jpg" width="800" height="600" /></div>
+</div>
+</p>
+
+<p>
+4. Down town area.
+<div id="bacont4">
+ <div><img alt="2009" src="p41.jpg" width="800" height="400" /></div>
+ <div><img alt="2013" src="p42.jpg" width="800" height="400" /></div>
+</div>
+</p>
+
+<p>
+5. Farms are gone. City grows.
+<div id="bacont5">
+ <div><img alt="2009" src="p51.jpg" width="800" height="267" /></div>
+ <div><img alt="2013" src="p52.jpg" width="800" height="267" /></div>
+</div>
+</p>
+
+<p>
+6. The mountain is probably the only thing that stands for another 10 years.
+<div id="bacont6">
+ <div><img alt="2009" src="p61.jpg" width="800" height="267" /></div>
+ <div><img alt="2013" src="p62.jpg" width="800" height="267" /></div>
+</div>
+</p>
+
+<p>
+7. Better housing. See the trees/bamboos grow?
+<div id="bacont7">
+ <div><img alt="2009" src="p71.jpg" width="800" height="267" /></div>
+ <div><img alt="2013" src="p72.jpg" width="800" height="267" /></div>
+</div>
+</p>
+
+<p>
+8. Haze. I have to be honest that, the sample size of two can't lead to any conclusion.
+<div id="bacont8">
+ <div><img alt="2009" src="p81.jpg" width="800" height="267" /></div>
+ <div><img alt="2013" src="p82.jpg" width="800" height="267" /></div>
+</div>
+</p>
+
+<h3>The Stacking Process</h3>
+
+I use Hugin to manually add control points, which specify the same objects in both images.
+The automatic control points generation doesn't work because the two images are quite different.
+<br />
+<img alt="control points" src="cps.jpg" width="750" height="446" />
+<br />
+After adding control points, Hugin fails to align them because they are panoramas which have complex distortions than a lens.
+Hugin only works with lens distortion.
+After searching and trying other software, including asking in <a href="http://photo.stackexchange.com/questions/35389/how-can-i-align-two-panoramic-images">stackexchange</a>, I ended up developing my own solution.
+The goal is to find a model which translates a point (x<sub>1</sub>, y<sub>1</sub>) in Image 1 to a point (x<sub>2</sub>, y<sub>2</sub>) in Image 2.
+In other words, x<sub>2</sub>=f(x<sub>1</sub>, y<sub>1</sub>) and y<sub>2</sub>=f(x<sub>1</sub>, y<sub>1</sub>).
+The affine transformation is a special case of it where x<sub>2</sub>=a+b*x<sub>1</sub>+c*y<sub>1</sub> and y<sub>2</sub>=d+e*x<sub>1</sub>+f*y<sub>1</sub>.
+Affine transformation doesn't work well here, but higher order transformation might work.
+I ended up using the third order, i.e.
+x<sub>2</sub> = a + b*x<sub>1</sub> + c*y<sub>1</sub> +
+d*x<sub>1</sub>*x<sub>1</sub> +
+e*x<sub>1</sub>*y<sub>1</sub> +
+f*y<sub>1</sub>*y<sub>1</sub> +
+g*x<sub>1</sub>*x<sub>1</sub>*x<sub>1</sub> +
+h*x<sub>1</sub>*x<sub>1</sub>*y<sub>1</sub> +
+i*x<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub> +
+j*y<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub>.
+<br/>
+Given the control points, I used least square fitting using GNU Octave to find the coefficients.
+Solving the whole panorama using a single model doesn't work well because the distortion is too complex for the third order transformation.
+If I use higher order, the numerical error comes to play.
+I ended up cutting the panorama into three parts (left, middle and right) and solving them independently.
+It works surprisingly well, and the three parts are well connected because I have a few overlapping control points between two adjacent parts.
+<br/>
+After finding out the coefficients using Octave, I wrote a simple C program to do the image transformation.
+To give an idea how the third order transformation looks like, this is the one for the middle part.
+<br/>
+x<sub>2</sub> = 1.9898e+03 + 1.3420e+00*x<sub>1</sub> + -6.8559e-02*y<sub>1</sub> + -1.8703e-05*x<sub>1</sub>*x<sub>1</sub> + -5.0530e-06*x<sub>1</sub>*y<sub>1</sub> + 5.9110e-05*y<sub>1</sub>*y<sub>1</sub> + 1.5748e-09*x<sub>1</sub>*x<sub>1</sub>*x<sub>1</sub> + 6.0810e-09*x<sub>1</sub>*x<sub>1</sub>*y<sub>1</sub> + -9.6947e-09*x<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub> + -8.2613e-09*y<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub>
+<br/>
+y<sub>2</sub> = 5.9421e+02 + -3.2313e-03*x<sub>1</sub> + 1.1095e+00*y<sub>1</sub> + 8.1613e-06*x<sub>1</sub>*x<sub>1</sub> + 2.3740e-05*x<sub>1</sub>*y<sub>1</sub> + 2.4393e-05*y<sub>1</sub>*y<sub>1</sub> + -1.6736e-09*x<sub>1</sub>*x<sub>1</sub>*x<sub>1</sub> + -8.6399e-09*x<sub>1</sub>*x<sub>1</sub>*y<sub>1</sub> + 2.0527e-08*x<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub> + -5.3927e-08*y<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub>;
+<br/>
+You can leave your comments <a href="kkk">here</a>.
+
+<h3>Credits</h3>
+Photo stitching: Hugin<br/>
+Adding control points: Hugin<br/>
+Solving the transformation: GNU Octave<br/>
+The slider control in this webpage: <a href="http://www.catchmyfame.com/catchmyfame-jquery-plugins/jquery-beforeafter-plugin/">jQuery Before/After Plugin</a><br/>
+
+</body>
+</html>
