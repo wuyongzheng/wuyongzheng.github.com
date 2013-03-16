@@ -37,7 +37,7 @@ It shows how fast a typical <a href="http://en.wikipedia.org/wiki/Counties_of_th
 </p>
 
 <p>
-2. A highway has been constructed in the background.
+2. A highway has been built in the background.
 <div id="bacont2">
  <div><img alt="2009" src="p21.jpg" width="800" height="267" /></div>
  <div><img alt="2013" src="p22.jpg" width="800" height="267" /></div>
@@ -77,7 +77,7 @@ It shows how fast a typical <a href="http://en.wikipedia.org/wiki/Counties_of_th
 </p>
 
 <p>
-7. Better housing. See the trees/bamboos grow?
+7. More houses. See the trees/bamboos grow?
 <div id="bacont7">
  <div><img alt="2009" src="p71.jpg" width="800" height="267" /></div>
  <div><img alt="2013" src="p72.jpg" width="800" height="267" /></div>
@@ -118,7 +118,7 @@ j*y<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub>.
 <br/>
 Given the control points, I used least square fitting using GNU Octave to find the coefficients.
 Solving the whole panorama using a single model doesn't work well because the distortion is too complex for the third order transformation.
-If I use higher order, the numerical error comes to play.
+If I use higher order, the numerical error comes into play.
 I ended up cutting the panorama into three parts (left, middle and right) and solving them independently.
 It works surprisingly well, and the three parts are well connected because I have a few overlapping control points between two adjacent parts.
 <br/>
@@ -130,6 +130,8 @@ x<sub>2</sub> = 1.9898e+03 + 1.3420e+00*x<sub>1</sub> + -6.8559e-02*y<sub>1</sub
 y<sub>2</sub> = 5.9421e+02 + -3.2313e-03*x<sub>1</sub> + 1.1095e+00*y<sub>1</sub> + 8.1613e-06*x<sub>1</sub>*x<sub>1</sub> + 2.3740e-05*x<sub>1</sub>*y<sub>1</sub> + 2.4393e-05*y<sub>1</sub>*y<sub>1</sub> + -1.6736e-09*x<sub>1</sub>*x<sub>1</sub>*x<sub>1</sub> + -8.6399e-09*x<sub>1</sub>*x<sub>1</sub>*y<sub>1</sub> + 2.0527e-08*x<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub> + -5.3927e-08*y<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub>;
 <br/>
 You can leave your comments <a href="http://wuyongzheng.wordpress.com/2013/03/16/4-years-of-suiyang/">here</a>.
+<br/>
+Last updated: see <a href="https://github.com/wuyongzheng/wuyongzheng.github.com/commits/master">here</a>
 
 <h3>Credits</h3>
 Photo stitching: Hugin<br/>
