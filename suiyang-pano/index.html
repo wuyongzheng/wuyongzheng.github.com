@@ -69,7 +69,7 @@ It shows how fast a typical <a href="http://en.wikipedia.org/wiki/Counties_of_th
 </p>
 
 <p>
-6. The mountain is probably the only thing that stands for another 10 years.
+6. The mountain is probably the only thing that stands for another decade.
 <div id="bacont6">
  <div><img alt="2009" src="p61.jpg" width="800" height="267" /></div>
  <div><img alt="2013" src="p62.jpg" width="800" height="267" /></div>
@@ -94,7 +94,7 @@ It shows how fast a typical <a href="http://en.wikipedia.org/wiki/Counties_of_th
 
 <h3>The Stacking Process</h3>
 
-I use Hugin to manually add control points, which specify the same objects in both images.
+I used Hugin to manually add control points, which specify the same objects in both images.
 The automatic control points generation doesn't work because the two images are quite different.
 <br />
 <img alt="control points" src="cps.jpg" width="750" height="446" />
@@ -122,22 +122,24 @@ If I use higher order, the numerical error comes into play.
 I ended up cutting the panorama into three parts (left, middle and right) and solving them independently.
 It works surprisingly well, and the three parts are well connected because I have a few overlapping control points between two adjacent parts.
 <br/>
-After finding out the coefficients using Octave, I wrote a simple C program to do the image transformation.
+After finding out the coefficients, I wrote a simple <a href="morph.c">C program</a> to do the image transformation.
 To give an idea how the third order transformation looks like, this is the one for the middle part.
 <br/>
 x<sub>2</sub> = 1.9898e+03 + 1.3420e+00*x<sub>1</sub> + -6.8559e-02*y<sub>1</sub> + -1.8703e-05*x<sub>1</sub>*x<sub>1</sub> + -5.0530e-06*x<sub>1</sub>*y<sub>1</sub> + 5.9110e-05*y<sub>1</sub>*y<sub>1</sub> + 1.5748e-09*x<sub>1</sub>*x<sub>1</sub>*x<sub>1</sub> + 6.0810e-09*x<sub>1</sub>*x<sub>1</sub>*y<sub>1</sub> + -9.6947e-09*x<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub> + -8.2613e-09*y<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub>
 <br/>
 y<sub>2</sub> = 5.9421e+02 + -3.2313e-03*x<sub>1</sub> + 1.1095e+00*y<sub>1</sub> + 8.1613e-06*x<sub>1</sub>*x<sub>1</sub> + 2.3740e-05*x<sub>1</sub>*y<sub>1</sub> + 2.4393e-05*y<sub>1</sub>*y<sub>1</sub> + -1.6736e-09*x<sub>1</sub>*x<sub>1</sub>*x<sub>1</sub> + -8.6399e-09*x<sub>1</sub>*x<sub>1</sub>*y<sub>1</sub> + 2.0527e-08*x<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub> + -5.3927e-08*y<sub>1</sub>*y<sub>1</sub>*y<sub>1</sub>;
-<br/>
-You can leave your comments <a href="http://wuyongzheng.wordpress.com/2013/03/16/4-years-of-suiyang/">here</a>.
-<br/>
-Last updated: see <a href="https://github.com/wuyongzheng/wuyongzheng.github.com/commits/master">here</a>
 
 <h3>Credits</h3>
 Photo stitching: Hugin<br/>
 Adding control points: Hugin<br/>
 Solving the transformation: GNU Octave<br/>
+Applying the transformation: My <a href="morph.c">morph.c</a><br/>
 The slider control in this webpage: <a href="http://www.catchmyfame.com/catchmyfame-jquery-plugins/jquery-beforeafter-plugin/">jQuery Before/After Plugin</a><br/>
+
+<br/>
+You can leave your comments <a href="http://wuyongzheng.wordpress.com/2013/03/16/4-years-of-suiyang/">here</a>.
+<br/>
+Last updated: see <a href="https://github.com/wuyongzheng/wuyongzheng.github.com/commits/master">here</a>
 
 </body>
 </html>
