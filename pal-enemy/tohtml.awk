@@ -4,6 +4,8 @@ BEGIN {
 	FS = "\t"
 	print "<html>";
 	print "<head>";
+	print "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
+	print "<title>仙剑奇侠传1的敌人属性及插图</title>"
 	print "</head>";
 	print "<body>";
 	print "<p>在网上有很多仙剑1的敌人属性介绍，但是我没有找到有插图的，于是自己做了一个。鼠标放在偷取物品上可以看到物品介绍。</p>";
