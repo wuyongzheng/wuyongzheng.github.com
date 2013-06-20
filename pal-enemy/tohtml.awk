@@ -4,7 +4,7 @@ BEGIN {
 	FS = "\t"
 	print "<html>";
 	print "<head>";
-	print "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
+	print "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>";
 	print "<title>仙剑奇侠传1的敌人属性及插图</title>"
 	print "</head>";
 	print "<body>";
@@ -58,6 +58,7 @@ BEGINFILE {
 	printf("<td>毒抗: %s</td>\n", $28);
 	printf("<td>物抗: %s</td>\n", $34);
 	printf("<td>灵葫值: %s</td>\n", $36);
+	printf("<td>出现频率: %s</td>\n", $20);
 	if ($21 in item)
 		str = sprintf("<span title=\"%s\"><i>%s</i></span>", item[$21], $21);
 	else
@@ -66,7 +67,6 @@ BEGINFILE {
 		printf("<td>偷: %s</td>\n", str);
 	else if ($22 > 1)
 		printf("<td>偷: %s x %d</td>\n", str, $22);
-	printf("<td>出现频率: %s</td>\n", $20);
 	print "</tr>";
 
 	print "<tr><td colspan=\"5\">";
