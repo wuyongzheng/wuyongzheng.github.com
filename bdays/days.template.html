@@ -59,6 +59,8 @@ function cal() {
 		row.cells[0].style.whiteSpace = "nowrap";
 		j ++;
 	}
+
+	document.getElementById("ptail").style.display = "block";
 }
 </script>
 </head>
@@ -70,7 +72,7 @@ This page computes the days to celebrate in the near future.
 </p>
 
 <p>
-Your birthday (Y/M/D):
+Your birthday (Y/M/D e.g. 1990/1/31):
 <input type="text" id="year"  name="year" size="4"/>
 <input type="text" id="month" name="month" size="2"/>
 <input type="text" id="day"   name="day" size="2"/>
@@ -84,4 +86,9 @@ Days:
 Weeks:
 <table id="tweek">
 </table>
+
+<p id="ptail" style="display:none">
+All data come from Wikipedia, e.g. <a href="http://en.wikipedia.org/wiki/10000_(number)">10000 (number)</a>.
+You can download the data here: <a href="numbers.txt">numbers.txt</a>.
+</p>
 </body>
