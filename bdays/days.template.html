@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Number of Days</title>
+<script>
+var numbers = [];
+
+function cal() {
+	var year = document.getElementById("year").value;
+	var month = document.getElementById("month").value;
+	var day = document.getElementById("day").value;
+	if (!(year && month && day))
+		return;
+	var date0 = new Date();
+	date0.setUTCFullYear(year);
+	date0.setUTCMonth(month-1);
+	date0.setUTCDate(day);
+	var date1 = new Date();
+	//alert((date1.getTime() - date0.getTime()) / (1000*3600*24));
+
+	var tabref = document.getElementById("tday");
+	while (tabref.rows.length > 0)
+		tabref.deleteRow(0);
+	var row = tabref.insertRow(-1);
+	row.insertCell(0).innerHTML = "<b>date</b>";
+	row.insertCell(1).innerHTML = "<b>days</b>";
+	row.insertCell(2).innerHTML = "<b>remarks</b>";
+	for (var i = 0, j = 0; i < numbers.length && j < 20; i += 2) {
+		var ddate = new Date(date0);
+		ddate.setUTCDate(ddate.getUTCDate() + numbers[i]);
+		if (ddate.getTime() < date1.getTime())
+			continue;
+		var row = tabref.insertRow(-1);
+		row.insertCell(0).innerHTML = ddate.getUTCFullYear() + "-" + (ddate.getUTCMonth() + 1) + "-" + ddate.getUTCDate();
+		row.insertCell(1).innerHTML = numbers[i];
+		row.insertCell(2).innerHTML = numbers[i+1];
+		row.cells[0].noWrap = "nowrap";
+		row.cells[0].style.whiteSpace = "nowrap";
+		j ++;
+	}
+
+	var tabref = document.getElementById("tweek");
+	while (tabref.rows.length > 0)
+		tabref.deleteRow(0);
+	var row = tabref.insertRow(-1);
+	row.insertCell(0).innerHTML = "<b>date</b>";
+	row.insertCell(1).innerHTML = "<b>weeks</b>";
+	row.insertCell(2).innerHTML = "<b>remarks</b>";
+	for (var i = 0, j = 0; i < numbers.length && j < 20; i += 2) {
+		var ddate = new Date(date0);
+		ddate.setUTCDate(ddate.getUTCDate() + numbers[i] * 7);
+		if (ddate.getTime() < date1.getTime())
+			continue;
+		var row = tabref.insertRow(-1);
+		row.insertCell(0).innerHTML = ddate.getUTCFullYear() + "-" + (ddate.getUTCMonth() + 1) + "-" + ddate.getUTCDate();
+		row.insertCell(1).innerHTML = numbers[i];
+		row.insertCell(2).innerHTML = numbers[i+1];
+		row.cells[0].noWrap = "nowrap";
+		row.cells[0].style.whiteSpace = "nowrap";
+		j ++;
+	}
+}
+</script>
+</head>
+<body>
+<p>
+Do you want to celebrate your 10000th day since birth?
+How about 6765th (the 20th <a href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci number</a>) day?
+This page computes the days to celebrate in the near future.
+</p>
+
+<p>
+Your birthday (Y/M/D):
+<input type="text" id="year"  name="year" size="4"/>
+<input type="text" id="month" name="month" size="2"/>
+<input type="text" id="day"   name="day" size="2"/>
+<input type="button" value="go" onclick="cal()" />
+</p>
+
+Days:
+<table id="tday">
+</table>
+<br/>
+Weeks:
+<table id="tweek">
+</table>
+</body>
