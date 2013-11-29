@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Number of Days</title>
+<title>Nerd's Birthday</title>
 <script>
 var numbers = [];
 
@@ -46,7 +46,7 @@ function cal() {
 	row.insertCell(0).innerHTML = "<b>date</b>";
 	row.insertCell(1).innerHTML = "<b>weeks</b>";
 	row.insertCell(2).innerHTML = "<b>remarks</b>";
-	for (var i = 0, j = 0; i < numbers.length && j < 20; i += 2) {
+	for (var i = 0, j = 0; i < numbers.length && j < 5; i += 2) {
 		var ddate = new Date(date0);
 		ddate.setUTCDate(ddate.getUTCDate() + numbers[i] * 7);
 		if (ddate.getTime() < date1.getTime())
@@ -72,23 +72,27 @@ This page computes the days to celebrate in the near future.
 </p>
 
 <p>
-Your birthday (Y/M/D e.g. 1990/1/31):
+Your birthday (Y-M-D e.g. 1990-1-31):
 <input type="text" id="year"  name="year" size="4"/>
 <input type="text" id="month" name="month" size="2"/>
 <input type="text" id="day"   name="day" size="2"/>
 <input type="button" value="go" onclick="cal()" />
 </p>
 
-Days:
+<p id="ptail" style="display:none">
+<b>Days:</b>
 <table id="tday">
 </table>
 <br/>
-Weeks:
+
+<b>Weeks:</b>
 <table id="tweek">
 </table>
+<br/>
 
-<p id="ptail" style="display:none">
+<b>Data Source:</b><br/>
 All data come from Wikipedia, e.g. <a href="http://en.wikipedia.org/wiki/10000_(number)">10000 (number)</a>.
 You can download the data here: <a href="numbers.txt">numbers.txt</a>.
 </p>
+
 </body>
