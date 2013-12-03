@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <title>Nerd's Birthday</title>
 <script>
-var numbers = [
+var thenumbers = [
 	1000, "round number",
 	1002, "sphenic number, <a href=\"http://en.wikipedia.org/wiki/Mertens_function\" title=\"Mertens function\">Mertens function</a> zero, <a href=\"http://en.wikipedia.org/wiki/Abundant_number\" title=\"Abundant number\">abundant number</a>",
 	1005, "Mertens function zero",
@@ -1547,6 +1547,174 @@ var numbers = [
 	98765, "consecutive digits",
 	99066, "largest number whose <a href=\"http://en.wikipedia.org/wiki/Square_(algebra)\" title=\"Square (algebra)\">square (algebra)</a> uses all of the <a href=\"http://en.wikipedia.org/wiki/Decimal\" title=\"Decimal\">decimal</a> <a href=\"http://en.wikipedia.org/wiki/Numerical_digit\" title=\"Numerical digit\">digits</a> once.",
 	99999, "<a href=\"http://en.wikipedia.org/wiki/Kaprekar_number\" title=\"Kaprekar number\">Kaprekar number</a>, <a href=\"http://en.wikipedia.org/wiki/Repdigit\" title=\"Repdigit\">repdigit</a>",
+	100000, "round number",
+	100003, "smallest 6-digit prime number",
+	100255, "<a href=\"http://en.wikipedia.org/wiki/Friedman_number\" title=\"Friedman number\">Friedman number</a><sup id=\"cite_ref-1\" class=\"reference\"><a href=\"#cite_note-1\"><span>[</span>1<span>]</span></a></sup>",
+	101101, "smallest <a href=\"http://en.wikipedia.org/wiki/Palindromic_number\" title=\"Palindromic number\">palindromic</a> <a href=\"http://en.wikipedia.org/wiki/Carmichael_number\" title=\"Carmichael number\">Carmichael number</a>",
+	101723, "smallest <a href=\"http://en.wikipedia.org/wiki/Prime_number\" title=\"Prime number\">prime number</a> whose square is a <a href=\"http://en.wikipedia.org/wiki/Pandigital_number\" title=\"Pandigital number\">pandigital number</a> containing each digit from 0 to 9",
+	102564, "The smallest <a href=\"http://en.wikipedia.org/wiki/Parasitic_number\" title=\"Parasitic number\">parasitic number</a>",
+	103680, "<a href=\"http://en.wikipedia.org/wiki/Highly_totient_number\" title=\"Highly totient number\">highly totient number</a>",
+	103769, "the number of combinatorial types of 5-dimensional <a href=\"http://en.wikipedia.org/wiki/Zonohedron\" title=\"Zonohedron\">parallelohedra</a>",
+	103823, "nice Friedman number",
+	104723, "the 9,999<sup>th</sup> prime number",
+	104729, "the 10,000<sup>th</sup> prime number",
+	104869, "the smallest <a href=\"http://en.wikipedia.org/wiki/Prime_number\" title=\"Prime number\">prime number</a> containing every non-prime digit.",
+	105664, "<a href=\"http://en.wikipedia.org/wiki/Harmonic_divisor_number\" title=\"Harmonic divisor number\">harmonic divisor number</a>",
+	110880, "<a href=\"http://en.wikipedia.org/wiki/Highly_composite_number\" title=\"Highly composite number\">highly composite number</a>",
+	111111, "<a href=\"http://en.wikipedia.org/wiki/Repunit\" title=\"Repunit\">repunit</a>",
+	111777, "smallest natural number requiring 17 syllables in American English, 19 in British English",
+	113634, "<a href=\"http://en.wikipedia.org/wiki/Motzkin_number\" title=\"Motzkin number\">Motzkin number</a> for <i>n</i> = 14",
+	114689, "<a href=\"http://en.wikipedia.org/wiki/Prime_factor\" title=\"Prime factor\">prime factor</a> of <a href=\"http://en.wikipedia.org/wiki/Fermat_number\" title=\"Fermat number\">F</a><sub>12</sub>",
+	115975, "<a href=\"http://en.wikipedia.org/wiki/Bell_number\" title=\"Bell number\">Bell number</a>",
+	117067, "first <a href=\"http://en.wikipedia.org/wiki/Vampire_number\" title=\"Vampire number\">prime vampire number</a>",
+	117649, "7<sup>6</sup>",
+	117800, "harmonic divisor number",
+	120284, "<a href=\"http://en.wikipedia.org/wiki/Keith_number\" title=\"Keith number\">Keith number</a>",
+	120960, "highly totient number",
+	121393, "<a href=\"http://en.wikipedia.org/wiki/Fibonacci_number\" title=\"Fibonacci number\">Fibonacci number</a>",
+	123456, "consecutive digits",
+	124000, "number with religious significance",
+	127777, "smallest natural number requiring 18 syllables in American English, 20 in British English",
+	127912, "<a href=\"http://en.wikipedia.org/wiki/Wedderburn-Etherington_number\" title=\"Wedderburn-Etherington number\" class=\"mw-redirect\">Wedderburn-Etherington number</a>",
+	128981, "Starts the first <a href=\"http://en.wikipedia.org/wiki/Prime_gap\" title=\"Prime gap\">prime gap</a> sequence of 2, 4, 6, 8, 10, 12, 14",
+	129106, "Keith number",
+	131071, "<a href=\"http://en.wikipedia.org/wiki/Mersenne_prime\" title=\"Mersenne prime\">Mersenne prime</a>",
+	131072, "2<sup>17</sup>",
+	131361, "<a href=\"http://en.wikipedia.org/wiki/Leyland_number\" title=\"Leyland number\">Leyland number</a>",
+	134340, "<a href=\"http://en.wikipedia.org/wiki/Pluto\" title=\"Pluto\">Pluto</a>'s minor planet designation",
+	135137, "<a href=\"http://en.wikipedia.org/wiki/Markov_number\" title=\"Markov number\">Markov number</a>",
+	142857, "<a href=\"http://en.wikipedia.org/wiki/Kaprekar_number\" title=\"Kaprekar number\">Kaprekar number</a>, <a href=\"http://en.wikipedia.org/wiki/Harshad_number\" title=\"Harshad number\">Harshad number</a> smallest <a href=\"http://en.wikipedia.org/wiki/Cyclic_number\" title=\"Cyclic number\">cyclic number</a> in <a href=\"http://en.wikipedia.org/wiki/Decimal\" title=\"Decimal\">decimal</a>.",
+	144000, "number with religious significance",
+	147640, "Keith number",
+	148149, "Kaprekar number",
+	156146, "Keith number",
+	161051, "11<sup>5</sup>",
+	161280, "highly totient number",
+	166320, "highly composite number",
+	167400, "harmonic divisor number",
+	173600, "harmonic divisor number",
+	174680, "Keith number",
+	174763, "<a href=\"http://en.wikipedia.org/wiki/Wagstaff_prime\" title=\"Wagstaff prime\">Wagstaff prime</a>",
+	177147, "3<sup>11</sup>",
+	177777, "smallest natural number requiring 19 syllables in American English, 21 in British English",
+	178478, "Leyland number",
+	181440, "highly totient number",
+	181819, "Kaprekar number",
+	183186, "Keith number",
+	187110, "Kaprekar number",
+	195025, "<a href=\"http://en.wikipedia.org/wiki/Pell_number\" title=\"Pell number\">Pell number</a>, Markov number",
+	196418, "Fibonacci number, Markov number",
+	196883, "the dimension of the smallest nontrivial <a href=\"http://en.wikipedia.org/wiki/Irreducible\" title=\"Irreducible\" class=\"mw-redirect\">irreducible</a> <a href=\"http://en.wikipedia.org/wiki/Group_representation\" title=\"Group representation\">representation</a> of the <a href=\"http://en.wikipedia.org/wiki/Monster_group\" title=\"Monster group\">Monster group</a>",
+	196884, "the coefficient of <i>q</i> in the <a href=\"http://en.wikipedia.org/wiki/Fourier_series\" title=\"Fourier series\">Fourier series</a> expansion of the <a href=\"http://en.wikipedia.org/wiki/J-invariant\" title=\"J-invariant\">j-invariant</a>. The adjacency of 196883 and 196884 was important in suggesting <a href=\"http://en.wikipedia.org/wiki/Monstrous_moonshine\" title=\"Monstrous moonshine\">monstrous moonshine</a>.",
+	200000, "round number",
+	207360, "highly totient number",
+	208012, "<a href=\"http://en.wikipedia.org/wiki/Catalan_number\" title=\"Catalan number\">Catalan number</a>",
+	208335, "the largest number to be both <a href=\"http://en.wikipedia.org/wiki/Triangular_number\" title=\"Triangular number\">triangular</a> and <a href=\"http://en.wikipedia.org/wiki/Square_pyramidal_number\" title=\"Square pyramidal number\">square pyramidal</a>",
+	208495, "Kaprekar number",
+	221760, "highly composite number",
+	222222, "<a href=\"http://en.wikipedia.org/wiki/Repdigit\" title=\"Repdigit\">repdigit</a>",
+	234567, "consecutive digits",
+	237510, "harmonic divisor number",
+	241920, "highly totient number",
+	242060, "harmonic divisor number",
+	248832, "the smallest fifth power that can be represented as the sum of only 6 fifth powers.",
+	261119, "<a href=\"http://en.wikipedia.org/wiki/Carol_number\" title=\"Carol number\">Carol number</a>",
+	262144, "2<sup>18</sup>; <a href=\"http://en.wikipedia.org/wiki/Exponential_factorial\" title=\"Exponential factorial\">exponential factorial</a> of 4; a <a href=\"http://en.wikipedia.org/wiki/Superperfect_number\" title=\"Superperfect number\">superperfect number</a>",
+	262468, "Leyland number",
+	263167, "<a href=\"http://en.wikipedia.org/wiki/Kynea_number\" title=\"Kynea number\">Kynea number</a>",
+	268705, "Leyland number",
+	274177, "prime factor of F<sub>6</sub>",
+	277200, "highly composite number",
+	279936, "6<sup>7</sup>",
+	280859, "a six-<a href=\"http://en.wikipedia.org/wiki/Numerical_digit\" title=\"Numerical digit\">digit</a> <a href=\"http://en.wikipedia.org/wiki/Prime_number\" title=\"Prime number\">prime number</a> whose <a href=\"http://en.wikipedia.org/wiki/Square_(algebra)\" title=\"Square (algebra)\">square (algebra)</a> is tridigital.",
+	293547, "Wedderburn-Etherington number",
+	294685, "Markov number",
+	298320, "Keith number",
+	300000, "round number",
+	310572, "Motzkin number",
+	317811, "Fibonacci number",
+	318682, "Kaprekar number",
+	326981, "<a href=\"http://en.wikipedia.org/wiki/Alternating_factorial\" title=\"Alternating factorial\">alternating factorial</a>",
+	329967, "Kaprekar number",
+	332640, "highly composite number; harmonic divisor number",
+	333333, "repdigit",
+	333667, "<a href=\"http://en.wikipedia.org/wiki/Sexy_prime\" title=\"Sexy prime\">sexy prime</a> and <a href=\"http://en.wikipedia.org/wiki/Unique_prime\" title=\"Unique prime\">unique prime</a>",
+	333673, "sexy prime",
+	333679, "sexy prime",
+	345678, "consecutive digits",
+	351352, "Kaprekar number",
+	355419, "Keith number",
+	356643, "Kaprekar number",
+	360360, "harmonic divisor number; the smallest number divisible by all of the numbers 1 through 15 (there is no smaller number divisble by 13)",
+	362880, "9!, highly totient number",
+	370261, "first prime followed by a <a href=\"http://en.wikipedia.org/wiki/Prime_gap\" title=\"Prime gap\">prime gap</a> of over 100",
+	371293, "13<sup>5</sup>",
+	389305, "<a href=\"http://en.wikipedia.org/wiki/Self-descriptive_number\" title=\"Self-descriptive number\">self-descriptive number</a> in base 7",
+	390313, "Kaprekar number",
+	390625, "5<sup>8</sup>",
+	397585, "Leyland number",
+	400000, "round number",
+	409113, "sum of the first nine <a href=\"http://en.wikipedia.org/wiki/Factorial\" title=\"Factorial\">factorials</a>",
+	422481, "smallest number whose fourth power is the sum of three smaller fourth powers",
+	423393, "Leyland number",
+	444444, "repdigit",
+	456789, "consecutive digits",
+	461539, "Kaprekar number",
+	426389, "Markov number",
+	466830, "Kaprekar number",
+	470832, "Pell number",
+	483840, "highly totient number",
+	498960, "highly composite number",
+	499393, "Markov number",
+	499500, "Kaprekar number",
+	500000, "round number",
+	500500, "Kaprekar number, sum of first 1000 integers",
+	509203, "<a href=\"http://en.wikipedia.org/wiki/Riesel_number\" title=\"Riesel number\">Riesel number</a>",
+	510510, "the product of the first seven prime numbers, thus the seventh <a href=\"http://en.wikipedia.org/wiki/Primorial\" title=\"Primorial\">primorial</a>",
+	514229, "<a href=\"http://en.wikipedia.org/wiki/Fibonacci_prime\" title=\"Fibonacci prime\">Fibonacci prime</a>, Markov number",
+	524287, "Mersenne prime",
+	524288, "2<sup>19</sup>, power of two",
+	524649, "Leyland number",
+	531441, "3<sup>12</sup>",
+	533169, "Leyland number",
+	533170, "Kaprekar number",
+	539400, "harmonic divisor number",
+	548834, "equal to the sum of the sixth powers of its digits",
+	554400, "highly composite number",
+	555555, "repdigit",
+	600000, "round number",
+	604800, "number of seconds in a week",
+	646018, "Markov number",
+	654321, "consecutive digits",
+	665280, "highly composite number",
+	666666, "repdigit",
+	676157, "Wedderburn-Etherington number",
+	678570, "Bell number",
+	694280, "Keith number",
+	695520, "harmonic divisor number",
+	700000, "round number",
+	720720, "<a href=\"http://en.wikipedia.org/wiki/Superior_highly_composite_number\" title=\"Superior highly composite number\">superior highly composite number</a>; <a href=\"http://en.wikipedia.org/wiki/Colossally_abundant_number\" title=\"Colossally abundant number\">colossally abundant number</a>; the smallest number divisible by all the numbers 1 through 16",
+	725760, "highly totient number",
+	726180, "harmonic divisor number",
+	742900, "Catalan number",
+	753480, "harmonic divisor number",
+	765432, "consecutive digits",
+	765623, "<a href=\"http://en.wikipedia.org/wiki/Emirp\" title=\"Emirp\">emirp</a>, Friedman number 5<sup>6</sup> × 7<sup>2</sup> - 6 ÷ 3",
+	777777, "repdigit, smallest natural number requiring 20 syllables in American English, 22 in British English",
+	800000, "round number",
+	823543, "7<sup>7</sup>",
+	832040, "Fibonacci number",
+	853467, "Motzkin number",
+	876543, "consecutive digits",
+	888888, "repdigit",
+	900000, "round number",
+	925765, "Markov number",
+	925993, "Keith number",
+	950976, "harmonic divisor number",
+	967680, "highly totient number",
+	987654, "consecutive digits",
+	999983, "largest 6-digit prime number",
+	999999, "The divisibility of this number by 7 and by 13 accounts for the fact that <a href=\"http://en.wikipedia.org/wiki/Rational_number\" title=\"Rational number\">rational numbers</a> with those denominators have 6-digit <a href=\"http://en.wikipedia.org/wiki/Repetend\" title=\"Repetend\" class=\"mw-redirect\">repetends</a> when expressed in <a href=\"http://en.wikipedia.org/wiki/Decimal\" title=\"Decimal\">decimal</a> form. <a href=\"http://en.wikipedia.org/wiki/Repdigit\" title=\"Repdigit\">Repdigit</a>. See also <a href=\"http://en.wikipedia.org/wiki/Feynman_point\" title=\"Feynman point\">Feynman point</a>.",
 ];
 
 function cal() {
@@ -1562,6 +1730,19 @@ function cal() {
 	var date1 = new Date();
 	//alert((date1.getTime() - date0.getTime()) / (1000*3600*24));
 
+	var reversed = false;
+	var numbers = thenumbers;
+	if (date1.getTime() < date0.getTime()) {
+		numbers = new Array();
+		for (var i = 0; i < thenumbers.length; i += 2) {
+			numbers[i]   = thenumbers[thenumbers.length-2-i];
+			numbers[i+1] = thenumbers[thenumbers.length-1-i];
+		}
+		reversed = true;
+	}
+
+	document.getElementById("dage").innerHTML = Math.round((date1.getTime() - date0.getTime()) / (1000*3600*24));
+
 	var tabref = document.getElementById("tday");
 	while (tabref.rows.length > 0)
 		tabref.deleteRow(0);
@@ -1571,12 +1752,12 @@ function cal() {
 	row.insertCell(2).innerHTML = "<b>remarks</b>";
 	for (var i = 0, j = 0; i < numbers.length && j < 20; i += 2) {
 		var ddate = new Date(date0);
-		ddate.setUTCDate(ddate.getUTCDate() + numbers[i]);
+		ddate.setUTCDate(ddate.getUTCDate() + (reversed ? -numbers[i] : numbers[i]));
 		if (ddate.getTime() < date1.getTime())
 			continue;
 		var row = tabref.insertRow(-1);
 		row.insertCell(0).innerHTML = ddate.getUTCFullYear() + "-" + (ddate.getUTCMonth() + 1) + "-" + ddate.getUTCDate();
-		row.insertCell(1).innerHTML = numbers[i];
+		row.insertCell(1).innerHTML = (reversed ? "-" : "") + numbers[i];
 		row.insertCell(2).innerHTML = numbers[i+1];
 		row.cells[0].noWrap = "nowrap";
 		row.cells[0].style.whiteSpace = "nowrap";
@@ -1592,19 +1773,19 @@ function cal() {
 	row.insertCell(2).innerHTML = "<b>remarks</b>";
 	for (var i = 0, j = 0; i < numbers.length && j < 5; i += 2) {
 		var ddate = new Date(date0);
-		ddate.setUTCDate(ddate.getUTCDate() + numbers[i] * 7);
+		ddate.setUTCDate(ddate.getUTCDate() + (reversed ? - numbers[i] * 7 : numbers[i] * 7));
 		if (ddate.getTime() < date1.getTime())
 			continue;
 		var row = tabref.insertRow(-1);
 		row.insertCell(0).innerHTML = ddate.getUTCFullYear() + "-" + (ddate.getUTCMonth() + 1) + "-" + ddate.getUTCDate();
-		row.insertCell(1).innerHTML = numbers[i];
+		row.insertCell(1).innerHTML = (reversed ? "-" : "") + numbers[i];
 		row.insertCell(2).innerHTML = numbers[i+1];
 		row.cells[0].noWrap = "nowrap";
 		row.cells[0].style.whiteSpace = "nowrap";
 		j ++;
 	}
 
-	document.getElementById("ptail").style.display = "block";
+	document.getElementById("ptail").style.display = "inline";
 }
 </script>
 </head>
@@ -1623,7 +1804,10 @@ Your birthday (Y-M-D e.g. 1990-1-31):
 <input type="button" value="go" onclick="cal()" />
 </p>
 
-<p id="ptail" style="display:none">
+<div id="ptail" style="display:none">
+
+<p>You are <b id="dage"></b> days old.</p>
+
 <b>Days:</b>
 <table id="tday">
 </table>
@@ -1638,6 +1822,6 @@ Your birthday (Y-M-D e.g. 1990-1-31):
 All data come from Wikipedia, e.g. <a href="http://en.wikipedia.org/wiki/10000_(number)">10000 (number)</a>.
 You can download the data here: <a href="numbers.txt">numbers.txt</a>.
 You can leave your comments in <a href="http://wuyongzheng.wordpress.com/2013/11/29/nerds-birthday/">my blog</a>.
-</p>
+</div>
 
 </body>
