@@ -127,7 +127,7 @@
 1338	Mertens function zero
 1342	Mertens function zero
 1350	nonagonal number
-1365	pentatope number
+1365	pentatope number, binary 10101010101
 1367	safe prime, balanced prime
 1369	37<sup>2</sup>, centered octagonal number
 1371	sum of the first 28 primes
@@ -493,6 +493,7 @@
 2704	<img class="tex" alt="52^2" src="http://upload.wikimedia.org/math/8/a/7/8a753c1ddd03e36568ad9c5d407a0715.png" />
 2728	Kaprekar number
 2729	highly cototient number
+2730	binary 101010101010
 2731	<a href="http://en.wikipedia.org/wiki/Wagstaff_prime" title="Wagstaff prime">Wagstaff prime</a>
 2736	octahedral number
 2741	Sophie Germain prime
@@ -835,7 +836,7 @@
 5456	<a href="http://en.wikipedia.org/wiki/Tetrahedral_number" title="Tetrahedral number">tetrahedral number</a>
 5459	highly cototient number
 5460	triangular number
-5461	<a href="http://en.wikipedia.org/wiki/Super-Poulet_number" title="Super-Poulet number">super-Poulet number</a>, centered heptagonal number
+5461	<a href="http://en.wikipedia.org/wiki/Super-Poulet_number" title="Super-Poulet number">super-Poulet number</a>, centered heptagonal number, binary 1010101010101
 5476	<img class="tex" alt="74^2" src="http://upload.wikimedia.org/math/3/1/b/31b075ecda98e70532b6052f5447c02b.png" />
 5483	safe prime
 5500	nonagonal number
@@ -1194,6 +1195,7 @@
 10837	star prime
 10856	amicable number with 10744
 10905	<a href="http://en.wikipedia.org/wiki/Wedderburn%E2%80%93Etherington_number" title="Wedderburn–Etherington number">Wedderburn–Etherington number</a>
+10922	binary 10101010101010
 10946	<a href="http://en.wikipedia.org/wiki/Fibonacci_number" title="Fibonacci number">Fibonacci number</a>, <a href="http://en.wikipedia.org/wiki/Markov_number" title="Markov number">Markov number</a>
 10989	reverses when multiplied by 9
 10990	<a href="http://en.wikipedia.org/wiki/Weird_number" title="Weird number">weird number</a>
@@ -1337,6 +1339,7 @@
 20903	first prime of form 120<i>k</i>+23 that is <i>not</i> a <a href="http://en.wikipedia.org/wiki/Full_reptend_prime" title="Full reptend prime">full reptend prime</a>
 21147	<a href="http://en.wikipedia.org/wiki/Bell_number" title="Bell number">Bell number</a>
 21181	one of six remaining <a href="http://en.wikipedia.org/wiki/Seventeen_or_Bust" title="Seventeen or Bust">Seventeen or Bust</a> numbers in the <a href="http://en.wikipedia.org/wiki/Sierpinski_number" title="Sierpinski number">Sierpinski problem</a>
+21845	binary 101010101010101
 21856	<a href="http://en.wikipedia.org/wiki/Octahedral_number" title="Octahedral number">octahedral number</a>
 21978	reverses when multiplied by 4
 22050	pentagonal pyramidal number
@@ -1436,6 +1439,7 @@
 42925	<a href="http://en.wikipedia.org/wiki/Square_pyramidal_number" title="Square pyramidal number">square pyramidal number</a>
 43261	<a href="http://en.wikipedia.org/wiki/Markov_number" title="Markov number">Markov number</a>
 43560	pentagonal pyramidal number
+43690	binary 1010101010101010
 43691	<a href="http://en.wikipedia.org/wiki/Wagstaff_prime" title="Wagstaff prime">Wagstaff prime</a>
 44100	sum of the cubes of the first 20 positive integers, sampling rate of <a href="http://en.wikipedia.org/wiki/Red_Book_(CD_standard)" title="Red Book (CD standard)" class="mw-redirect">Red Book</a>-compliant audio compact disks
 44444	repdigit
@@ -1530,6 +1534,7 @@
 83521	17^4
 86400	<a href="http://en.wikipedia.org/wiki/Second" title="Second">seconds</a> in a <a href="http://en.wikipedia.org/wiki/Day" title="Day">day</a>; 28801-<a href="http://en.wikipedia.org/wiki/Polygonal_number" title="Polygonal number">gonal</a> number; highly powerful number; solution to Singmaster's problem when n = 11
 87360	<a href="http://en.wikipedia.org/wiki/Unitary_perfect_number" title="Unitary perfect number">unitary perfect number</a>
+87381	binary 10101010101010101
 87654	consecutive digits
 88888	repdigit
 90000	sum of the cubes of the first 24 positive integers, square of 300.
@@ -1588,6 +1593,7 @@
 167400	harmonic divisor number
 173600	harmonic divisor number
 174680	Keith number
+174762	binary 101010101010101010
 174763	<a href="http://en.wikipedia.org/wiki/Wagstaff_prime" title="Wagstaff prime">Wagstaff prime</a>
 177147	3<sup>11</sup>
 177777	smallest natural number requiring 19 syllables in American English, 21 in British English
@@ -1636,6 +1642,7 @@
 333673	sexy prime
 333679	sexy prime
 345678	consecutive digits
+349525	binary 1010101010101010101
 351352	Kaprekar number
 355419	Keith number
 356643	Kaprekar number
@@ -1686,6 +1693,7 @@
 678570	Bell number
 694280	Keith number
 695520	harmonic divisor number
+699050	binary 10101010101010101010
 700000	round number
 720720	<a href="http://en.wikipedia.org/wiki/Superior_highly_composite_number" title="Superior highly composite number">superior highly composite number</a>; <a href="http://en.wikipedia.org/wiki/Colossally_abundant_number" title="Colossally abundant number">colossally abundant number</a>; the smallest number divisible by all the numbers 1 through 16
 725760	highly totient number
