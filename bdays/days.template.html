@@ -1,0 +1,119 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nerd's Birthday</title>
+<script>
+var thenumbers = [];
+
+function cal() {
+	var year = document.getElementById("year").value;
+	var month = document.getElementById("month").value;
+	var day = document.getElementById("day").value;
+	if (!(year && month && day))
+		return;
+	var date0 = new Date();
+	date0.setUTCFullYear(year);
+	date0.setUTCMonth(month-1);
+	date0.setUTCDate(day);
+	var date1 = new Date();
+	//alert((date1.getTime() - date0.getTime()) / (1000*3600*24));
+
+	var reversed = false;
+	var numbers = thenumbers;
+	if (date1.getTime() < date0.getTime()) {
+		numbers = new Array();
+		for (var i = 0; i < thenumbers.length; i += 2) {
+			numbers[i]   = thenumbers[thenumbers.length-2-i];
+			numbers[i+1] = thenumbers[thenumbers.length-1-i];
+		}
+		reversed = true;
+	}
+
+	document.getElementById("dage").innerHTML = Math.round((date1.getTime() - date0.getTime()) / (1000*3600*24));
+
+	var tabref = document.getElementById("tday");
+	while (tabref.rows.length > 0)
+		tabref.deleteRow(0);
+	var row = tabref.insertRow(-1);
+	row.insertCell(0).innerHTML = "<b>date</b>";
+	row.insertCell(1).innerHTML = "<b>days</b>";
+	row.insertCell(2).innerHTML = "<b>remarks</b>";
+	for (var i = 0, j = 0; i < numbers.length && j < 20; i += 2) {
+		var ddate = new Date(date0);
+		ddate.setUTCDate(ddate.getUTCDate() + (reversed ? -numbers[i] : numbers[i]));
+		if (ddate.getTime() < date1.getTime())
+			continue;
+		var row = tabref.insertRow(-1);
+		row.insertCell(0).innerHTML = ddate.getUTCFullYear() + "-" + (ddate.getUTCMonth() + 1) + "-" + ddate.getUTCDate();
+		row.insertCell(1).innerHTML = (reversed ? "-" : "") + numbers[i];
+		row.insertCell(2).innerHTML = numbers[i+1];
+		row.cells[0].noWrap = "nowrap";
+		row.cells[0].style.whiteSpace = "nowrap";
+		j ++;
+	}
+
+	var tabref = document.getElementById("tweek");
+	while (tabref.rows.length > 0)
+		tabref.deleteRow(0);
+	var row = tabref.insertRow(-1);
+	row.insertCell(0).innerHTML = "<b>date</b>";
+	row.insertCell(1).innerHTML = "<b>weeks</b>";
+	row.insertCell(2).innerHTML = "<b>remarks</b>";
+	for (var i = 0, j = 0; i < numbers.length && j < 5; i += 2) {
+		var ddate = new Date(date0);
+		ddate.setUTCDate(ddate.getUTCDate() + (reversed ? - numbers[i] * 7 : numbers[i] * 7));
+		if (ddate.getTime() < date1.getTime())
+			continue;
+		var row = tabref.insertRow(-1);
+		row.insertCell(0).innerHTML = ddate.getUTCFullYear() + "-" + (ddate.getUTCMonth() + 1) + "-" + ddate.getUTCDate();
+		row.insertCell(1).innerHTML = (reversed ? "-" : "") + numbers[i];
+		row.insertCell(2).innerHTML = numbers[i+1];
+		row.cells[0].noWrap = "nowrap";
+		row.cells[0].style.whiteSpace = "nowrap";
+		j ++;
+	}
+
+	document.getElementById("ptail").style.display = "inline";
+}
+</script>
+</head>
+<body>
+<p>
+Do you want to celebrate your 10000th day since birth?
+How about 6765th (the 20th <a href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci number</a>) day?
+This page computes the days to celebrate in the near future.
+</p>
+
+<p>
+Your birthday (Y-M-D e.g. 1990-1-31):
+<input type="text" id="year"  name="year" size="4"/>
+<input type="text" id="month" name="month" size="2"/>
+<input type="text" id="day"   name="day" size="2"/>
+<input type="button" value="go" onclick="cal()" />
+</p>
+
+<div id="ptail" style="display:none">
+
+<p>You are <b id="dage"></b> days old.</p>
+
+<b>Days:</b>
+<table id="tday">
+</table>
+<br/>
+
+<b>Weeks:</b>
+<table id="tweek">
+</table>
+<br/>
+
+<b>Data Source:</b><br/>
+Most data come from Wikipedia, e.g. <a href="http://en.wikipedia.org/wiki/10000_(number)">10000 (number)</a>.
+You can download the data here: <a href="numbers.txt">numbers.txt</a>.
+<!--There is another website, <a
+href="http://www.timeanddate.com/date/birthday.html">Special Age
+Calculator</a>, which gives you hours, minutes and seconds.</br>
+</br>
+-->You can leave your comments in <a href="http://wuyongzheng.wordpress.com/2013/11/29/nerds-birthday/">my blog</a>.
+</div>
+
+</body>
