@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ActiveSG Badminton Courts</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var venues = [
+        {id:291, lat:1.326575, lng:103.937797, name:"Bedok Sports Hall"},
+        {id:292, lat:1.355245, lng:103.850805, name:"Bishan Sports Hall"},
+        {id:293, lat:1.359667, lng:103.752228, name:"Bukit Gombak Sports Hall"},
+        {id:295, lat:1.390985, lng:103.748067, name:"Choa Chu Kang Sports Hall"},
+        {id:296, lat:1.311086, lng:103.765029, name:"Clementi Sports Hall"},
+        {id:298, lat:1.289297, lng:103.820672, name:"Delta Sports Hall"},
+        {id:301, lat:1.370961, lng:103.888024, name:"Hougang Sports Hall"},
+        {id:302, lat:1.346852, lng:103.729195, name:"Jurong East Sports Hall"},
+        {id:304, lat:1.338574, lng:103.694113, name:"Jurong West Sports Hall"},
+        {id:308, lat:1.396759, lng:103.886691, name:"Sengkang Sports Hall"},
+        {id:311, lat:1.330012, lng:103.851021, name:"Toa Payoh Sports Hall"},
+        {id:312, lat:1.434380, lng:103.779704, name:"Woodlands Sports Hall"},
+        {id:314, lat:1.383762, lng:103.845894, name:"Yio Chu Kang Sports Hall"},
+        {id:316, lat:1.412094, lng:103.831120, name:"Yishun Sports Hall"},
+        {id:318, lat:1.318499, lng:103.819515, name:"MOE (Evans) Sports Hall"},
+        {id:322, lat:1.374262, lng:103.851456, name:"Anderson Secondary School Hall"},
+        {id:323, lat:1.324809, lng:103.950977, name:"Bedok South Secondary School Hall"},
+        {id:324, lat:1.324312, lng:103.943919, name:"Bedok View Secondary School Hall"},
+        {id:325, lat:1.345720, lng:103.752000, name:"Bukit View Secondary School Hall"},
+        {id:326, lat:1.454201, lng:103.817423, name:"Endeavour Primary School Hall"},
+        {id:328, lat:1.396421, lng:103.912588, name:"Greendale Primary School Hall"},
+        {id:329, lat:1.377340, lng:103.881046, name:"Hougang Primary School Hall"},
+        {id:330, lat:1.357339, lng:103.948893, name:"Gongshang Primary School Hall"},
+        {id:332, lat:1.351789, lng:103.721537, name:"Hua Yi Secondary School Hall"},
+        {id:333, lat:1.428957, lng:103.790631, name:"Innova Primary School Hall"},
+        {id:338, lat:1.354805, lng:103.948043, name:"Pasir Ris Secondary School Hall"},
+        {id:340, lat:1.445241, lng:103.816996, name:"Sembawang Secondary School Hall"},
+        {id:342, lat:1.400050, lng:103.746125, name:"Unity Secondary School Hall"},
+        {id:344, lat:1.432310, lng:103.837860, name:"Yishun Town Secondary School Hall"},
+        {id:345, lat:1.342423, lng:103.760309, name:"Yusof Ishak Secondary School Hall"},
+        {id:420, lat:1.341540, lng:103.851956, name:"Beatty Secondary School Hall"},
+        {id:421, lat:1.334289, lng:103.910319, name:"Bedok North Secondary School Hall"},
+        {id:422, lat:1.355997, lng:103.960586, name:"East Spring Secondary School Hall"},
+        {id:423, lat:1.357878, lng:103.949913, name:"East View Secondary School Hall"},
+        {id:424, lat:1.347455, lng:103.726467, name:"Fuhua Secondary School Hall"},
+        {id:425, lat:1.335276, lng:103.702086, name:"Jurong West Secondary School Hall"},
+        {id:426, lat:1.308070, lng:103.769189, name:"Nan Hua High School Hall"},
+        {id:427, lat:1.326674, lng:103.920663, name:"Ping Yi Secondary School Hall"},
+        {id:430, lat:1.300681, lng:103.801857, name:"Queensway Secondary School Hall"},
+        {id:431, lat:1.440880, lng:103.788728, name:"Riverside Secondary School Hall"},
+        {id:432, lat:1.387707, lng:103.760018, name:"West Spring Secondary School Hall"},
+        {id:433, lat:1.403245, lng:103.747290, name:"Unity Primary School Hall"},
+        {id:434, lat:1.428129, lng:103.828833, name:"Yishun Secondary School Hall"},
+        {id:435, lat:1.356754, lng:103.890092, name:"Yuying Secondary School Hall"},
+        {id:446, lat:1.419240, lng:103.831032, name:"Naval Base Secondary School Hall"},
+        {id:447, lat:1.358700, lng:103.870667, name:"Peicai Secondary School Hall"},
+        {id:448, lat:1.359895, lng:103.869558, name:"Zhonghua Primary School Hall"},
+        {id:449, lat:1.369670, lng:103.868983, name:"Serangoon Garden Secondary School Hall"},
+        {id:450, lat:1.377635, lng:103.842103, name:"Yio Chu Kang Secondary School Hall"},
+        {id:451, lat:1.340338, lng:103.739469, name:"Shuqun Secondary School Hall"},
+        {id:452, lat:1.301947, lng:103.765404, name:"Kent Ridge Secondary School Hall"},
+        {id:453, lat:1.289088, lng:103.823727, name:"Gan Eng Seng Secondary School Hall"},
+        {id:454, lat:1.352075, lng:103.726968, name:"Hong Kah Secondary School Hall"},
+        {id:455, lat:1.330865, lng:103.724543, name:"Jurong Secondary School Hall"},
+        {id:456, lat:1.342312, lng:103.720644, name:"Yuan Ching Secondary School Hall"},
+        {id:457, lat:1.347973, lng:103.940012, name:"Junyuan Primary School Hall"},
+        {id:458, lat:1.401899, lng:103.909667, name:"Punggol Secondary School Hall"},
+        {id:459, lat:1.372403, lng:103.959380, name:"Pasir Ris Crest Secondary School Hall"},
+        {id:460, lat:1.367353, lng:103.842600, name:"Ang Mo Kio Secondary School Hall"},
+        {id:542, lat:1.372521, lng:103.949593, name:"Pasir Ris Sports Hall"},
+        {id:551, lat:1.390652, lng:103.887283, name:"Anchor Green Primary School Hall"},
+        {id:553, lat:1.366130, lng:103.829903, name:"Peirce Secondary School Hall"},
+        {id:554, lat:1.324320, lng:103.861002, name:"Bendemeer Secondary School Hall"},
+        {id:555, lat:1.293338, lng:103.817566, name:"Crescent Girls Secondary School Hall"},
+        {id:556, lat:1.367101, lng:103.949261, name:"Coral Secondary School Hall"},
+        {id:557, lat:1.358200, lng:103.935299, name:"Poi Ching School Hall"},
+        {id:559, lat:1.382060, lng:103.773836, name:"Greenridge Secondary School Hall"},
+        {id:560, lat:1.435827, lng:103.840098, name:"Northland Secondary School Hall"},
+        {id:561, lat:1.439565, lng:103.774208, name:"Woodlands Secondary School Hall"},
+        {id:562, lat:1.346401, lng:103.875825, name:"St. Gabriel Secondary School Hall"},
+        {id:564, lat:1.315403, lng:103.763253, name:"Clementi Primary School Hall"},
+        {id:565, lat:1.315501, lng:103.762094, name:"Clementi Town Secondary School Hall"},
+        {id:566, lat:1.319200, lng:103.745652, name:"Commonwealth Secondary School Hall"},
+        {id:567, lat:1.336581, lng:103.699087, name:"Frontier Primary School Hall"},
+        {id:569, lat:1.357861, lng:103.889918, name:"Xing Hua Primary School"},
+        {id:599, lat:1.436417, lng:103.803690, name:"Spectra School Hall"},
+        {id:735, lat:1.343873, lng:103.743027, name:"Crest Secondary School Hall"},
+        {id:821, lat:1.322197, lng:103.865365, name:"Bendemeer Primary School Hall"},
+        {id:822, lat:1.342172, lng:103.701945, name:"Boon Lay Secondary School Hall "},
+        {id:823, lat:1.381660, lng:103.738424, name:"Bukit Panjang Govt High School Hall "},
+        {id:824, lat:1.275620, lng:103.840000, name:"Cantonment Primary School Hall "},
+        {id:825, lat:1.298360, lng:103.882979, name:"Dunman High School Hall"},
+        {id:826, lat:1.399882, lng:103.902302, name:"Edgefield Secondary School Hall "},
+        {id:827, lat:1.377661, lng:103.882530, name:"Hougang Secondary School Hall "},
+        {id:828, lat:1.351493, lng:103.729161, name:"Jurongville Secondary School Hall"},
+        {id:829, lat:1.338205, lng:103.687205, name:"Juying Secondary School Hall "},
+        {id:830, lat:1.381017, lng:103.899463, name:"North Vista Secondary School Hall"},
+        {id:831, lat:1.456638, lng:103.813826, name:"Northoaks Primary School Hall "},
+        {id:832, lat:1.384006, lng:103.891075, name:"Palm View Primary School Hall"},
+        {id:833, lat:1.296349, lng:103.807958, name:"Queenstown Primary School Hall "},
+        {id:834, lat:1.274538, lng:103.824287, name:"Radin Mas Primary School Hall "},
+        {id:835, lat:1.444970, lng:103.820734, name:"Sembawang Primary School Hall "},
+      ];
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 1.3595015, lng: 103.8264145},
+          zoom: 12
+        });
+        for (var i = 0; i < venues.length; i ++) {
+          var marker = new google.maps.Marker({
+            position: venues[i],
+            map: map,
+            title: venues[i].name,
+            infow: new google.maps.InfoWindow({content: "<a href='https://members.myactivesg.com/facilities/view/activity/18/venue/" + venues[i].id + "'>" + venues[i].name + "</a>"})
+          });
+          marker.addListener('click', function() {
+            this.infow.open(map, this);
+          });
+        }
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJvBveKdnhCw9MaDwzFb_7cTnXWNohROU&callback=initMap" async defer></script>
+  </body>
+</html>
