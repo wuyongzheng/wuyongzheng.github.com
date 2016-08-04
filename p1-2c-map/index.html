@@ -1,0 +1,5884 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Voronoi</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+function showInfo(event) {
+  infoWindow.setContent(this.text);
+  infoWindow.setPosition(event.latLng);
+  infoWindow.open(map);
+}
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: {lat: 1.3595015, lng: 103.8264145}
+  });
+infoWindow = new google.maps.InfoWindow;
+// Anderson Primary School
+var coords = [
+{lat: 1.38291192674, lng: 103.852248469},
+{lat: 1.37930386429, lng: 103.837531665},
+{lat: 1.39412714886, lng: 103.814496474},
+{lat: 1.39967890553, lng: 103.831354134},
+{lat: 1.40136128825, lng: 103.855034772},
+{lat: 1.39865499665, lng: 103.855721972},
+{lat: 1.38904894698, lng: 103.857388548},
+{lat: 1.38474956081, lng: 103.854448962},
+{lat: 1.38291192674, lng: 103.852248469},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B5004A',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38441642518, lng: 103.84131508},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Anderson Primary School: 80/73", position: {lat: 1.38441642518, lng: 103.84131508}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Ang Mo Kio Primary School
+var coords = [
+{lat: 1.36959071829, lng: 103.845731376},
+{lat: 1.36252663636, lng: 103.843497928},
+{lat: 1.36148320935, lng: 103.840854437},
+{lat: 1.3673884451, lng: 103.833046551},
+{lat: 1.3740418902, lng: 103.839192382},
+{lat: 1.37055324302, lng: 103.845531438},
+{lat: 1.36959071829, lng: 103.845731376},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4800B7',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3692868333, lng: 103.839269508},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Ang Mo Kio Primary School: 57/121", position: {lat: 1.3692868333, lng: 103.839269508}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// CHIJ Saint Nicholas Girls' School
+var coords = [
+{lat: 1.3740418902, lng: 103.839192382},
+{lat: 1.3673884451, lng: 103.833046551},
+{lat: 1.37101333797, lng: 103.802623128},
+{lat: 1.39337573057, lng: 103.806504988},
+{lat: 1.39412714886, lng: 103.814496474},
+{lat: 1.37930386429, lng: 103.837531665},
+{lat: 1.3740418902, lng: 103.839192382},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C70038',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37374219921, lng: 103.834446151},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "CHIJ Saint Nicholas Girls' School: 34/29", position: {lat: 1.37374219921, lng: 103.834446151}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Da Qiao Primary School
+var coords = [
+{lat: 1.38474956081, lng: 103.854448962},
+{lat: 1.38904894698, lng: 103.857388548},
+{lat: 1.38130406753, lng: 103.866425819},
+{lat: 1.36856898066, lng: 103.866987879},
+{lat: 1.3661845045, lng: 103.86421051},
+{lat: 1.36465094274, lng: 103.860005545},
+{lat: 1.36560452261, lng: 103.857730411},
+{lat: 1.36811119947, lng: 103.855627324},
+{lat: 1.38474956081, lng: 103.854448962},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1900E6',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37239007043, lng: 103.858904611},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Da Qiao Primary School: 15/64", position: {lat: 1.37239007043, lng: 103.858904611}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Jing Shan Primary School
+var coords = [
+{lat: 1.36959071829, lng: 103.845731376},
+{lat: 1.37055324302, lng: 103.845531438},
+{lat: 1.38291192674, lng: 103.852248469},
+{lat: 1.38474956081, lng: 103.854448962},
+{lat: 1.36811119947, lng: 103.855627324},
+{lat: 1.36959071829, lng: 103.845731376},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#6E0091',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37188546943, lng: 103.851779697},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Jing Shan Primary School: 62/89", position: {lat: 1.37188546943, lng: 103.851779697}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Mayflower Primary School
+var coords = [
+{lat: 1.37055324302, lng: 103.845531438},
+{lat: 1.3740418902, lng: 103.839192382},
+{lat: 1.37930386429, lng: 103.837531665},
+{lat: 1.38291192674, lng: 103.852248469},
+{lat: 1.37055324302, lng: 103.845531438},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2D00D2',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37652100024, lng: 103.843250771},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Mayflower Primary School: 44/120", position: {lat: 1.37652100024, lng: 103.843250771}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Teck Ghee Primary School
+var coords = [
+{lat: 1.36959071829, lng: 103.845731376},
+{lat: 1.36811119947, lng: 103.855627324},
+{lat: 1.36560452261, lng: 103.857730411},
+{lat: 1.36038537603, lng: 103.847519815},
+{lat: 1.36252663636, lng: 103.843497928},
+{lat: 1.36959071829, lng: 103.845731376},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C2003D',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.36562731331, lng: 103.850844056},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Teck Ghee Primary School: 110/97", position: {lat: 1.36562731331, lng: 103.850844056}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Townsville Primary School
+var coords = [
+{lat: 1.36038537603, lng: 103.847519815},
+{lat: 1.36560452261, lng: 103.857730411},
+{lat: 1.36465094274, lng: 103.860005545},
+{lat: 1.35524432704, lng: 103.858211247},
+{lat: 1.35426961451, lng: 103.851256449},
+{lat: 1.36038537603, lng: 103.847519815},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2200DD',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.36000958012, lng: 103.853715561},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Townsville Primary School: 42/136", position: {lat: 1.36000958012, lng: 103.853715561}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Bedok Green Primary School
+var coords = [
+{lat: 1.31830397292, lng: 103.939543598},
+{lat: 1.31341451435, lng: 103.935647998},
+{lat: 1.31249247374, lng: 103.933512531},
+{lat: 1.32298735241, lng: 103.930323287},
+{lat: 1.32906739497, lng: 103.936636719},
+{lat: 1.32932184114, lng: 103.937395536},
+{lat: 1.31830397292, lng: 103.939543598},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2400DB',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3241500339, lng: 103.937626962},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Bedok Green Primary School: 44/137", position: {lat: 1.3241500339, lng: 103.937626962}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// CHIJ (Katong) Primary
+var coords = [
+{lat: 1.31459798798, lng: 103.904583025},
+{lat: 1.31602367579, lng: 103.908866187},
+{lat: 1.31234815629, lng: 103.914736223},
+{lat: 1.30773076506, lng: 103.914375559},
+{lat: 1.30288382991, lng: 103.905707952},
+{lat: 1.31459798798, lng: 103.904583025},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#6F0090',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.30637695344, lng: 103.910500548},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "CHIJ (Katong) Primary: 67/93", position: {lat: 1.30637695344, lng: 103.910500548}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Damai Primary School
+var coords = [
+{lat: 1.35454012533, lng: 103.911376578},
+{lat: 1.35611729467, lng: 103.913163204},
+{lat: 1.35084956992, lng: 103.921473871},
+{lat: 1.34331808039, lng: 103.928189687},
+{lat: 1.33310321586, lng: 103.926595721},
+{lat: 1.33140534701, lng: 103.925752579},
+{lat: 1.3331779644, lng: 103.916370087},
+{lat: 1.35057200538, lng: 103.908464409},
+{lat: 1.35454012533, lng: 103.911376578},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0900F6',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33548857144, lng: 103.921195047},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Damai Primary School: 14/88", position: {lat: 1.33548857144, lng: 103.921195047}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// East Coast Primary School
+var coords = [
+{lat: 1.32624935598, lng: 103.926181093},
+{lat: 1.32387555666, lng: 103.919977822},
+{lat: 1.32477635449, lng: 103.914607893},
+{lat: 1.3331779644, lng: 103.916370087},
+{lat: 1.33140534701, lng: 103.925752579},
+{lat: 1.32624935598, lng: 103.926181093},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1100EE',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.32926631204, lng: 103.920019486},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "East Coast Primary School: 18/92", position: {lat: 1.32926631204, lng: 103.920019486}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Fengshan Primary School
+var coords = [
+{lat: 1.32906739497, lng: 103.936636719},
+{lat: 1.32298735241, lng: 103.930323287},
+{lat: 1.32624935598, lng: 103.926181093},
+{lat: 1.33140534701, lng: 103.925752579},
+{lat: 1.33310321586, lng: 103.926595721},
+{lat: 1.33173996789, lng: 103.933327794},
+{lat: 1.32906739497, lng: 103.936636719},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#94006B',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33024207508, lng: 103.931760127},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Fengshan Primary School: 103/103", position: {lat: 1.33024207508, lng: 103.931760127}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Opera Estate Primary School
+var coords = [
+{lat: 1.32298735241, lng: 103.930323287},
+{lat: 1.31249247374, lng: 103.933512531},
+{lat: 1.31004018529, lng: 103.927832975},
+{lat: 1.31219112209, lng: 103.922431706},
+{lat: 1.32387555666, lng: 103.919977822},
+{lat: 1.32624935598, lng: 103.926181093},
+{lat: 1.32298735241, lng: 103.930323287},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#6C0093',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31988975041, lng: 103.923607606},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Opera Estate Primary School: 71/104", position: {lat: 1.31988975041, lng: 103.923607606}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Red Swastika School
+var coords = [
+{lat: 1.32996568065, lng: 103.938658748},
+{lat: 1.32932184114, lng: 103.937395536},
+{lat: 1.32906739497, lng: 103.936636719},
+{lat: 1.33173996789, lng: 103.933327794},
+{lat: 1.34152857671, lng: 103.934024485},
+{lat: 1.34069482666, lng: 103.936281369},
+{lat: 1.32996568065, lng: 103.938658748},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B3004C',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33358769122, lng: 103.934462335},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Red Swastika School: 83/76", position: {lat: 1.33358769122, lng: 103.934462335}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Saint Anthony's Canossian Primary School
+var coords = [
+{lat: 1.32835020231, lng: 103.950481268},
+{lat: 1.32810039985, lng: 103.949570185},
+{lat: 1.32996568065, lng: 103.938658748},
+{lat: 1.34069482666, lng: 103.936281369},
+{lat: 1.34164440801, lng: 103.94452026},
+{lat: 1.32876381875, lng: 103.950668853},
+{lat: 1.32835020231, lng: 103.950481268},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4000BF',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.335021327, lng: 103.940932353},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Saint Anthony's Canossian Primary School: 59/136", position: {lat: 1.335021327, lng: 103.940932353}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// St. Stephen's School
+var coords = [
+{lat: 1.32477635449, lng: 103.914607893},
+{lat: 1.32387555666, lng: 103.919977822},
+{lat: 1.31219112209, lng: 103.922431706},
+{lat: 1.31234815629, lng: 103.914736223},
+{lat: 1.31602367579, lng: 103.908866187},
+{lat: 1.32333964884, lng: 103.912010597},
+{lat: 1.32477635449, lng: 103.914607893},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5B00A4',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31876628924, lng: 103.918258123},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "St. Stephen's School: 64/112", position: {lat: 1.31876628924, lng: 103.918258123}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Telok Kurau Primary School
+var coords = [
+{lat: 1.32477635449, lng: 103.914607893},
+{lat: 1.32333964884, lng: 103.912010597},
+{lat: 1.32955893838, lng: 103.906431044},
+{lat: 1.34583148327, lng: 103.902397376},
+{lat: 1.35057200538, lng: 103.908464409},
+{lat: 1.3331779644, lng: 103.916370087},
+{lat: 1.32477635449, lng: 103.914607893},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#870078',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33106235405, lng: 103.911456501},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Telok Kurau Primary School: 84/99", position: {lat: 1.33106235405, lng: 103.911456501}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Temasek Primary School
+var coords = [
+{lat: 1.32810039985, lng: 103.949570185},
+{lat: 1.32835020231, lng: 103.950481268},
+{lat: 1.31774179882, lng: 103.945670088},
+{lat: 1.31341451435, lng: 103.935647998},
+{lat: 1.31830397292, lng: 103.939543598},
+{lat: 1.32810039985, lng: 103.949570185},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C90036',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31774179882, lng: 103.945670088},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Temasek Primary School: 84/73", position: {lat: 1.31774179882, lng: 103.945670088}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Yu Neng Primary School
+var coords = [
+{lat: 1.33173996789, lng: 103.933327794},
+{lat: 1.33310321586, lng: 103.926595721},
+{lat: 1.34331808039, lng: 103.928189687},
+{lat: 1.34192199158, lng: 103.933268826},
+{lat: 1.34152857671, lng: 103.934024485},
+{lat: 1.33173996789, lng: 103.933327794},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#AE0051',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33372975039, lng: 103.932466382},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Yu Neng Primary School: 59/55", position: {lat: 1.33372975039, lng: 103.932466382}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Ai Tong School
+var coords = [
+{lat: 1.36341156407, lng: 103.800303759},
+{lat: 1.36689994565, lng: 103.800999202},
+{lat: 1.37101333797, lng: 103.802623128},
+{lat: 1.3673884451, lng: 103.833046551},
+{lat: 1.36148320935, lng: 103.840854437},
+{lat: 1.35028373987, lng: 103.835137772},
+{lat: 1.34501310051, lng: 103.820089439},
+{lat: 1.36198603786, lng: 103.800174512},
+{lat: 1.36341156407, lng: 103.800303759},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#EA0015',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.36088371396, lng: 103.832914087},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Ai Tong School: 56/37", position: {lat: 1.36088371396, lng: 103.832914087}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Catholic High School
+var coords = [
+{lat: 1.36038537603, lng: 103.847519815},
+{lat: 1.35426961451, lng: 103.851256449},
+{lat: 1.35166251638, lng: 103.849904684},
+{lat: 1.34785436393, lng: 103.841965243},
+{lat: 1.35028373987, lng: 103.835137772},
+{lat: 1.36148320935, lng: 103.840854437},
+{lat: 1.36252663636, lng: 103.843497928},
+{lat: 1.36038537603, lng: 103.847519815},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E2001D',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3547008888, lng: 103.845026808},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Catholic High School: 30/22", position: {lat: 1.3547008888, lng: 103.845026808}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Guangyang Primary School
+var coords = [
+{lat: 1.34236804555, lng: 103.845149483},
+{lat: 1.34785436393, lng: 103.841965243},
+{lat: 1.35166251638, lng: 103.849904684},
+{lat: 1.34484369022, lng: 103.853863227},
+{lat: 1.34127059974, lng: 103.850757608},
+{lat: 1.34236804555, lng: 103.845149483},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1000EF',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34595655502, lng: 103.849221027},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Guangyang Primary School: 23/119", position: {lat: 1.34595655502, lng: 103.849221027}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Kuo Chuan Presbyterian Primary School
+var coords = [
+{lat: 1.35524432704, lng: 103.858211247},
+{lat: 1.35468051327, lng: 103.858752794},
+{lat: 1.34507507242, lng: 103.858917098},
+{lat: 1.34484369022, lng: 103.853863227},
+{lat: 1.35166251638, lng: 103.849904684},
+{lat: 1.35426961451, lng: 103.851256449},
+{lat: 1.35524432704, lng: 103.858211247},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C1003E',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34942680231, lng: 103.855198733},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Kuo Chuan Presbyterian Primary School: 108/96", position: {lat: 1.34942680231, lng: 103.855198733}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Bukit View Primary School
+var coords = [
+{lat: 1.3490598857, lng: 103.747566295},
+{lat: 1.35050667257, lng: 103.747969802},
+{lat: 1.34994618053, lng: 103.755224789},
+{lat: 1.33186183969, lng: 103.753698178},
+{lat: 1.33164952492, lng: 103.753561195},
+{lat: 1.33123070592, lng: 103.75219687},
+{lat: 1.3490598857, lng: 103.747566295},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3500CA',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34588653235, lng: 103.753449679},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Bukit View Primary School: 46/115", position: {lat: 1.34588653235, lng: 103.753449679}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Dazhong Primary School
+var coords = [
+{lat: 1.37085376817, lng: 103.751384794},
+{lat: 1.36933777534, lng: 103.755576112},
+{lat: 1.36416005005, lng: 103.757580514},
+{lat: 1.35225910826, lng: 103.74732735},
+{lat: 1.36071156211, lng: 103.736050832},
+{lat: 1.36446272669, lng: 103.733471792},
+{lat: 1.37085376817, lng: 103.751384794},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5300AC',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.35924319979, lng: 103.748275773},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Dazhong Primary School: 50/92", position: {lat: 1.35924319979, lng: 103.748275773}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Keming Primary School
+var coords = [
+{lat: 1.34994618053, lng: 103.755224789},
+{lat: 1.35314294593, lng: 103.767698168},
+{lat: 1.35300146712, lng: 103.767958824},
+{lat: 1.34561742562, lng: 103.76470669},
+{lat: 1.33186183969, lng: 103.753698178},
+{lat: 1.34994618053, lng: 103.755224789},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D5002A',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34564640635, lng: 103.756294228},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Keming Primary School: 120/97", position: {lat: 1.34564640635, lng: 103.756294228}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Lianhua Primary School
+var coords = [
+{lat: 1.35050667257, lng: 103.747969802},
+{lat: 1.35225910826, lng: 103.74732735},
+{lat: 1.36416005005, lng: 103.757580514},
+{lat: 1.35314294593, lng: 103.767698168},
+{lat: 1.34994618053, lng: 103.755224789},
+{lat: 1.35050667257, lng: 103.747969802},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1A00E5',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.35423030503, lng: 103.754094286},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Lianhua Primary School: 25/103", position: {lat: 1.35423030503, lng: 103.754094286}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Princess Elizabeth Primary School
+var coords = [
+{lat: 1.34602561594, lng: 103.74169172},
+{lat: 1.34602328721, lng: 103.737208105},
+{lat: 1.36071156211, lng: 103.736050832},
+{lat: 1.35225910826, lng: 103.74732735},
+{lat: 1.35050667257, lng: 103.747969802},
+{lat: 1.3490598857, lng: 103.747566295},
+{lat: 1.34602561594, lng: 103.74169172},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D1002E',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34938946946, lng: 103.740889788},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Princess Elizabeth Primary School: 110/91", position: {lat: 1.34938946946, lng: 103.740889788}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// St. Anthony's Primary School
+var coords = [
+{lat: 1.34602561594, lng: 103.74169172},
+{lat: 1.3490598857, lng: 103.747566295},
+{lat: 1.33123070592, lng: 103.75219687},
+{lat: 1.32946408393, lng: 103.749810323},
+{lat: 1.3355245542, lng: 103.744297796},
+{lat: 1.34602561594, lng: 103.74169172},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#BA0045',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34342465384, lng: 103.743970667},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "St. Anthony's Primary School: 103/93", position: {lat: 1.34342465384, lng: 103.743970667}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Alexandra Primary School
+var coords = [
+{lat: 1.3063113759, lng: 103.826237144},
+{lat: 1.30590603049, lng: 103.826663916},
+{lat: 1.2897329353, lng: 103.830856164},
+{lat: 1.28659990679, lng: 103.820861621},
+{lat: 1.29428866131, lng: 103.816084127},
+{lat: 1.30717591978, lng: 103.819911408},
+{lat: 1.3063113759, lng: 103.826237144},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#BE0041',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.29137033179, lng: 103.824069086},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Alexandra Primary School: 147/132", position: {lat: 1.29137033179, lng: 103.824069086}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Blangah Rise Primary School
+var coords = [
+{lat: 1.27771639965, lng: 103.816375511},
+{lat: 1.27554297229, lng: 103.816245236},
+{lat: 1.27601663753, lng: 103.808342849},
+{lat: 1.28411027916, lng: 103.79292783},
+{lat: 1.28583233888, lng: 103.797764921},
+{lat: 1.28601146019, lng: 103.804433107},
+{lat: 1.27771639965, lng: 103.816375511},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0D00F2',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.27601663753, lng: 103.808342849},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Blangah Rise Primary School: 16/95", position: {lat: 1.27601663753, lng: 103.808342849}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Cantonment Primary School
+var coords = [
+{lat: 1.28479887905, lng: 103.835877143},
+{lat: 1.28806204015, lng: 103.85152769},
+{lat: 1.28798090046, lng: 103.851887682},
+{lat: 1.28340358971, lng: 103.859289274},
+{lat: 1.27598803761, lng: 103.839844871},
+{lat: 1.27556525622, lng: 103.833878943},
+{lat: 1.28099082518, lng: 103.833494455},
+{lat: 1.28479887905, lng: 103.835877143},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4D00B2',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.27598803761, lng: 103.839844871},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Cantonment Primary School: 68/135", position: {lat: 1.27598803761, lng: 103.839844871}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// CHIJ (Kellock)
+var coords = [
+{lat: 1.28099082518, lng: 103.833494455},
+{lat: 1.27556525622, lng: 103.833878943},
+{lat: 1.27514247483, lng: 103.827913015},
+{lat: 1.27510589094, lng: 103.826030319},
+{lat: 1.27962519646, lng: 103.825942502},
+{lat: 1.28099082518, lng: 103.833494455},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#70008F',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.27514247483, lng: 103.827913015},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "CHIJ (Kellock): 87/120", position: {lat: 1.27514247483, lng: 103.827913015}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Gan Eng Seng Primary School
+var coords = [
+{lat: 1.28088898316, lng: 103.820178163},
+{lat: 1.27771639965, lng: 103.816375511},
+{lat: 1.28601146019, lng: 103.804433107},
+{lat: 1.29428866131, lng: 103.816084127},
+{lat: 1.28659990679, lng: 103.820861621},
+{lat: 1.28088898316, lng: 103.820178163},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3D00C2',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.2858370584, lng: 103.815164004},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Gan Eng Seng Primary School: 55/133", position: {lat: 1.2858370584, lng: 103.815164004}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Radin Mas Primary School
+var coords = [
+{lat: 1.28088898316, lng: 103.820178163},
+{lat: 1.27962519646, lng: 103.825942502},
+{lat: 1.27510589094, lng: 103.826030319},
+{lat: 1.27506930705, lng: 103.824147624},
+{lat: 1.27554297229, lng: 103.816245236},
+{lat: 1.27771639965, lng: 103.816375511},
+{lat: 1.28088898316, lng: 103.820178163},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#CC0033',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.27506930705, lng: 103.824147624},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Radin Mas Primary School: 100/86", position: {lat: 1.27506930705, lng: 103.824147624}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Zhangde Primary School
+var coords = [
+{lat: 1.28088898316, lng: 103.820178163},
+{lat: 1.28659990679, lng: 103.820861621},
+{lat: 1.2897329353, lng: 103.830856164},
+{lat: 1.28479887905, lng: 103.835877143},
+{lat: 1.28099082518, lng: 103.833494455},
+{lat: 1.27962519646, lng: 103.825942502},
+{lat: 1.28088898316, lng: 103.820178163},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#80007F',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.28451412625, lng: 103.826218328},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Zhangde Primary School: 120/149", position: {lat: 1.28451412625, lng: 103.826218328}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Beacon Primary School
+var coords = [
+{lat: 1.37675948304, lng: 103.77677002},
+{lat: 1.38324929831, lng: 103.770256137},
+{lat: 1.38961856371, lng: 103.771964999},
+{lat: 1.40613201845, lng: 103.783872037},
+{lat: 1.39885309563, lng: 103.803263293},
+{lat: 1.39337573057, lng: 103.806504988},
+{lat: 1.37101333797, lng: 103.802623128},
+{lat: 1.36689994565, lng: 103.800999202},
+{lat: 1.37675948304, lng: 103.77677002},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5900A6',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38430761218, lng: 103.773581541},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Beacon Primary School: 69/121", position: {lat: 1.38430761218, lng: 103.773581541}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Bukit Panjang Primary School
+var coords = [
+{lat: 1.37675948304, lng: 103.77677002},
+{lat: 1.36689994565, lng: 103.800999202},
+{lat: 1.36341156407, lng: 103.800303759},
+{lat: 1.37214753732, lng: 103.759284325},
+{lat: 1.37536644808, lng: 103.761343384},
+{lat: 1.37674413295, lng: 103.762830609},
+{lat: 1.37675948304, lng: 103.77677002},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#BF0040',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37358232443, lng: 103.769217119},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Bukit Panjang Primary School: 103/92", position: {lat: 1.37358232443, lng: 103.769217119}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// CHIJ Our Lady Queen of Peace
+var coords = [
+{lat: 1.36341156407, lng: 103.800303759},
+{lat: 1.36198603786, lng: 103.800174512},
+{lat: 1.36090792242, lng: 103.799144521},
+{lat: 1.35976923985, lng: 103.796677578},
+{lat: 1.35381601219, lng: 103.776411265},
+{lat: 1.35300146712, lng: 103.767958824},
+{lat: 1.35314294593, lng: 103.767698168},
+{lat: 1.36416005005, lng: 103.757580514},
+{lat: 1.36933777534, lng: 103.755576112},
+{lat: 1.37214753732, lng: 103.759284325},
+{lat: 1.36341156407, lng: 103.800303759},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4C00B3',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.36679002241, lng: 103.767770552},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "CHIJ Our Lady Queen of Peace: 55/112", position: {lat: 1.36679002241, lng: 103.767770552}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Greenridge Primary School
+var coords = [
+{lat: 1.38324929831, lng: 103.770256137},
+{lat: 1.38205677398, lng: 103.764847379},
+{lat: 1.3861671931, lng: 103.763532372},
+{lat: 1.38961856371, lng: 103.771964999},
+{lat: 1.38324929831, lng: 103.770256137},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#72008D',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38583005685, lng: 103.767907089},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Greenridge Primary School: 105/145", position: {lat: 1.38583005685, lng: 103.767907089}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// West Spring Primary School
+var coords = [
+{lat: 1.3861671931, lng: 103.763532372},
+{lat: 1.39171365267, lng: 103.758099743},
+{lat: 1.411462076, lng: 103.76782598},
+{lat: 1.40759860511, lng: 103.781443123},
+{lat: 1.40613201845, lng: 103.783872037},
+{lat: 1.38961856371, lng: 103.771964999},
+{lat: 1.3861671931, lng: 103.763532372},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#AD0052',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38947480926, lng: 103.766415336},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "West Spring Primary School: 180/170", position: {lat: 1.38947480926, lng: 103.766415336}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// West View Primary School
+var coords = [
+{lat: 1.37674413295, lng: 103.762830609},
+{lat: 1.37536644808, lng: 103.761343384},
+{lat: 1.38575485455, lng: 103.756939872},
+{lat: 1.39124451221, lng: 103.757384296},
+{lat: 1.39171365267, lng: 103.758099743},
+{lat: 1.3861671931, lng: 103.763532372},
+{lat: 1.38205677398, lng: 103.764847379},
+{lat: 1.37674413295, lng: 103.762830609},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2600D9',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38335342715, lng: 103.760165693},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "West View Primary School: 38/116", position: {lat: 1.38335342715, lng: 103.760165693}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Zhenghua Primary School
+var coords = [
+{lat: 1.37675948304, lng: 103.77677002},
+{lat: 1.37674413295, lng: 103.762830609},
+{lat: 1.38205677398, lng: 103.764847379},
+{lat: 1.38324929831, lng: 103.770256137},
+{lat: 1.37675948304, lng: 103.77677002},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#760089',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37991999944, lng: 103.76921014},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Zhenghua Primary School: 85/112", position: {lat: 1.37991999944, lng: 103.76921014}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Bukit Timah Primary School
+var coords = [
+{lat: 1.33186183969, lng: 103.753698178},
+{lat: 1.34561742562, lng: 103.76470669},
+{lat: 1.33202090916, lng: 103.771862376},
+{lat: 1.32696160671, lng: 103.772292283},
+{lat: 1.3268459661, lng: 103.770081038},
+{lat: 1.33164952492, lng: 103.753561195},
+{lat: 1.33186183969, lng: 103.753698178},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3100CE',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33741583606, lng: 103.766578663},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Bukit Timah Primary School: 52/131", position: {lat: 1.33741583606, lng: 103.766578663}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Henry Park Primary School
+var coords = [
+{lat: 1.32462859448, lng: 103.775443573},
+{lat: 1.3256107919, lng: 103.793997372},
+{lat: 1.31574515549, lng: 103.799707571},
+{lat: 1.30985000266, lng: 103.79337441},
+{lat: 1.30816851246, lng: 103.776392193},
+{lat: 1.32462859448, lng: 103.775443573},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F5000A',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3169153262, lng: 103.784130483},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Henry Park Primary School: 50/25", position: {lat: 1.3169153262, lng: 103.784130483}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Methodist Girls' School (Primary)
+var coords = [
+{lat: 1.32462859448, lng: 103.775443573},
+{lat: 1.32658979241, lng: 103.773270699},
+{lat: 1.35976923985, lng: 103.796677578},
+{lat: 1.36090792242, lng: 103.799144521},
+{lat: 1.3256107919, lng: 103.793997372},
+{lat: 1.32462859448, lng: 103.775443573},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F1000E',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33321591373, lng: 103.783267566},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Methodist Girls' School (Primary): 78/44", position: {lat: 1.33321591373, lng: 103.783267566}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Nanyang Primary School
+var coords = [
+{lat: 1.35300146712, lng: 103.767958824},
+{lat: 1.35381601219, lng: 103.776411265},
+{lat: 1.33202090916, lng: 103.771862376},
+{lat: 1.34561742562, lng: 103.76470669},
+{lat: 1.35300146712, lng: 103.767958824},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F90006',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33943070543, lng: 103.770407115},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Nanyang Primary School: 49/21", position: {lat: 1.33943070543, lng: 103.770407115}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Pei Hwa Presbyterian Primary School
+var coords = [
+{lat: 1.32658979241, lng: 103.773270699},
+{lat: 1.32696160671, lng: 103.772292283},
+{lat: 1.33202090916, lng: 103.771862376},
+{lat: 1.35381601219, lng: 103.776411265},
+{lat: 1.35976923985, lng: 103.796677578},
+{lat: 1.32658979241, lng: 103.773270699},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A90056',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33823000068, lng: 103.776160055},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Pei Hwa Presbyterian Primary School: 44/41", position: {lat: 1.33823000068, lng: 103.776160055}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Raffles Girls' Primary School
+var coords = [
+{lat: 1.36090792242, lng: 103.799144521},
+{lat: 1.36198603786, lng: 103.800174512},
+{lat: 1.34501310051, lng: 103.820089439},
+{lat: 1.33819207495, lng: 103.822279885},
+{lat: 1.31323181507, lng: 103.812449192},
+{lat: 1.31317794191, lng: 103.811105482},
+{lat: 1.31574515549, lng: 103.799707571},
+{lat: 1.3256107919, lng: 103.793997372},
+{lat: 1.36090792242, lng: 103.799144521},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D80027',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.32983505331, lng: 103.806452179},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Raffles Girls' Primary School: 135/107", position: {lat: 1.32983505331, lng: 103.806452179}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Anglo-Chinese School (Junior)
+var coords = [
+{lat: 1.31232833232, lng: 103.845412863},
+{lat: 1.30932800959, lng: 103.846399372},
+{lat: 1.30180940047, lng: 103.838648579},
+{lat: 1.30590603049, lng: 103.826663916},
+{lat: 1.3063113759, lng: 103.826237144},
+{lat: 1.30884942331, lng: 103.828608138},
+{lat: 1.3150643417, lng: 103.840422983},
+{lat: 1.31232833232, lng: 103.845412863},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E1001E',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.30924550982, lng: 103.841046807},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Anglo-Chinese School (Junior): 65/49", position: {lat: 1.30924550982, lng: 103.841046807}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// River Valley Primary School
+var coords = [
+{lat: 1.28479887905, lng: 103.835877143},
+{lat: 1.2897329353, lng: 103.830856164},
+{lat: 1.30590603049, lng: 103.826663916},
+{lat: 1.30180940047, lng: 103.838648579},
+{lat: 1.28806204015, lng: 103.85152769},
+{lat: 1.28479887905, lng: 103.835877143},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#DE0021',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.29446119382, lng: 103.835993192},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "River Valley Primary School: 120/92", position: {lat: 1.29446119382, lng: 103.835993192}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Saint Margaret's Primary School
+var coords = [
+{lat: 1.30932800959, lng: 103.846399372},
+{lat: 1.30646148749, lng: 103.85166716},
+{lat: 1.28798090046, lng: 103.851887682},
+{lat: 1.28806204015, lng: 103.85152769},
+{lat: 1.30180940047, lng: 103.838648579},
+{lat: 1.30932800959, lng: 103.846399372},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#7A0085',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.30398042753, lng: 103.846154168},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Saint Margaret's Primary School: 81/105", position: {lat: 1.30398042753, lng: 103.846154168}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Stamford Primary School
+var coords = [
+{lat: 1.28340358971, lng: 103.859289274},
+{lat: 1.28798090046, lng: 103.851887682},
+{lat: 1.30646148749, lng: 103.85166716},
+{lat: 1.31282469728, lng: 103.859840833},
+{lat: 1.31278689347, lng: 103.862295478},
+{lat: 1.30852337755, lng: 103.87180234},
+{lat: 1.3063738298, lng: 103.872906269},
+{lat: 1.29003057397, lng: 103.876665963},
+{lat: 1.28340358971, lng: 103.859289274},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1D00E2',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.30411268414, lng: 103.857237785},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Stamford Primary School: 30/113", position: {lat: 1.30411268414, lng: 103.857237785}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Chua Chu Kang Primary School
+var coords = [
+{lat: 1.38651278057, lng: 103.742568645},
+{lat: 1.38647371098, lng: 103.742925075},
+{lat: 1.38568714015, lng: 103.745035171},
+{lat: 1.37591603676, lng: 103.750052839},
+{lat: 1.37085376817, lng: 103.751384794},
+{lat: 1.36446272669, lng: 103.733471792},
+{lat: 1.3648274688, lng: 103.732235164},
+{lat: 1.38651278057, lng: 103.742568645},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#ED0012',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37787423809, lng: 103.741628549},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Chua Chu Kang Primary School: 128/80", position: {lat: 1.37787423809, lng: 103.741628549}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Concord Primary School
+var coords = [
+{lat: 1.36797274922, lng: 103.720022731},
+{lat: 1.37253961216, lng: 103.715449866},
+{lat: 1.39112199858, lng: 103.732915344},
+{lat: 1.38651278057, lng: 103.742568645},
+{lat: 1.3648274688, lng: 103.732235164},
+{lat: 1.36557456946, lng: 103.725311892},
+{lat: 1.36797274922, lng: 103.720022731},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#680097',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38034123354, lng: 103.73645144},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Concord Primary School: 94/140", position: {lat: 1.38034123354, lng: 103.73645144}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// De La Salle School
+var coords = [
+{lat: 1.38651278057, lng: 103.742568645},
+{lat: 1.39112199858, lng: 103.732915344},
+{lat: 1.40053703581, lng: 103.741764483},
+{lat: 1.39840431078, lng: 103.746830439},
+{lat: 1.38647371098, lng: 103.742925075},
+{lat: 1.38651278057, lng: 103.742568645},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#8A0075',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39514984834, lng: 103.743522195},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "De La Salle School: 119/136", position: {lat: 1.39514984834, lng: 103.743522195}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Kranji Primary School
+var coords = [
+{lat: 1.38647371098, lng: 103.742925075},
+{lat: 1.39840431078, lng: 103.746830439},
+{lat: 1.39840622796, lng: 103.746854726},
+{lat: 1.39060778114, lng: 103.753457134},
+{lat: 1.38568714015, lng: 103.745035171},
+{lat: 1.38647371098, lng: 103.742925075},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0400FB',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39382356151, lng: 103.747573903},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Kranji Primary School: 12/115", position: {lat: 1.39382356151, lng: 103.747573903}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// South View Primary School
+var coords = [
+{lat: 1.37085376817, lng: 103.751384794},
+{lat: 1.37591603676, lng: 103.750052839},
+{lat: 1.38575485455, lng: 103.756939872},
+{lat: 1.37536644808, lng: 103.761343384},
+{lat: 1.37214753732, lng: 103.759284325},
+{lat: 1.36933777534, lng: 103.755576112},
+{lat: 1.37085376817, lng: 103.751384794},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F4000B',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3817667348, lng: 103.756422498},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "South View Primary School: 135/71", position: {lat: 1.3817667348, lng: 103.756422498}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Teck Whye Primary School
+var coords = [
+{lat: 1.38568714015, lng: 103.745035171},
+{lat: 1.39060778114, lng: 103.753457134},
+{lat: 1.39124451221, lng: 103.757384296},
+{lat: 1.38575485455, lng: 103.756939872},
+{lat: 1.37591603676, lng: 103.750052839},
+{lat: 1.38568714015, lng: 103.745035171},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1600E9',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38390360226, lng: 103.753369768},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Teck Whye Primary School: 31/136", position: {lat: 1.38390360226, lng: 103.753369768}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Unity Primary School
+var coords = [
+{lat: 1.39840431078, lng: 103.746830439},
+{lat: 1.40053703581, lng: 103.741764483},
+{lat: 1.4194217973, lng: 103.759514161},
+{lat: 1.41650852925, lng: 103.762928246},
+{lat: 1.41255795791, lng: 103.766442796},
+{lat: 1.39840622796, lng: 103.746854726},
+{lat: 1.39840431078, lng: 103.746830439},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#7C0083',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.40304497475, lng: 103.746845977},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Unity Primary School: 89/113", position: {lat: 1.40304497475, lng: 103.746845977}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Yew Tee Primary School
+var coords = [
+{lat: 1.39171365267, lng: 103.758099743},
+{lat: 1.39124451221, lng: 103.757384296},
+{lat: 1.39060778114, lng: 103.753457134},
+{lat: 1.39840622796, lng: 103.746854726},
+{lat: 1.41255795791, lng: 103.766442796},
+{lat: 1.411462076, lng: 103.76782598},
+{lat: 1.39171365267, lng: 103.758099743},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#64009B',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39694090757, lng: 103.751255962},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Yew Tee Primary School: 71/109", position: {lat: 1.39694090757, lng: 103.751255962}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Clementi Primary School
+var coords = [
+{lat: 1.29864284773, lng: 103.765249336},
+{lat: 1.31640210921, lng: 103.75924215},
+{lat: 1.31862946448, lng: 103.765035633},
+{lat: 1.29779178345, lng: 103.767823735},
+{lat: 1.29741597721, lng: 103.767586014},
+{lat: 1.29864284773, lng: 103.765249336},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5F00A0',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31536150644, lng: 103.763164282},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Clementi Primary School: 84/137", position: {lat: 1.31536150644, lng: 103.763164282}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Nan Hua Primary School
+var coords = [
+{lat: 1.33164952492, lng: 103.753561195},
+{lat: 1.3268459661, lng: 103.770081038},
+{lat: 1.31862946448, lng: 103.765035633},
+{lat: 1.31640210921, lng: 103.75924215},
+{lat: 1.32516520931, lng: 103.74692163},
+{lat: 1.32946408393, lng: 103.749810323},
+{lat: 1.33123070592, lng: 103.75219687},
+{lat: 1.33164952492, lng: 103.753561195},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F2000D',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31980214353, lng: 103.76145704},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Nan Hua Primary School: 81/45", position: {lat: 1.31980214353, lng: 103.76145704}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Pei Tong Primary School
+var coords = [
+{lat: 1.32462859448, lng: 103.775443573},
+{lat: 1.30816851246, lng: 103.776392193},
+{lat: 1.29779178345, lng: 103.767823735},
+{lat: 1.31862946448, lng: 103.765035633},
+{lat: 1.3268459661, lng: 103.770081038},
+{lat: 1.32696160671, lng: 103.772292283},
+{lat: 1.32658979241, lng: 103.773270699},
+{lat: 1.32462859448, lng: 103.775443573},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#61009E',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31596842862, lng: 103.767700289},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Pei Tong Primary School: 68/107", position: {lat: 1.31596842862, lng: 103.767700289}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// QIFA Primary School
+var coords = [
+{lat: 1.31463922689, lng: 103.734782892},
+{lat: 1.32516520931, lng: 103.74692163},
+{lat: 1.31640210921, lng: 103.75924215},
+{lat: 1.29864284773, lng: 103.765249336},
+{lat: 1.31463922689, lng: 103.734782892},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D60029',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3131942336, lng: 103.756757094},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "QIFA Primary School: 112/90", position: {lat: 1.3131942336, lng: 103.756757094}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Canossa Convent Primary School
+var coords = [
+{lat: 1.33176615279, lng: 103.881684736},
+{lat: 1.33613275765, lng: 103.884195541},
+{lat: 1.33982769304, lng: 103.889455075},
+{lat: 1.3404930334, lng: 103.894578996},
+{lat: 1.31994149562, lng: 103.894623473},
+{lat: 1.31987363993, lng: 103.89460787},
+{lat: 1.31987350824, lng: 103.894571771},
+{lat: 1.32265030498, lng: 103.88722508},
+{lat: 1.33176615279, lng: 103.881684736},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0A00F5',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.32851216527, lng: 103.887924561},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Canossa Convent Primary School: 16/99", position: {lat: 1.32851216527, lng: 103.887924561}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Eunos Primary School
+var coords = [
+{lat: 1.31987363993, lng: 103.89460787},
+{lat: 1.31994149562, lng: 103.894623473},
+{lat: 1.32955893838, lng: 103.906431044},
+{lat: 1.32333964884, lng: 103.912010597},
+{lat: 1.31602367579, lng: 103.908866187},
+{lat: 1.31459798798, lng: 103.904583025},
+{lat: 1.31602455592, lng: 103.897784428},
+{lat: 1.31987363993, lng: 103.89460787},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1200ED',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.32472549558, lng: 103.904393076},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Eunos Primary School: 22/110", position: {lat: 1.32472549558, lng: 103.904393076}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Geylang Methodist School (Primary)
+var coords = [
+{lat: 1.31859609344, lng: 103.874280088},
+{lat: 1.32265030498, lng: 103.88722508},
+{lat: 1.31987350824, lng: 103.894571771},
+{lat: 1.3063738298, lng: 103.872906269},
+{lat: 1.30852337755, lng: 103.87180234},
+{lat: 1.31859609344, lng: 103.874280088},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#82007D',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31779125396, lng: 103.883872424},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Geylang Methodist School (Primary): 125/154", position: {lat: 1.31779125396, lng: 103.883872424}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Haig Girls' School
+var coords = [
+{lat: 1.32810039985, lng: 103.949570185},
+{lat: 1.31830397292, lng: 103.939543598},
+{lat: 1.32932184114, lng: 103.937395536},
+{lat: 1.32996568065, lng: 103.938658748},
+{lat: 1.32810039985, lng: 103.949570185},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#9D0062',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.32444186425, lng: 103.939123823},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Haig Girls' School: 91/89", position: {lat: 1.32444186425, lng: 103.939123823}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Kong Hwa School
+var coords = [
+{lat: 1.29003057397, lng: 103.876665963},
+{lat: 1.3063738298, lng: 103.872906269},
+{lat: 1.31987350824, lng: 103.894571771},
+{lat: 1.31987363993, lng: 103.89460787},
+{lat: 1.31602455592, lng: 103.897784428},
+{lat: 1.29418239039, lng: 103.887552488},
+{lat: 1.29003057397, lng: 103.876665963},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#DC0023',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31118658277, lng: 103.887987766},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Kong Hwa School: 69/54", position: {lat: 1.31118658277, lng: 103.887987766}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Macpherson Primary School
+var coords = [
+{lat: 1.32699064893, lng: 103.873045509},
+{lat: 1.33176615279, lng: 103.881684736},
+{lat: 1.32265030498, lng: 103.88722508},
+{lat: 1.31859609344, lng: 103.874280088},
+{lat: 1.32699064893, lng: 103.873045509},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0500FA',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.32472885061, lng: 103.881699655},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Macpherson Primary School: 14/121", position: {lat: 1.32472885061, lng: 103.881699655}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Maha Bodhi School
+var coords = [
+{lat: 1.3404930334, lng: 103.894578996},
+{lat: 1.34536719146, lng: 103.901148953},
+{lat: 1.34583148327, lng: 103.902397376},
+{lat: 1.32955893838, lng: 103.906431044},
+{lat: 1.31994149562, lng: 103.894623473},
+{lat: 1.3404930334, lng: 103.894578996},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B70048',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.32854108007, lng: 103.901285225},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Maha Bodhi School: 106/96", position: {lat: 1.32854108007, lng: 103.901285225}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// CHIJ Our Lady Of The Nativity
+var coords = [
+{lat: 1.37915531811, lng: 103.90172729},
+{lat: 1.37942120494, lng: 103.903296824},
+{lat: 1.37386291724, lng: 103.916373153},
+{lat: 1.36684035332, lng: 103.916878705},
+{lat: 1.35994971989, lng: 103.913992172},
+{lat: 1.37136131517, lng: 103.893216247},
+{lat: 1.37425877074, lng: 103.89338418},
+{lat: 1.37915531811, lng: 103.90172729},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A1005E',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37349077265, lng: 103.897449745},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "CHIJ Our Lady Of The Nativity: 104/101", position: {lat: 1.37349077265, lng: 103.897449745}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Holy Innocents' Primary School
+var coords = [
+{lat: 1.35454012533, lng: 103.911376578},
+{lat: 1.36465213633, lng: 103.88647696},
+{lat: 1.36822487274, lng: 103.888037722},
+{lat: 1.37136131517, lng: 103.893216247},
+{lat: 1.35994971989, lng: 103.913992172},
+{lat: 1.35611729467, lng: 103.913163204},
+{lat: 1.35454012533, lng: 103.911376578},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#8E0071',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.36664618549, lng: 103.893690218},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Holy Innocents' Primary School: 82/91", position: {lat: 1.36664618549, lng: 103.893690218}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Hougang Primary School
+var coords = [
+{lat: 1.37488809855, lng: 103.883334706},
+{lat: 1.373547584, lng: 103.879161362},
+{lat: 1.38155756225, lng: 103.873382674},
+{lat: 1.38579367564, lng: 103.881014008},
+{lat: 1.38480841179, lng: 103.883084513},
+{lat: 1.37488809855, lng: 103.883334706},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#AA0055',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37763317394, lng: 103.881004187},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Hougang Primary School: 108/102", position: {lat: 1.37763317394, lng: 103.881004187}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Montfort Junior School
+var coords = [
+{lat: 1.37851528902, lng: 103.890083823},
+{lat: 1.37425877074, lng: 103.89338418},
+{lat: 1.37136131517, lng: 103.893216247},
+{lat: 1.36822487274, lng: 103.888037722},
+{lat: 1.37403569415, lng: 103.885546238},
+{lat: 1.37851528902, lng: 103.890083823},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1400EB',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37396560875, lng: 103.889257112},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Montfort Junior School: 20/92", position: {lat: 1.37396560875, lng: 103.889257112}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Paya Lebar Methodist Girls' School (Primary)
+var coords = [
+{lat: 1.35060414995, lng: 103.876525234},
+{lat: 1.35352323443, lng: 103.876282296},
+{lat: 1.35940985954, lng: 103.879926783},
+{lat: 1.34536719146, lng: 103.901148953},
+{lat: 1.3404930334, lng: 103.894578996},
+{lat: 1.33982769304, lng: 103.889455075},
+{lat: 1.35060414995, lng: 103.876525234},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A60059',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.35037708288, lng: 103.885085405},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Paya Lebar Methodist Girls' School (Primary): 115/110", position: {lat: 1.35037708288, lng: 103.885085405}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Punggol Primary School
+var coords = [
+{lat: 1.3811686543, lng: 103.892949627},
+{lat: 1.37915531811, lng: 103.90172729},
+{lat: 1.37425877074, lng: 103.89338418},
+{lat: 1.37851528902, lng: 103.890083823},
+{lat: 1.37936664627, lng: 103.890043391},
+{lat: 1.3811686543, lng: 103.892949627},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#7F0080',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37818275901, lng: 103.894696032},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Punggol Primary School: 106/133", position: {lat: 1.37818275901, lng: 103.894696032}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Xinghua Primary School
+var coords = [
+{lat: 1.35454012533, lng: 103.911376578},
+{lat: 1.35057200538, lng: 103.908464409},
+{lat: 1.34583148327, lng: 103.902397376},
+{lat: 1.34536719146, lng: 103.901148953},
+{lat: 1.35940985954, lng: 103.879926783},
+{lat: 1.36112677875, lng: 103.880076554},
+{lat: 1.36465213633, lng: 103.88647696},
+{lat: 1.35454012533, lng: 103.911376578},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3400CB',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.35819340479, lng: 103.89025745},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Xinghua Primary School: 42/105", position: {lat: 1.35819340479, lng: 103.89025745}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Xinmin Primary School
+var coords = [
+{lat: 1.37403569415, lng: 103.885546238},
+{lat: 1.36822487274, lng: 103.888037722},
+{lat: 1.36465213633, lng: 103.88647696},
+{lat: 1.36112677875, lng: 103.880076554},
+{lat: 1.36453050322, lng: 103.877227198},
+{lat: 1.373547584, lng: 103.879161362},
+{lat: 1.37488809855, lng: 103.883334706},
+{lat: 1.37403569415, lng: 103.885546238},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#AF0050',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37129934996, lng: 103.883038667},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Xinmin Primary School: 97/91", position: {lat: 1.37129934996, lng: 103.883038667}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Yio Chu Kang Primary School
+var coords = [
+{lat: 1.37936664627, lng: 103.890043391},
+{lat: 1.37851528902, lng: 103.890083823},
+{lat: 1.37403569415, lng: 103.885546238},
+{lat: 1.37488809855, lng: 103.883334706},
+{lat: 1.38480841179, lng: 103.883084513},
+{lat: 1.3846870105, lng: 103.883966809},
+{lat: 1.37936664627, lng: 103.890043391},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1800E7',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37774716201, lng: 103.885523886},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Yio Chu Kang Primary School: 29/126", position: {lat: 1.37774716201, lng: 103.885523886}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Fuhua Primary School
+var coords = [
+{lat: 1.31953320868, lng: 103.725461893},
+{lat: 1.33993968247, lng: 103.727481026},
+{lat: 1.34082177824, lng: 103.728123629},
+{lat: 1.34263152794, lng: 103.734567491},
+{lat: 1.3355245542, lng: 103.744297796},
+{lat: 1.32946408393, lng: 103.749810323},
+{lat: 1.32516520931, lng: 103.74692163},
+{lat: 1.31463922689, lng: 103.734782892},
+{lat: 1.31953320868, lng: 103.725461893},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#63009C',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33659663218, lng: 103.736463944},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Fuhua Primary School: 70/108", position: {lat: 1.33659663218, lng: 103.736463944}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Jurong Primary School
+var coords = [
+{lat: 1.36557456946, lng: 103.725311892},
+{lat: 1.3648274688, lng: 103.732235164},
+{lat: 1.36446272669, lng: 103.733471792},
+{lat: 1.36071156211, lng: 103.736050832},
+{lat: 1.34602328721, lng: 103.737208105},
+{lat: 1.34263152794, lng: 103.734567491},
+{lat: 1.34082177824, lng: 103.728123629},
+{lat: 1.36557456946, lng: 103.725311892},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#8B0074',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34877136247, lng: 103.733044688},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Jurong Primary School: 101/115", position: {lat: 1.34877136247, lng: 103.733044688}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Yuhua Primary School
+var coords = [
+{lat: 1.34602561594, lng: 103.74169172},
+{lat: 1.3355245542, lng: 103.744297796},
+{lat: 1.34263152794, lng: 103.734567491},
+{lat: 1.34602328721, lng: 103.737208105},
+{lat: 1.34602561594, lng: 103.74169172},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1500EA',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34266093122, lng: 103.740893282},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Yuhua Primary School: 26/116", position: {lat: 1.34266093122, lng: 103.740893282}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Boon Lay Garden Primary School
+var coords = [
+{lat: 1.34269345886, lng: 103.717355391},
+{lat: 1.33331775859, lng: 103.709201851},
+{lat: 1.34003297902, lng: 103.706301131},
+{lat: 1.34205264287, lng: 103.70582626},
+{lat: 1.3431302359, lng: 103.706002474},
+{lat: 1.34489138303, lng: 103.706669746},
+{lat: 1.34879524632, lng: 103.713061536},
+{lat: 1.34269345886, lng: 103.717355391},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1E00E1',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34275605154, lng: 103.713033294},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Boon Lay Garden Primary School: 40/142", position: {lat: 1.34275605154, lng: 103.713033294}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Corporation Primary School
+var coords = [
+{lat: 1.35872377261, lng: 103.717313385},
+{lat: 1.34879524632, lng: 103.713061536},
+{lat: 1.34489138303, lng: 103.706669746},
+{lat: 1.35636923163, lng: 103.700251419},
+{lat: 1.37253961216, lng: 103.715449866},
+{lat: 1.36797274922, lng: 103.720022731},
+{lat: 1.35872377261, lng: 103.717313385},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5100AE',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.35152780997, lng: 103.707675835},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Corporation Primary School: 65/122", position: {lat: 1.35152780997, lng: 103.707675835}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Frontier Primary School
+var coords = [
+{lat: 1.33625064371, lng: 103.693622138},
+{lat: 1.33676142416, lng: 103.693715397},
+{lat: 1.34003297902, lng: 103.706301131},
+{lat: 1.33331775859, lng: 103.709201851},
+{lat: 1.3278472333, lng: 103.709627137},
+{lat: 1.33625064371, lng: 103.693622138},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#9B0064',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33699814667, lng: 103.699703637},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Frontier Primary School: 132/130", position: {lat: 1.33699814667, lng: 103.699703637}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Jurong West Primary School
+var coords = [
+{lat: 1.34205264287, lng: 103.70582626},
+{lat: 1.34003297902, lng: 103.706301131},
+{lat: 1.33676142416, lng: 103.693715397},
+{lat: 1.34185518747, lng: 103.69354107},
+{lat: 1.34239761906, lng: 103.69370549},
+{lat: 1.34205264287, lng: 103.70582626},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#92006D',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33947080917, lng: 103.699060889},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Jurong West Primary School: 122/130", position: {lat: 1.33947080917, lng: 103.699060889}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Juying Primary School
+var coords = [
+{lat: 1.34101791112, lng: 103.687911771},
+{lat: 1.34185518747, lng: 103.69354107},
+{lat: 1.33676142416, lng: 103.693715397},
+{lat: 1.33625064371, lng: 103.693622138},
+{lat: 1.33909901354, lng: 103.688197179},
+{lat: 1.34101791112, lng: 103.687911771},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0100FE',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33909901354, lng: 103.688197179},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Juying Primary School: 10/122", position: {lat: 1.33909901354, lng: 103.688197179}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Lakeside Primary School
+var coords = [
+{lat: 1.33993968247, lng: 103.727481026},
+{lat: 1.31953320868, lng: 103.725461893},
+{lat: 1.3278472333, lng: 103.709627137},
+{lat: 1.33331775859, lng: 103.709201851},
+{lat: 1.34269345886, lng: 103.717355391},
+{lat: 1.34234331256, lng: 103.721319492},
+{lat: 1.33993968247, lng: 103.727481026},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#9E0061',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33842186359, lng: 103.718017147},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Lakeside Primary School: 138/135", position: {lat: 1.33842186359, lng: 103.718017147}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Pioneer Primary School
+var coords = [
+{lat: 1.3430831427, lng: 103.693582589},
+{lat: 1.34644665965, lng: 103.690925251},
+{lat: 1.35575558354, lng: 103.699674655},
+{lat: 1.34740721476, lng: 103.697605395},
+{lat: 1.3430831427, lng: 103.693582589},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0E00F1',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34884385583, lng: 103.69510319},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Pioneer Primary School: 27/145", position: {lat: 1.34884385583, lng: 103.69510319}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Rulang Primary School
+var coords = [
+{lat: 1.35872377261, lng: 103.717313385},
+{lat: 1.34234331256, lng: 103.721319492},
+{lat: 1.34269345886, lng: 103.717355391},
+{lat: 1.34879524632, lng: 103.713061536},
+{lat: 1.35872377261, lng: 103.717313385},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#FA0005',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34678291587, lng: 103.718755673},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Rulang Primary School: 73/29", position: {lat: 1.34678291587, lng: 103.718755673}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Shuqun Primary School
+var coords = [
+{lat: 1.35872377261, lng: 103.717313385},
+{lat: 1.36797274922, lng: 103.720022731},
+{lat: 1.36557456946, lng: 103.725311892},
+{lat: 1.34082177824, lng: 103.728123629},
+{lat: 1.33993968247, lng: 103.727481026},
+{lat: 1.34234331256, lng: 103.721319492},
+{lat: 1.35872377261, lng: 103.717313385},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C60039',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34746507288, lng: 103.721544926},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Shuqun Primary School: 122/107", position: {lat: 1.34746507288, lng: 103.721544926}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// West Grove Primary School
+var coords = [
+{lat: 1.3431302359, lng: 103.706002474},
+{lat: 1.34205264287, lng: 103.70582626},
+{lat: 1.34239761906, lng: 103.69370549},
+{lat: 1.3430831427, lng: 103.693582589},
+{lat: 1.34740721476, lng: 103.697605395},
+{lat: 1.3431302359, lng: 103.706002474},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C5003A',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34501509159, lng: 103.699218688},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "West Grove Primary School: 132/116", position: {lat: 1.34501509159, lng: 103.699218688}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Westwood Primary School
+var coords = [
+{lat: 1.35636923163, lng: 103.700251419},
+{lat: 1.34489138303, lng: 103.706669746},
+{lat: 1.3431302359, lng: 103.706002474},
+{lat: 1.34740721476, lng: 103.697605395},
+{lat: 1.35575558354, lng: 103.699674655},
+{lat: 1.35636923163, lng: 103.700251419},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#990066',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3475089313, lng: 103.700488903},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Westwood Primary School: 153/152", position: {lat: 1.3475089313, lng: 103.700488903}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Xingnan Primary School
+var coords = [
+{lat: 1.34239761906, lng: 103.69370549},
+{lat: 1.34185518747, lng: 103.69354107},
+{lat: 1.34101791112, lng: 103.687911771},
+{lat: 1.3429368087, lng: 103.687626362},
+{lat: 1.34644665965, lng: 103.690925251},
+{lat: 1.3430831427, lng: 103.693582589},
+{lat: 1.34239761906, lng: 103.69370549},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#74008B',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3429368087, lng: 103.687626362},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Xingnan Primary School: 70/93", position: {lat: 1.3429368087, lng: 103.687626362}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Bendemeer Primary School
+var coords = [
+{lat: 1.32719914633, lng: 103.872779164},
+{lat: 1.32699064893, lng: 103.873045509},
+{lat: 1.31859609344, lng: 103.874280088},
+{lat: 1.30852337755, lng: 103.87180234},
+{lat: 1.31278689347, lng: 103.862295478},
+{lat: 1.32658711253, lng: 103.86103755},
+{lat: 1.32719914633, lng: 103.872779164},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4B00B4',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.322333, lng: 103.865409},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Bendemeer Primary School: 58/119", position: {lat: 1.322333, lng: 103.865409}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Farrer Park Primary School
+var coords = [
+{lat: 1.31282469728, lng: 103.859840833},
+{lat: 1.30646148749, lng: 103.85166716},
+{lat: 1.30932800959, lng: 103.846399372},
+{lat: 1.31232833232, lng: 103.845412863},
+{lat: 1.31865806545, lng: 103.85191302},
+{lat: 1.31282469728, lng: 103.859840833},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1C00E3',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31243805827, lng: 103.850756476},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Farrer Park Primary School: 23/89", position: {lat: 1.31243805827, lng: 103.850756476}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Hong Wen School
+var coords = [
+{lat: 1.32955537409, lng: 103.857181408},
+{lat: 1.32658711253, lng: 103.86103755},
+{lat: 1.31278689347, lng: 103.862295478},
+{lat: 1.31282469728, lng: 103.859840833},
+{lat: 1.31865806545, lng: 103.85191302},
+{lat: 1.32265660431, lng: 103.850580853},
+{lat: 1.32898957291, lng: 103.852638836},
+{lat: 1.32955537409, lng: 103.857181408},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#CA0035',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.32161273831, lng: 103.857507302},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Hong Wen School: 92/80", position: {lat: 1.32161273831, lng: 103.857507302}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Ngee Ann Primary School
+var coords = [
+{lat: 1.30452930519, lng: 103.914683249},
+{lat: 1.30773076506, lng: 103.914375559},
+{lat: 1.31234815629, lng: 103.914736223},
+{lat: 1.31219112209, lng: 103.922431706},
+{lat: 1.31004018529, lng: 103.927832975},
+{lat: 1.30579169011, lng: 103.917993363},
+{lat: 1.30452930519, lng: 103.914683249},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B60049',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.30579169011, lng: 103.917993363},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Ngee Ann Primary School: 101/92", position: {lat: 1.30579169011, lng: 103.917993363}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Tanjong Katong Primary School
+var coords = [
+{lat: 1.29418239039, lng: 103.887552488},
+{lat: 1.31602455592, lng: 103.897784428},
+{lat: 1.31459798798, lng: 103.904583025},
+{lat: 1.30288382991, lng: 103.905707952},
+{lat: 1.30108980672, lng: 103.905664502},
+{lat: 1.29418239039, lng: 103.887552488},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#7E0081',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.30540104638, lng: 103.900338174},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Tanjong Katong Primary School: 99/125", position: {lat: 1.30540104638, lng: 103.900338174}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Tao Nan School
+var coords = [
+{lat: 1.30108980672, lng: 103.905664502},
+{lat: 1.30288382991, lng: 103.905707952},
+{lat: 1.30773076506, lng: 103.914375559},
+{lat: 1.30452930519, lng: 103.914683249},
+{lat: 1.30108980672, lng: 103.905664502},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#EC0013',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.30513814033, lng: 103.911193294},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Tao Nan School: 73/48", position: {lat: 1.30513814033, lng: 103.911193294}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Anglo-Chinese School (Primary)
+var coords = [
+{lat: 1.32800973257, lng: 103.83451335},
+{lat: 1.32737217169, lng: 103.835998058},
+{lat: 1.32116932236, lng: 103.841184492},
+{lat: 1.3150643417, lng: 103.840422983},
+{lat: 1.30884942331, lng: 103.828608138},
+{lat: 1.32800973257, lng: 103.83451335},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#DD0022',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31887496466, lng: 103.835981461},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Anglo-Chinese School (Primary): 27/20", position: {lat: 1.31887496466, lng: 103.835981461}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Balestier Hill Primary School
+var coords = [
+{lat: 1.32737217169, lng: 103.835998058},
+{lat: 1.33106607315, lng: 103.848254032},
+{lat: 1.33019879721, lng: 103.851400815},
+{lat: 1.32898957291, lng: 103.852638836},
+{lat: 1.32265660431, lng: 103.850580853},
+{lat: 1.32116932236, lng: 103.841184492},
+{lat: 1.32737217169, lng: 103.835998058},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0000FF',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.32588385463, lng: 103.844363924},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Balestier Hill Primary School: 10/128", position: {lat: 1.32588385463, lng: 103.844363924}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Singapore Chinese Girls' School (Primary)
+var coords = [
+{lat: 1.32800973257, lng: 103.83451335},
+{lat: 1.30884942331, lng: 103.828608138},
+{lat: 1.3063113759, lng: 103.826237144},
+{lat: 1.30717591978, lng: 103.819911408},
+{lat: 1.31323181507, lng: 103.812449192},
+{lat: 1.33819207495, lng: 103.822279885},
+{lat: 1.33363434473, lng: 103.829709341},
+{lat: 1.32800973257, lng: 103.83451335},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#CD0032',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3212862435, lng: 103.82815772},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Singapore Chinese Girls' School (Primary): 60/51", position: {lat: 1.3212862435, lng: 103.82815772}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Saint Joseph's Institution (SJI) Junior
+var coords = [
+{lat: 1.31865806545, lng: 103.85191302},
+{lat: 1.31232833232, lng: 103.845412863},
+{lat: 1.3150643417, lng: 103.840422983},
+{lat: 1.32116932236, lng: 103.841184492},
+{lat: 1.32265660431, lng: 103.850580853},
+{lat: 1.31865806545, lng: 103.85191302},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E90016',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31766714546, lng: 103.845664488},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Saint Joseph's Institution (SJI) Junior: 88/60", position: {lat: 1.31766714546, lng: 103.845664488}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Casuarina Primary School
+var coords = [
+{lat: 1.37395604013, lng: 103.960350712},
+{lat: 1.36967136464, lng: 103.959873253},
+{lat: 1.36939976443, lng: 103.959321397},
+{lat: 1.37657517475, lng: 103.951714847},
+{lat: 1.37904622614, lng: 103.95217641},
+{lat: 1.37395604013, lng: 103.960350712},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3300CC',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37289984272, lng: 103.957316674},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Casuarina Primary School: 34/85", position: {lat: 1.37289984272, lng: 103.957316674}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Coral Primary School
+var coords = [
+{lat: 1.36336380846, lng: 103.954908088},
+{lat: 1.36657994029, lng: 103.941905287},
+{lat: 1.37407626277, lng: 103.950773531},
+{lat: 1.3659184997, lng: 103.95559766},
+{lat: 1.36336380846, lng: 103.954908088},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5800A7',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.36836296358, lng: 103.950917837},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Coral Primary School: 31/55", position: {lat: 1.36836296358, lng: 103.950917837}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Elias Park Primary School
+var coords = [
+{lat: 1.37904622614, lng: 103.95217641},
+{lat: 1.37657517475, lng: 103.951714847},
+{lat: 1.37407626277, lng: 103.950773531},
+{lat: 1.36657994029, lng: 103.941905287},
+{lat: 1.36621518566, lng: 103.940555719},
+{lat: 1.36695136378, lng: 103.939255733},
+{lat: 1.37181734745, lng: 103.939759056},
+{lat: 1.38316714767, lng: 103.945558646},
+{lat: 1.37904622614, lng: 103.95217641},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#84007B',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3751698164, lng: 103.945164008},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Elias Park Primary School: 93/111", position: {lat: 1.3751698164, lng: 103.945164008}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Loyang Primary School
+var coords = [
+{lat: 1.3659184997, lng: 103.95559766},
+{lat: 1.37407626277, lng: 103.950773531},
+{lat: 1.37657517475, lng: 103.951714847},
+{lat: 1.36939976443, lng: 103.959321397},
+{lat: 1.3659184997, lng: 103.95559766},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2C00D3',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37119708215, lng: 103.955710426},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Loyang Primary School: 31/85", position: {lat: 1.37119708215, lng: 103.955710426}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Meridian Primary School
+var coords = [
+{lat: 1.38064333939, lng: 103.918846073},
+{lat: 1.3841148834, lng: 103.921995096},
+{lat: 1.39060647601, lng: 103.930910162},
+{lat: 1.37181734745, lng: 103.939759056},
+{lat: 1.36695136378, lng: 103.939255733},
+{lat: 1.36684035332, lng: 103.916878705},
+{lat: 1.37386291724, lng: 103.916373153},
+{lat: 1.38064333939, lng: 103.918846073},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5000AF',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37620514596, lng: 103.935154735},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Meridian Primary School: 36/68", position: {lat: 1.37620514596, lng: 103.935154735}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Park View Primary School
+var coords = [
+{lat: 1.37181734745, lng: 103.939759056},
+{lat: 1.39060647601, lng: 103.930910162},
+{lat: 1.3916412569, lng: 103.931950121},
+{lat: 1.38316714767, lng: 103.945558646},
+{lat: 1.37181734745, lng: 103.939759056},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3800C7',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37816163729, lng: 103.939309013},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Park View Primary School: 39/96", position: {lat: 1.37816163729, lng: 103.939309013}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Pasir Ris Primary School
+var coords = [
+{lat: 1.36867497874, lng: 103.962846113},
+{lat: 1.36967136464, lng: 103.959873253},
+{lat: 1.37395604013, lng: 103.960350712},
+{lat: 1.37225785533, lng: 103.963077817},
+{lat: 1.36867497874, lng: 103.962846113},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#DA0025',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37225785533, lng: 103.963077817},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Pasir Ris Primary School: 89/70", position: {lat: 1.37225785533, lng: 103.963077817}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// White Sands Primary School
+var coords = [
+{lat: 1.3596313676, lng: 103.962261265},
+{lat: 1.35918844493, lng: 103.956782814},
+{lat: 1.3597073333, lng: 103.956415578},
+{lat: 1.36336380846, lng: 103.954908088},
+{lat: 1.3659184997, lng: 103.95559766},
+{lat: 1.36939976443, lng: 103.959321397},
+{lat: 1.36967136464, lng: 103.959873253},
+{lat: 1.36867497874, lng: 103.962846113},
+{lat: 1.3596313676, lng: 103.962261265},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#BB0044',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.36567612912, lng: 103.960871881},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "White Sands Primary School: 88/79", position: {lat: 1.36567612912, lng: 103.960871881}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Edgefield Primary School
+var coords = [
+{lat: 1.39712968339, lng: 103.905435405},
+{lat: 1.39837697429, lng: 103.902633039},
+{lat: 1.40179640994, lng: 103.903369542},
+{lat: 1.40354504248, lng: 103.907782153},
+{lat: 1.40157993778, lng: 103.910348681},
+{lat: 1.39837660445, lng: 103.910240562},
+{lat: 1.39786818268, lng: 103.909887538},
+{lat: 1.39712968339, lng: 103.905435405},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#860079',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.40014017557, lng: 103.907519627},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Edgefield Primary School: 110/131", position: {lat: 1.40014017557, lng: 103.907519627}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Greendale Primary School
+var coords = [
+{lat: 1.39837660445, lng: 103.910240562},
+{lat: 1.39802789493, lng: 103.915549293},
+{lat: 1.3841148834, lng: 103.921995096},
+{lat: 1.38064333939, lng: 103.918846073},
+{lat: 1.38601002897, lng: 103.913845939},
+{lat: 1.39786818268, lng: 103.909887538},
+{lat: 1.39837660445, lng: 103.910240562},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4500BA',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39644338998, lng: 103.912843705},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Greendale Primary School: 73/161", position: {lat: 1.39644338998, lng: 103.912843705}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Horizon Primary School
+var coords = [
+{lat: 1.40150166068, lng: 103.916115354},
+{lat: 1.39802789493, lng: 103.915549293},
+{lat: 1.39837660445, lng: 103.910240562},
+{lat: 1.40157993778, lng: 103.910348681},
+{lat: 1.40303046933, lng: 103.913660249},
+{lat: 1.40150166068, lng: 103.916115354},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E5001A',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3999526972, lng: 103.913074217},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Horizon Primary School: 111/84", position: {lat: 1.3999526972, lng: 103.913074217}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Mee Toh School
+var coords = [
+{lat: 1.39712968339, lng: 103.905435405},
+{lat: 1.39786818268, lng: 103.909887538},
+{lat: 1.38601002897, lng: 103.913845939},
+{lat: 1.38990551023, lng: 103.908082035},
+{lat: 1.39712968339, lng: 103.905435405},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E60019',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39495334719, lng: 103.908379994},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Mee Toh School: 149/113", position: {lat: 1.39495334719, lng: 103.908379994}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Oasis Primary School
+var coords = [
+{lat: 1.40354504248, lng: 103.907782153},
+{lat: 1.40620282855, lng: 103.908318715},
+{lat: 1.40468660236, lng: 103.911000674},
+{lat: 1.40303046933, lng: 103.913660249},
+{lat: 1.40157993778, lng: 103.910348681},
+{lat: 1.40354504248, lng: 103.907782153},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#880077',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.40468660236, lng: 103.911000674},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Oasis Primary School: 186/217", position: {lat: 1.40468660236, lng: 103.911000674}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Punggol Cove Primary School
+var coords = [
+{lat: 1.41090327272, lng: 103.880129363},
+{lat: 1.41937401186, lng: 103.873410261},
+{lat: 1.42431425206, lng: 103.87499567},
+{lat: 1.41165448941, lng: 103.898675609},
+{lat: 1.40944637049, lng: 103.902581414},
+{lat: 1.40686095156, lng: 103.900300104},
+{lat: 1.40657330863, lng: 103.888220547},
+{lat: 1.41090327272, lng: 103.880129363},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4900B6',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.41165448941, lng: 103.898675609},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Punggol Cove Primary School: 113/233", position: {lat: 1.41165448941, lng: 103.898675609}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Punggol Green Primary School
+var coords = [
+{lat: 1.39881611715, lng: 103.894128011},
+{lat: 1.40657330863, lng: 103.888220547},
+{lat: 1.40686095156, lng: 103.900300104},
+{lat: 1.40179640994, lng: 103.903369542},
+{lat: 1.39837697429, lng: 103.902633039},
+{lat: 1.39768760122, lng: 103.901611429},
+{lat: 1.39881611715, lng: 103.894128011},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F0000F',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.40199552447, lng: 103.898905612},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Punggol Green Primary School: 258/154", position: {lat: 1.40199552447, lng: 103.898905612}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Punggol View Primary School
+var coords = [
+{lat: 1.40179640994, lng: 103.903369542},
+{lat: 1.40686095156, lng: 103.900300104},
+{lat: 1.40944637049, lng: 103.902581414},
+{lat: 1.40620282855, lng: 103.908318715},
+{lat: 1.40354504248, lng: 103.907782153},
+{lat: 1.40179640994, lng: 103.903369542},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D0002F',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4058458341, lng: 103.905258585},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Punggol View Primary School: 165/139", position: {lat: 1.4058458341, lng: 103.905258585}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Waterway Primary School
+var coords = [
+{lat: 1.3916412569, lng: 103.931950121},
+{lat: 1.39060647601, lng: 103.930910162},
+{lat: 1.3841148834, lng: 103.921995096},
+{lat: 1.39802789493, lng: 103.915549293},
+{lat: 1.40150166068, lng: 103.916115354},
+{lat: 1.3916412569, lng: 103.931950121},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4100BE',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39906734245, lng: 103.918507403},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Waterway Primary School: 100/230", position: {lat: 1.39906734245, lng: 103.918507403}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Fairfield Methodist School (Primary)
+var coords = [
+{lat: 1.29779178345, lng: 103.767823735},
+{lat: 1.30816851246, lng: 103.776392193},
+{lat: 1.30985000266, lng: 103.79337441},
+{lat: 1.28479684962, lng: 103.791620199},
+{lat: 1.29741597721, lng: 103.767586014},
+{lat: 1.29779178345, lng: 103.767823735},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E80017',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.30110907188, lng: 103.785695535},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Fairfield Methodist School (Primary): 40/28", position: {lat: 1.30110907188, lng: 103.785695535}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// New Town Primary School
+var coords = [
+{lat: 1.28479684962, lng: 103.791620199},
+{lat: 1.30985000266, lng: 103.79337441},
+{lat: 1.31574515549, lng: 103.799707571},
+{lat: 1.31317794191, lng: 103.811105482},
+{lat: 1.28583233888, lng: 103.797764921},
+{lat: 1.28411027916, lng: 103.79292783},
+{lat: 1.28479684962, lng: 103.791620199},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2000DF',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.30012426596, lng: 103.799760257},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "New Town Primary School: 46/161", position: {lat: 1.30012426596, lng: 103.799760257}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Queenstown Primary School
+var coords = [
+{lat: 1.30717591978, lng: 103.819911408},
+{lat: 1.29428866131, lng: 103.816084127},
+{lat: 1.28601146019, lng: 103.804433107},
+{lat: 1.28583233888, lng: 103.797764921},
+{lat: 1.31317794191, lng: 103.811105482},
+{lat: 1.31323181507, lng: 103.812449192},
+{lat: 1.30717591978, lng: 103.819911408},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#7B0084',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.29620176542, lng: 103.807800634},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Queenstown Primary School: 120/155", position: {lat: 1.29620176542, lng: 103.807800634}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Canberra Primary School
+var coords = [
+{lat: 1.44599744861, lng: 103.809450603},
+{lat: 1.45183147537, lng: 103.807942241},
+{lat: 1.45373219472, lng: 103.814143956},
+{lat: 1.45151786353, lng: 103.818975199},
+{lat: 1.44931581249, lng: 103.81945355},
+{lat: 1.44248128691, lng: 103.812875016},
+{lat: 1.44599744861, lng: 103.809450603},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#EE0011',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.45069128412, lng: 103.815646084},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Canberra Primary School: 101/60", position: {lat: 1.45069128412, lng: 103.815646084}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Endeavour Primary School
+var coords = [
+{lat: 1.45373219472, lng: 103.814143956},
+{lat: 1.45602422452, lng: 103.815682534},
+{lat: 1.4536897414, lng: 103.820049158},
+{lat: 1.45151786353, lng: 103.818975199},
+{lat: 1.45373219472, lng: 103.814143956},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#83007C',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.45457937078, lng: 103.817428133},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Endeavour Primary School: 93/111", position: {lat: 1.45457937078, lng: 103.817428133}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Northoaks Primary School
+var coords = [
+{lat: 1.45602422452, lng: 103.815682534},
+{lat: 1.45373219472, lng: 103.814143956},
+{lat: 1.45183147537, lng: 103.807942241},
+{lat: 1.45320163023, lng: 103.806794403},
+{lat: 1.45709257426, lng: 103.813684199},
+{lat: 1.45602422452, lng: 103.815682534},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3700C8',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.45709257426, lng: 103.813684199},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Northoaks Primary School: 46/114", position: {lat: 1.45709257426, lng: 103.813684199}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Sembawang Primary School
+var coords = [
+{lat: 1.43419545951, lng: 103.821169961},
+{lat: 1.43173069575, lng: 103.816573965},
+{lat: 1.44248128691, lng: 103.812875016},
+{lat: 1.44931581249, lng: 103.81945355},
+{lat: 1.4467392394, lng: 103.831799684},
+{lat: 1.4433847847, lng: 103.830504793},
+{lat: 1.43419545951, lng: 103.821169961},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#660099',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.44556360335, lng: 103.8209733},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Sembawang Primary School: 79/119", position: {lat: 1.44556360335, lng: 103.8209733}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Wellington Primary School
+var coords = [
+{lat: 1.44720525555, lng: 103.832178314},
+{lat: 1.4467392394, lng: 103.831799684},
+{lat: 1.44931581249, lng: 103.81945355},
+{lat: 1.45151786353, lng: 103.818975199},
+{lat: 1.4536897414, lng: 103.820049158},
+{lat: 1.44720525555, lng: 103.832178314},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5D00A2',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.45214696561, lng: 103.822347213},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Wellington Primary School: 76/129", position: {lat: 1.45214696561, lng: 103.822347213}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Anchor Green Primary School
+var coords = [
+{lat: 1.38814333426, lng: 103.890381677},
+{lat: 1.3846870105, lng: 103.883966809},
+{lat: 1.38480841179, lng: 103.883084513},
+{lat: 1.38579367564, lng: 103.881014008},
+{lat: 1.38924464165, lng: 103.880793529},
+{lat: 1.39686995934, lng: 103.882088912},
+{lat: 1.39306777078, lng: 103.888456575},
+{lat: 1.38814333426, lng: 103.890381677},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5700A8',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39094842182, lng: 103.88734034},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Anchor Green Primary School: 93/168", position: {lat: 1.39094842182, lng: 103.88734034}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Compassvale Primary School
+var coords = [
+{lat: 1.39482819536, lng: 103.893784177},
+{lat: 1.39881611715, lng: 103.894128011},
+{lat: 1.39768760122, lng: 103.901611429},
+{lat: 1.39280006556, lng: 103.901037479},
+{lat: 1.3905192345, lng: 103.895070398},
+{lat: 1.39482819536, lng: 103.893784177},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#CE0031',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39436919675, lng: 103.897755545},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Compassvale Primary School: 142/121", position: {lat: 1.39436919675, lng: 103.897755545}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Fernvale Primary School
+var coords = [
+{lat: 1.38130406753, lng: 103.866425819},
+{lat: 1.38904894698, lng: 103.857388548},
+{lat: 1.39865499665, lng: 103.855721972},
+{lat: 1.38924464165, lng: 103.880793529},
+{lat: 1.38579367564, lng: 103.881014008},
+{lat: 1.38155756225, lng: 103.873382674},
+{lat: 1.38130406753, lng: 103.866425819},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5400AB',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39010142867, lng: 103.874083125},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Fernvale Primary School: 88/162", position: {lat: 1.39010142867, lng: 103.874083125}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Nan Chiau Primary School
+var coords = [
+{lat: 1.38830726781, lng: 103.894370111},
+{lat: 1.38814333426, lng: 103.890381677},
+{lat: 1.39306777078, lng: 103.888456575},
+{lat: 1.39482819536, lng: 103.893784177},
+{lat: 1.3905192345, lng: 103.895070398},
+{lat: 1.38830726781, lng: 103.894370111},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#FC0003',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39226736814, lng: 103.890714224},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Nan Chiau Primary School: 183/74", position: {lat: 1.39226736814, lng: 103.890714224}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// North Spring Primary School
+var coords = [
+{lat: 1.38492409534, lng: 103.899966679},
+{lat: 1.39092757499, lng: 103.902596141},
+{lat: 1.38990551023, lng: 103.908082035},
+{lat: 1.38601002897, lng: 103.913845939},
+{lat: 1.38064333939, lng: 103.918846073},
+{lat: 1.37386291724, lng: 103.916373153},
+{lat: 1.37942120494, lng: 103.903296824},
+{lat: 1.38492409534, lng: 103.899966679},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2A00D5',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38774665802, lng: 103.903509421},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "North Spring Primary School: 64/177", position: {lat: 1.38774665802, lng: 103.903509421}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// North Vista Primary School
+var coords = [
+{lat: 1.38827815316, lng: 103.894388356},
+{lat: 1.38492409534, lng: 103.899966679},
+{lat: 1.37942120494, lng: 103.903296824},
+{lat: 1.37915531811, lng: 103.90172729},
+{lat: 1.3811686543, lng: 103.892949627},
+{lat: 1.38827815316, lng: 103.894388356},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#6B0094',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38309496735, lng: 103.895822747},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "North Vista Primary School: 108/160", position: {lat: 1.38309496735, lng: 103.895822747}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Palm View Primary School
+var coords = [
+{lat: 1.38830726781, lng: 103.894370111},
+{lat: 1.38827815316, lng: 103.894388356},
+{lat: 1.3811686543, lng: 103.892949627},
+{lat: 1.37936664627, lng: 103.890043391},
+{lat: 1.3846870105, lng: 103.883966809},
+{lat: 1.38814333426, lng: 103.890381677},
+{lat: 1.38830726781, lng: 103.894370111},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#780087',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38406050185, lng: 103.891051544},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Palm View Primary School: 119/156", position: {lat: 1.38406050185, lng: 103.891051544}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Rivervale Primary School
+var coords = [
+{lat: 1.39280006556, lng: 103.901037479},
+{lat: 1.39768760122, lng: 103.901611429},
+{lat: 1.39837697429, lng: 103.902633039},
+{lat: 1.39712968339, lng: 103.905435405},
+{lat: 1.38990551023, lng: 103.908082035},
+{lat: 1.39092757499, lng: 103.902596141},
+{lat: 1.39280006556, lng: 103.901037479},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#BD0042',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39356619018, lng: 103.904593645},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Rivervale Primary School: 140/126", position: {lat: 1.39356619018, lng: 103.904593645}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Seng Kang Primary School
+var coords = [
+{lat: 1.38830726781, lng: 103.894370111},
+{lat: 1.3905192345, lng: 103.895070398},
+{lat: 1.39280006556, lng: 103.901037479},
+{lat: 1.39092757499, lng: 103.902596141},
+{lat: 1.38492409534, lng: 103.899966679},
+{lat: 1.38827815316, lng: 103.894388356},
+{lat: 1.38830726781, lng: 103.894370111},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2E00D1',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.38944188984, lng: 103.899638937},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Seng Kang Primary School: 54/147", position: {lat: 1.38944188984, lng: 103.899638937}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Sengkang Green Primary School
+var coords = [
+{lat: 1.41090327272, lng: 103.880129363},
+{lat: 1.39686995934, lng: 103.882088912},
+{lat: 1.38924464165, lng: 103.880793529},
+{lat: 1.39865499665, lng: 103.855721972},
+{lat: 1.40136128825, lng: 103.855034772},
+{lat: 1.40898251064, lng: 103.859926104},
+{lat: 1.41937401186, lng: 103.873410261},
+{lat: 1.41090327272, lng: 103.880129363},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F80007',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39301478539, lng: 103.875176624},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Sengkang Green Primary School: 297/133", position: {lat: 1.39301478539, lng: 103.875176624}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Springdale Primary School
+var coords = [
+{lat: 1.39482819536, lng: 103.893784177},
+{lat: 1.39306777078, lng: 103.888456575},
+{lat: 1.39686995934, lng: 103.882088912},
+{lat: 1.41090327272, lng: 103.880129363},
+{lat: 1.40657330863, lng: 103.888220547},
+{lat: 1.39881611715, lng: 103.894128011},
+{lat: 1.39482819536, lng: 103.893784177},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#6A0095',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.39505573096, lng: 103.889792852},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Springdale Primary School: 110/163", position: {lat: 1.39505573096, lng: 103.889792852}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// CHIJ Our Lady Of Good Counsel
+var coords = [
+{lat: 1.35524432704, lng: 103.858211247},
+{lat: 1.36465094274, lng: 103.860005545},
+{lat: 1.3661845045, lng: 103.86421051},
+{lat: 1.35452689788, lng: 103.868488866},
+{lat: 1.35331324715, lng: 103.8657242},
+{lat: 1.35468051327, lng: 103.858752794},
+{lat: 1.35524432704, lng: 103.858211247},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4F00B0',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.35802010824, lng: 103.864145374},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "CHIJ Our Lady Of Good Counsel: 41/81", position: {lat: 1.35802010824, lng: 103.864145374}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Rosyth School
+var coords = [
+{lat: 1.373547584, lng: 103.879161362},
+{lat: 1.36453050322, lng: 103.877227198},
+{lat: 1.36856898066, lng: 103.866987879},
+{lat: 1.38130406753, lng: 103.866425819},
+{lat: 1.38155756225, lng: 103.873382674},
+{lat: 1.373547584, lng: 103.879161362},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E0001F',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.37308733226, lng: 103.874703086},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Rosyth School: 87/66", position: {lat: 1.37308733226, lng: 103.874703086}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Saint Gabriel's Primary School
+var coords = [
+{lat: 1.35331324715, lng: 103.8657242},
+{lat: 1.34092963553, lng: 103.864436068},
+{lat: 1.34507507242, lng: 103.858917098},
+{lat: 1.35468051327, lng: 103.858752794},
+{lat: 1.35331324715, lng: 103.8657242},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3B00C4',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34955142735, lng: 103.862484456},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Saint Gabriel's Primary School: 34/83", position: {lat: 1.34955142735, lng: 103.862484456}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Yangzheng Primary School
+var coords = [
+{lat: 1.33989483286, lng: 103.867779502},
+{lat: 1.34043437898, lng: 103.864775126},
+{lat: 1.34092963553, lng: 103.864436068},
+{lat: 1.35331324715, lng: 103.8657242},
+{lat: 1.35452689788, lng: 103.868488866},
+{lat: 1.35352323443, lng: 103.876282296},
+{lat: 1.35060414995, lng: 103.876525234},
+{lat: 1.34138935041, lng: 103.870418492},
+{lat: 1.33989483286, lng: 103.867779502},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#970068',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34896518566, lng: 103.868120361},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Yangzheng Primary School: 91/90", position: {lat: 1.34896518566, lng: 103.868120361}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Zhonghua Primary School
+var coords = [
+{lat: 1.36453050322, lng: 103.877227198},
+{lat: 1.36112677875, lng: 103.880076554},
+{lat: 1.35940985954, lng: 103.879926783},
+{lat: 1.35352323443, lng: 103.876282296},
+{lat: 1.35452689788, lng: 103.868488866},
+{lat: 1.3661845045, lng: 103.86421051},
+{lat: 1.36856898066, lng: 103.866987879},
+{lat: 1.36453050322, lng: 103.877227198},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0C00F3',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3600005024, lng: 103.869541526},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Zhonghua Primary School: 17/101", position: {lat: 1.3600005024, lng: 103.869541526}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Angsana Primary School
+var coords = [
+{lat: 1.35195963442, lng: 103.953816647},
+{lat: 1.35329277162, lng: 103.956036044},
+{lat: 1.34655479308, lng: 103.95873751},
+{lat: 1.34496214049, lng: 103.958015202},
+{lat: 1.34471577736, lng: 103.947056983},
+{lat: 1.34693925514, lng: 103.947331447},
+{lat: 1.35195963442, lng: 103.953816647},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0800F7',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34937663501, lng: 103.951721399},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Angsana Primary School: 13/90", position: {lat: 1.34937663501, lng: 103.951721399}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Changkat Primary School
+var coords = [
+{lat: 1.32876381875, lng: 103.950668853},
+{lat: 1.34164440801, lng: 103.94452026},
+{lat: 1.34349745581, lng: 103.945567045},
+{lat: 1.34471577736, lng: 103.947056983},
+{lat: 1.34496214049, lng: 103.958015202},
+{lat: 1.32876381875, lng: 103.950668853},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#8C0073',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34026925413, lng: 103.951926151},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Changkat Primary School: 80/89", position: {lat: 1.34026925413, lng: 103.951926151}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Chongzheng Primary School
+var coords = [
+{lat: 1.35195963442, lng: 103.953816647},
+{lat: 1.34693925514, lng: 103.947331447},
+{lat: 1.34985218774, lng: 103.947246635},
+{lat: 1.35195963442, lng: 103.953816647},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C3003C',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3505784392, lng: 103.950791048},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Chongzheng Primary School: 73/64", position: {lat: 1.3505784392, lng: 103.950791048}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// East Spring Primary School
+var coords = [
+{lat: 1.34655479308, lng: 103.95873751},
+{lat: 1.35329277162, lng: 103.956036044},
+{lat: 1.35555627946, lng: 103.95561197},
+{lat: 1.35918844493, lng: 103.956782814},
+{lat: 1.3596313676, lng: 103.962261265},
+{lat: 1.35344191584, lng: 103.961860995},
+{lat: 1.34655479308, lng: 103.95873751},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5C00A3',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.35344191584, lng: 103.961860995},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "East Spring Primary School: 66/115", position: {lat: 1.35344191584, lng: 103.961860995}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// East View Primary School
+var coords = [
+{lat: 1.34694168033, lng: 103.937089678},
+{lat: 1.34846078621, lng: 103.941864066},
+{lat: 1.34349745581, lng: 103.945567045},
+{lat: 1.34164440801, lng: 103.94452026},
+{lat: 1.34069482666, lng: 103.936281369},
+{lat: 1.34152857671, lng: 103.934024485},
+{lat: 1.34192199158, lng: 103.933268826},
+{lat: 1.34694168033, lng: 103.937089678},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0600F9',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34727762192, lng: 103.939519742},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "East View Primary School: 9/67", position: {lat: 1.34727762192, lng: 103.939519742}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Gongshang Primary School
+var coords = [
+{lat: 1.35375460418, lng: 103.946707029},
+{lat: 1.35726758137, lng: 103.942272005},
+{lat: 1.35861066695, lng: 103.942288038},
+{lat: 1.3597073333, lng: 103.956415578},
+{lat: 1.35918844493, lng: 103.956782814},
+{lat: 1.35555627946, lng: 103.95561197},
+{lat: 1.35375460418, lng: 103.946707029},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D90026',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.35748953424, lng: 103.949304564},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Gongshang Primary School: 75/59", position: {lat: 1.35748953424, lng: 103.949304564}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Junyuan Primary School
+var coords = [
+{lat: 1.35227938986, lng: 103.939868123},
+{lat: 1.34846078621, lng: 103.941864066},
+{lat: 1.34694168033, lng: 103.937089678},
+{lat: 1.35227938986, lng: 103.939868123},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#60009F',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34807173161, lng: 103.939267074},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Junyuan Primary School: 74/118", position: {lat: 1.34807173161, lng: 103.939267074}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Poi Ching School
+var coords = [
+{lat: 1.36621518566, lng: 103.940555719},
+{lat: 1.35861066695, lng: 103.942288038},
+{lat: 1.35726758137, lng: 103.942272005},
+{lat: 1.35417352405, lng: 103.939594273},
+{lat: 1.35084956992, lng: 103.921473871},
+{lat: 1.35611729467, lng: 103.913163204},
+{lat: 1.35994971989, lng: 103.913992172},
+{lat: 1.36684035332, lng: 103.916878705},
+{lat: 1.36695136378, lng: 103.939255733},
+{lat: 1.36621518566, lng: 103.940555719},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B1004E',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.35765734869, lng: 103.935246749},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Poi Ching School: 111/104", position: {lat: 1.35765734869, lng: 103.935246749}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Saint Hilda's Primary School
+var coords = [
+{lat: 1.35227938986, lng: 103.939868123},
+{lat: 1.34694168033, lng: 103.937089678},
+{lat: 1.34192199158, lng: 103.933268826},
+{lat: 1.34331808039, lng: 103.928189687},
+{lat: 1.35084956992, lng: 103.921473871},
+{lat: 1.35417352405, lng: 103.939594273},
+{lat: 1.35227938986, lng: 103.939868123},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F60009',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34937345098, lng: 103.936766323},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Saint Hilda's Primary School: 111/52", position: {lat: 1.34937345098, lng: 103.936766323}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Tampines North Primary School
+var coords = [
+{lat: 1.3597073333, lng: 103.956415578},
+{lat: 1.35861066695, lng: 103.942288038},
+{lat: 1.36621518566, lng: 103.940555719},
+{lat: 1.36657994029, lng: 103.941905287},
+{lat: 1.36336380846, lng: 103.954908088},
+{lat: 1.3597073333, lng: 103.956415578},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4400BB',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.36080117585, lng: 103.949047494},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Tampines North Primary School: 51/115", position: {lat: 1.36080117585, lng: 103.949047494}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Tampines Primary School
+var coords = [
+{lat: 1.34985218774, lng: 103.947246635},
+{lat: 1.34693925514, lng: 103.947331447},
+{lat: 1.34471577736, lng: 103.947056983},
+{lat: 1.34349745581, lng: 103.945567045},
+{lat: 1.34846078621, lng: 103.941864066},
+{lat: 1.35227938986, lng: 103.939868123},
+{lat: 1.35417352405, lng: 103.939594273},
+{lat: 1.35726758137, lng: 103.942272005},
+{lat: 1.35375460418, lng: 103.946707029},
+{lat: 1.34985218774, lng: 103.947246635},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#9A0065',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3503709879, lng: 103.943665972},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Tampines Primary School: 72/71", position: {lat: 1.3503709879, lng: 103.943665972}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Yumin Primary School
+var coords = [
+{lat: 1.35195963442, lng: 103.953816647},
+{lat: 1.34985218774, lng: 103.947246635},
+{lat: 1.35375460418, lng: 103.946707029},
+{lat: 1.35555627946, lng: 103.95561197},
+{lat: 1.35329277162, lng: 103.956036044},
+{lat: 1.35195963442, lng: 103.953816647},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2100DE',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.35132317438, lng: 103.950552161},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Yumin Primary School: 28/94", position: {lat: 1.35132317438, lng: 103.950552161}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Cedar Primary School
+var coords = [
+{lat: 1.33989483286, lng: 103.867779502},
+{lat: 1.34138935041, lng: 103.870418492},
+{lat: 1.33613275765, lng: 103.884195541},
+{lat: 1.33176615279, lng: 103.881684736},
+{lat: 1.32699064893, lng: 103.873045509},
+{lat: 1.32719914633, lng: 103.872779164},
+{lat: 1.33989483286, lng: 103.867779502},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3900C6',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3355220407, lng: 103.875733505},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Cedar Primary School: 31/76", position: {lat: 1.3355220407, lng: 103.875733505}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// CHIJ Primary (Toa Payoh)
+var coords = [
+{lat: 1.32800973257, lng: 103.83451335},
+{lat: 1.33363434473, lng: 103.829709341},
+{lat: 1.33752566037, lng: 103.843160193},
+{lat: 1.33106607315, lng: 103.848254032},
+{lat: 1.32737217169, lng: 103.835998058},
+{lat: 1.32800973257, lng: 103.83451335},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D2002D',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33323554202, lng: 103.842148155},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "CHIJ Primary (Toa Payoh): 66/53", position: {lat: 1.33323554202, lng: 103.842148155}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// First Toa Payoh Primary School
+var coords = [
+{lat: 1.34043437898, lng: 103.864775126},
+{lat: 1.33871432527, lng: 103.863092302},
+{lat: 1.33895040612, lng: 103.851591863},
+{lat: 1.34127059974, lng: 103.850757608},
+{lat: 1.34484369022, lng: 103.853863227},
+{lat: 1.34507507242, lng: 103.858917098},
+{lat: 1.34092963553, lng: 103.864436068},
+{lat: 1.34043437898, lng: 103.864775126},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0200FD',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34040178283, lng: 103.855611927},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "First Toa Payoh Primary School: 14/146", position: {lat: 1.34040178283, lng: 103.855611927}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Kheng Cheng School
+var coords = [
+{lat: 1.33106607315, lng: 103.848254032},
+{lat: 1.33752566037, lng: 103.843160193},
+{lat: 1.34236804555, lng: 103.845149483},
+{lat: 1.34127059974, lng: 103.850757608},
+{lat: 1.33895040612, lng: 103.851591863},
+{lat: 1.33019879721, lng: 103.851400815},
+{lat: 1.33106607315, lng: 103.848254032},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#960069',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33750949867, lng: 103.847568035},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Kheng Cheng School: 138/138", position: {lat: 1.33750949867, lng: 103.847568035}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Maris Stella High School (Primary)
+var coords = [
+{lat: 1.33613275765, lng: 103.884195541},
+{lat: 1.34138935041, lng: 103.870418492},
+{lat: 1.35060414995, lng: 103.876525234},
+{lat: 1.33982769304, lng: 103.889455075},
+{lat: 1.33613275765, lng: 103.884195541},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B2004D',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.342225, lng: 103.878291},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Maris Stella High School (Primary): 64/59", position: {lat: 1.342225, lng: 103.878291}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Marymount Convent School
+var coords = [
+{lat: 1.33363434473, lng: 103.829709341},
+{lat: 1.33819207495, lng: 103.822279885},
+{lat: 1.34501310051, lng: 103.820089439},
+{lat: 1.35028373987, lng: 103.835137772},
+{lat: 1.34785436393, lng: 103.841965243},
+{lat: 1.34236804555, lng: 103.845149483},
+{lat: 1.33752566037, lng: 103.843160193},
+{lat: 1.33363434473, lng: 103.829709341},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3C00C3',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.34061278645, lng: 103.840013927},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Marymount Convent School: 49/119", position: {lat: 1.34061278645, lng: 103.840013927}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Pei Chun Public School
+var coords = [
+{lat: 1.33871432527, lng: 103.863092302},
+{lat: 1.32955537409, lng: 103.857181408},
+{lat: 1.32898957291, lng: 103.852638836},
+{lat: 1.33019879721, lng: 103.851400815},
+{lat: 1.33895040612, lng: 103.851591863},
+{lat: 1.33871432527, lng: 103.863092302},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A70058',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33733527399, lng: 103.855548978},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Pei Chun Public School: 97/92", position: {lat: 1.33733527399, lng: 103.855548978}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// St Andrew's Junior School
+var coords = [
+{lat: 1.33989483286, lng: 103.867779502},
+{lat: 1.32719914633, lng: 103.872779164},
+{lat: 1.32658711253, lng: 103.86103755},
+{lat: 1.32955537409, lng: 103.857181408},
+{lat: 1.33871432527, lng: 103.863092302},
+{lat: 1.34043437898, lng: 103.864775126},
+{lat: 1.33989483286, lng: 103.867779502},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B90046',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.33127266095, lng: 103.864943019},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "St Andrew's Junior School: 70/63", position: {lat: 1.33127266095, lng: 103.864943019}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Admiralty Primary School
+var coords = [
+{lat: 1.4395503263, lng: 103.796551524},
+{lat: 1.44641906319, lng: 103.797815004},
+{lat: 1.44378939356, lng: 103.803870958},
+{lat: 1.43858368605, lng: 103.800300286},
+{lat: 1.4395503263, lng: 103.796551524},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A2005D',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.44307410714, lng: 103.800008208},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Admiralty Primary School: 95/92", position: {lat: 1.44307410714, lng: 103.800008208}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Evergreen Primary School
+var coords = [
+{lat: 1.4395503263, lng: 103.796551524},
+{lat: 1.43938224538, lng: 103.796078645},
+{lat: 1.4409118961, lng: 103.792160768},
+{lat: 1.44433157475, lng: 103.791087966},
+{lat: 1.44780155043, lng: 103.797232342},
+{lat: 1.44641906319, lng: 103.797815004},
+{lat: 1.4395503263, lng: 103.796551524},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#93006C',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.44407351717, lng: 103.794575052},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Evergreen Primary School: 113/114", position: {lat: 1.44407351717, lng: 103.794575052}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Fuchun Primary School
+var coords = [
+{lat: 1.42509376953, lng: 103.783683941},
+{lat: 1.40759860511, lng: 103.781443123},
+{lat: 1.411462076, lng: 103.76782598},
+{lat: 1.41255795791, lng: 103.766442796},
+{lat: 1.41650852925, lng: 103.762928246},
+{lat: 1.43821746509, lng: 103.78035282},
+{lat: 1.42509376953, lng: 103.783683941},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D4002B',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.43091403998, lng: 103.778172521},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Fuchun Primary School: 93/75", position: {lat: 1.43091403998, lng: 103.778172521}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Greenwood Primary School
+var coords = [
+{lat: 1.43173069575, lng: 103.816573965},
+{lat: 1.42323097295, lng: 103.812580312},
+{lat: 1.42288962298, lng: 103.812287402},
+{lat: 1.43858368605, lng: 103.800300286},
+{lat: 1.44378939356, lng: 103.803870958},
+{lat: 1.44599744861, lng: 103.809450603},
+{lat: 1.44248128691, lng: 103.812875016},
+{lat: 1.43173069575, lng: 103.816573965},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5500AA',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.43992820737, lng: 103.804594638},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Greenwood Primary School: 72/130", position: {lat: 1.43992820737, lng: 103.804594638}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Innova Primary School
+var coords = [
+{lat: 1.39885309563, lng: 103.803263293},
+{lat: 1.40613201845, lng: 103.783872037},
+{lat: 1.40759860511, lng: 103.781443123},
+{lat: 1.42509376953, lng: 103.783683941},
+{lat: 1.43121791604, lng: 103.788214789},
+{lat: 1.43160550494, lng: 103.794518721},
+{lat: 1.41389972954, lng: 103.807595826},
+{lat: 1.39885309563, lng: 103.803263293},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#AB0054',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.42933711743, lng: 103.79048433},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Innova Primary School: 126/119", position: {lat: 1.42933711743, lng: 103.79048433}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Marsiling Primary School
+var coords = [
+{lat: 1.43821746509, lng: 103.78035282},
+{lat: 1.41650852925, lng: 103.762928246},
+{lat: 1.4194217973, lng: 103.759514161},
+{lat: 1.43450858632, lng: 103.773694146},
+{lat: 1.438273382, lng: 103.780360567},
+{lat: 1.43821746509, lng: 103.78035282},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4300BC',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.43450858632, lng: 103.773694146},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Marsiling Primary School: 59/134", position: {lat: 1.43450858632, lng: 103.773694146}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Qihua Primary School
+var coords = [
+{lat: 1.43750096226, lng: 103.786998888},
+{lat: 1.43900716394, lng: 103.781659894},
+{lat: 1.44433157475, lng: 103.791087966},
+{lat: 1.4409118961, lng: 103.792160768},
+{lat: 1.43750096226, lng: 103.786998888},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2900D6',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.44212789664, lng: 103.788373162},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Qihua Primary School: 47/130", position: {lat: 1.44212789664, lng: 103.788373162}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Riverside Primary School
+var coords = [
+{lat: 1.44641906319, lng: 103.797815004},
+{lat: 1.44780155043, lng: 103.797232342},
+{lat: 1.45320163023, lng: 103.806794403},
+{lat: 1.45183147537, lng: 103.807942241},
+{lat: 1.44599744861, lng: 103.809450603},
+{lat: 1.44378939356, lng: 103.803870958},
+{lat: 1.44641906319, lng: 103.797815004},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A5005A',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.44710017973, lng: 103.801756445},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Riverside Primary School: 133/128", position: {lat: 1.44710017973, lng: 103.801756445}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Si Ling Primary School
+var coords = [
+{lat: 1.43664788936, lng: 103.787579599},
+{lat: 1.43121791604, lng: 103.788214789},
+{lat: 1.42509376953, lng: 103.783683941},
+{lat: 1.43821746509, lng: 103.78035282},
+{lat: 1.438273382, lng: 103.780360567},
+{lat: 1.43900716394, lng: 103.781659894},
+{lat: 1.43750096226, lng: 103.786998888},
+{lat: 1.43664788936, lng: 103.787579599},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2500DA',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4328379903, lng: 103.785752355},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Si Ling Primary School: 39/120", position: {lat: 1.4328379903, lng: 103.785752355}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Woodgrove Primary School
+var coords = [
+{lat: 1.43664788936, lng: 103.787579599},
+{lat: 1.43381616464, lng: 103.794104221},
+{lat: 1.43160550494, lng: 103.794518721},
+{lat: 1.43121791604, lng: 103.788214789},
+{lat: 1.43664788936, lng: 103.787579599},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#8F0070',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.43336257689, lng: 103.79023683},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Woodgrove Primary School: 105/115", position: {lat: 1.43336257689, lng: 103.79023683}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Woodlands Primary School
+var coords = [
+{lat: 1.43664788936, lng: 103.787579599},
+{lat: 1.43750096226, lng: 103.786998888},
+{lat: 1.4409118961, lng: 103.792160768},
+{lat: 1.43938224538, lng: 103.796078645},
+{lat: 1.43381616464, lng: 103.794104221},
+{lat: 1.43664788936, lng: 103.787579599},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#90006F',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.43695081025, lng: 103.791794144},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Woodlands Primary School: 85/91", position: {lat: 1.43695081025, lng: 103.791794144}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Woodlands Ring Primary School
+var coords = [
+{lat: 1.4395503263, lng: 103.796551524},
+{lat: 1.43858368605, lng: 103.800300286},
+{lat: 1.42288962298, lng: 103.812287402},
+{lat: 1.41389972954, lng: 103.807595826},
+{lat: 1.43160550494, lng: 103.794518721},
+{lat: 1.43381616464, lng: 103.794104221},
+{lat: 1.43938224538, lng: 103.796078645},
+{lat: 1.4395503263, lng: 103.796551524},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#73008C',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4347944073, lng: 103.797873239},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Woodlands Ring Primary School: 81/110", position: {lat: 1.4347944073, lng: 103.797873239}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Ahmad Ibrahim Primary School
+var coords = [
+{lat: 1.43419545951, lng: 103.821169961},
+{lat: 1.4433847847, lng: 103.830504793},
+{lat: 1.4400632403, lng: 103.832946353},
+{lat: 1.43013317118, lng: 103.833498542},
+{lat: 1.43419545951, lng: 103.821169961},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3000CF',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4338202406, lng: 103.832533613},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Ahmad Ibrahim Primary School: 47/121", position: {lat: 1.4338202406, lng: 103.832533613}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Chongfu School
+var coords = [
+{lat: 1.4400632403, lng: 103.832946353},
+{lat: 1.4433847847, lng: 103.830504793},
+{lat: 1.4467392394, lng: 103.831799684},
+{lat: 1.44720525555, lng: 103.832178314},
+{lat: 1.4380482837, lng: 103.849306323},
+{lat: 1.43457095884, lng: 103.845288211},
+{lat: 1.43662713608, lng: 103.836182525},
+{lat: 1.4400632403, lng: 103.832946353},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E4001B',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.43859408727, lng: 103.839028045},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Chongfu School: 111/84", position: {lat: 1.43859408727, lng: 103.839028045}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Huamin Primary School
+var coords = [
+{lat: 1.42094792759, lng: 103.847501299},
+{lat: 1.42707998095, lng: 103.837682566},
+{lat: 1.43415113913, lng: 103.845054309},
+{lat: 1.42094792759, lng: 103.847501299},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A3005C',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.42703147921, lng: 103.844234529},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Huamin Primary School: 103/99", position: {lat: 1.42703147921, lng: 103.844234529}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Jiemin Primary School
+var coords = [
+{lat: 1.42891614868, lng: 103.835630474},
+{lat: 1.42697143365, lng: 103.83718246},
+{lat: 1.42271262081, lng: 103.834421711},
+{lat: 1.42323097295, lng: 103.812580312},
+{lat: 1.43173069575, lng: 103.816573965},
+{lat: 1.43419545951, lng: 103.821169961},
+{lat: 1.43013317118, lng: 103.833498542},
+{lat: 1.42891614868, lng: 103.835630474},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#770088',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.42774192449, lng: 103.830530798},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Jiemin Primary School: 78/102", position: {lat: 1.42774192449, lng: 103.830530798}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Naval Base Primary School
+var coords = [
+{lat: 1.42010940102, lng: 103.835265547},
+{lat: 1.41472032245, lng: 103.852778719},
+{lat: 1.40898251064, lng: 103.859926104},
+{lat: 1.40136128825, lng: 103.855034772},
+{lat: 1.39967890553, lng: 103.831354134},
+{lat: 1.42010940102, lng: 103.835265547},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3F00C0',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.41619632583, lng: 103.839057288},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Naval Base Primary School: 59/137", position: {lat: 1.41619632583, lng: 103.839057288}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// North View Primary School
+var coords = [
+{lat: 1.42431425206, lng: 103.87499567},
+{lat: 1.41937401186, lng: 103.873410261},
+{lat: 1.40898251064, lng: 103.859926104},
+{lat: 1.41472032245, lng: 103.852778719},
+{lat: 1.42094792759, lng: 103.847501299},
+{lat: 1.43415113913, lng: 103.845054309},
+{lat: 1.43457095884, lng: 103.845288211},
+{lat: 1.4380482837, lng: 103.849306323},
+{lat: 1.42431425206, lng: 103.87499567},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#9F0060',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.42779810766, lng: 103.848371022},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "North View Primary School: 106/103", position: {lat: 1.42779810766, lng: 103.848371022}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Northland Primary School
+var coords = [
+{lat: 1.42697143365, lng: 103.83718246},
+{lat: 1.42707998095, lng: 103.837682566},
+{lat: 1.42094792759, lng: 103.847501299},
+{lat: 1.41472032245, lng: 103.852778719},
+{lat: 1.42010940102, lng: 103.835265547},
+{lat: 1.42271262081, lng: 103.834421711},
+{lat: 1.42697143365, lng: 103.83718246},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#FD0002',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.42121381804, lng: 103.840601249},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Northland Primary School: 160/57", position: {lat: 1.42121381804, lng: 103.840601249}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Peiying Primary School
+var coords = [
+{lat: 1.42323097295, lng: 103.812580312},
+{lat: 1.42271262081, lng: 103.834421711},
+{lat: 1.42010940102, lng: 103.835265547},
+{lat: 1.39967890553, lng: 103.831354134},
+{lat: 1.39412714886, lng: 103.814496474},
+{lat: 1.39337573057, lng: 103.806504988},
+{lat: 1.39885309563, lng: 103.803263293},
+{lat: 1.41389972954, lng: 103.807595826},
+{lat: 1.42288962298, lng: 103.812287402},
+{lat: 1.42323097295, lng: 103.812580312},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4700B8',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.41787355794, lng: 103.830296596},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Peiying Primary School: 52/113", position: {lat: 1.41787355794, lng: 103.830296596}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Xishan Primary School
+var coords = [
+{lat: 1.42891614868, lng: 103.835630474},
+{lat: 1.43662713608, lng: 103.836182525},
+{lat: 1.43457095884, lng: 103.845288211},
+{lat: 1.43415113913, lng: 103.845054309},
+{lat: 1.42707998095, lng: 103.837682566},
+{lat: 1.42697143365, lng: 103.83718246},
+{lat: 1.42891614868, lng: 103.835630474},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2800D7',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.43362828938, lng: 103.837906706},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Xishan Primary School: 41/119", position: {lat: 1.43362828938, lng: 103.837906706}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+// Yishun Primary School
+var coords = [
+{lat: 1.42891614868, lng: 103.835630474},
+{lat: 1.43013317118, lng: 103.833498542},
+{lat: 1.4400632403, lng: 103.832946353},
+{lat: 1.43662713608, lng: 103.836182525},
+{lat: 1.42891614868, lng: 103.835630474},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#670098',
+    fillOpacity: 0.3,
+  });
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.43390449281, lng: 103.834048727},
+    map: map,
+    radius: 100,
+    infow: new google.maps.InfoWindow({content: "Yishun Primary School: 76/113", position: {lat: 1.43390449281, lng: 103.834048727}}),
+  });
+  circ.addListener('click', function() {
+    this.infow.open(map, this);
+  });
+}
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJvBveKdnhCw9MaDwzFb_7cTnXWNohROU&callback=initMap">
+    </script>
+  </body>
+</html>
