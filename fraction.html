@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Find Nearest Fractions</title>
+<script>
+function search() {
+	if (document.getElementById("side1").checked == true)
+		side = 1;
+	else if (document.getElementById("side2").checked == true)
+		side = 2;
+	else
+		side = 3;
+	maxd = parseInt(document.getElementById("maxd").value);
+
+	table = document.getElementById("tab");
+	while (table.rows.length > 1)
+		table.deleteRow(1);
+
+	x = parseFloat(document.getElementById("x").value);
+	diff = Math.abs(x);
+	for (var d = 1; d <= maxd; d ++) {
+		switch (side) {
+			case 1: n = Math.floor(x * d); break;
+			case 2: n = Math.ceil(x * d); break;
+			default: n = Math.round(x * d);
+		}
+		x1 = n * 1.0 / d;
+		diff1 = x1 - x;
+		if (Math.abs(diff1) < diff) {
+			diff = Math.abs(diff1)
+			row = table.insertRow(-1);
+			row.insertCell(-1).innerHTML = n + "/" + d;
+			row.insertCell(-1).innerHTML = x1;
+			row.insertCell(-1).innerHTML = diff1.toExponential(2);
+			row.insertCell(-1).innerHTML = (diff1 * d).toExponential(2);
+		}
+	}
+}
+</script>
+</head>
+<body>
+<p>
+How to use? Try put 3.1415926535 into "x" and press "search".
+</p>
+
+x = <input id="x" /> <br />
+max denominator = <input id="maxd" value="10000" size="10" /> <br />
+Fraction must be (<input type="radio" id="side1" name="side" value="1">below
+<input type="radio" id="side2" name="side" value="2">above
+<input type="radio" id="side3" name="side" value="3" checked="on">below or above) x. </br>
+
+<input type="button" onclick="search()" value="search" />
+<br />
+Result: <br />
+<table border="1" id="tab">
+	<tr>
+		<th>p/q</th>
+		<th>p/q (decimal)</th>
+		<th>err = p/q - x</th>
+		<th>p - xq</th>
+	</tr>
+</table>
+</body>
+</html>
