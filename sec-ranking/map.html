@@ -1,0 +1,3895 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Singapore Secondary School Ranking by AL Cut Off Point</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: {lat: 1.3595015, lng: 103.8264145}
+  });
+infoWindow = new google.maps.InfoWindow;
+function showInfo(event) {
+  infoWindow.setContent(this.infotext);
+  infoWindow.setPosition(this.center);
+  infoWindow.open(map);
+}
+// Anglo-Chinese School (Independent)
+var coords = [
+{lat: 1.3130569087949013, lng: 103.78468270483499},
+{lat: 1.2947498161963384, lng: 103.78014945936248},
+{lat: 1.2981283836033877, lng: 103.77273003003017},
+{lat: 1.3018709650064857, lng: 103.77240025682408},
+{lat: 1.3041692750586444, lng: 103.77354561495679},
+{lat: 1.3130569087949013, lng: 103.78468270483499},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0100FE',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.302926803356, lng: 103.77969767819},
+    map: map,
+    radius: 100,
+    infotext: "Anglo-Chinese School (Independent): 6-8",
+  });
+  circ.addListener('click', showInfo);
+// Methodist Girls’ School (Secondary)
+var coords = [
+{lat: 1.3522302614161472, lng: 103.77779515227141},
+{lat: 1.3616683864094818, lng: 103.79781874719866},
+{lat: 1.3617530751122102, lng: 103.79824441916408},
+{lat: 1.3488264079827195, lng: 103.80745781474272},
+{lat: 1.3177758833008333, lng: 103.79190868757765},
+{lat: 1.3176541927503562, lng: 103.78842088712977},
+{lat: 1.324345881673683, lng: 103.77249523456851},
+{lat: 1.329561495526182, lng: 103.76818369525193},
+{lat: 1.3522302614161472, lng: 103.77779515227141},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0000FF',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3332159137342, lng: 103.7832675656},
+    map: map,
+    radius: 100,
+    infotext: "Methodist Girls’ School (Secondary): 4-8",
+  });
+  circ.addListener('click', showInfo);
+// Singapore Chinese Girls’ School
+var coords = [
+{lat: 1.3052311762222666, lng: 103.8284584671169},
+{lat: 1.3085760926699173, lng: 103.81956789850955},
+{lat: 1.3444517575866224, lng: 103.81730369680132},
+{lat: 1.3442614519298257, lng: 103.8217290604887},
+{lat: 1.3440244180761662, lng: 103.82228206021722},
+{lat: 1.3291135520297366, lng: 103.83373612894819},
+{lat: 1.3052311762222666, lng: 103.8284584671169},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0300FC',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.321286243496, lng: 103.82815772007},
+    map: map,
+    radius: 100,
+    infotext: "Singapore Chinese Girls’ School: 7-8",
+  });
+  circ.addListener('click', showInfo);
+// Catholic High School
+var coords = [
+{lat: 1.3583636369250462, lng: 103.85208268410814},
+{lat: 1.350180924474583, lng: 103.84885176024984},
+{lat: 1.3458434146729712, lng: 103.8408111149469},
+{lat: 1.3617694869959365, lng: 103.8461639915281},
+{lat: 1.361835343202796, lng: 103.84651931638147},
+{lat: 1.3583636369250462, lng: 103.85208268410814},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0700F8',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.354700888798, lng: 103.84502680755},
+    map: map,
+    radius: 100,
+    infotext: "Catholic High School: 5-9",
+  });
+  circ.addListener('click', showInfo);
+// Cedar Girls’ Secondary School
+var coords = [
+{lat: 1.3367199439382187, lng: 103.87909112514275},
+{lat: 1.3291606669759584, lng: 103.88516112952719},
+{lat: 1.32343423302164, lng: 103.87347495905395},
+{lat: 1.340312037356998, lng: 103.86798091529369},
+{lat: 1.340722779182325, lng: 103.86922366171845},
+{lat: 1.3367199439382187, lng: 103.87909112514275},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0900F6',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3340667914988, lng: 103.874726652},
+    map: map,
+    radius: 100,
+    infotext: "Cedar Girls’ Secondary School: 5-9",
+  });
+  circ.addListener('click', showInfo);
+// CHIJ St. Nicholas Girls’ School
+var coords = [
+{lat: 1.3719070091086971, lng: 103.83916395431156},
+{lat: 1.3706794037540995, lng: 103.8316690918167},
+{lat: 1.386071977755335, lng: 103.8050239882325},
+{lat: 1.3943752382720325, lng: 103.80615678974168},
+{lat: 1.394589916457368, lng: 103.80643293263792},
+{lat: 1.3957230929758002, lng: 103.82066147499918},
+{lat: 1.382303921787309, lng: 103.83463483877411},
+{lat: 1.373080093612829, lng: 103.84004375962874},
+{lat: 1.3719070091086971, lng: 103.83916395431156},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0500FA',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3740710944336, lng: 103.8344223566},
+    map: map,
+    radius: 100,
+    infotext: "CHIJ St. Nicholas Girls’ School: 4-9",
+  });
+  circ.addListener('click', showInfo);
+// Victoria School
+var coords = [
+{lat: 1.3230106462407707, lng: 103.92663237481709},
+{lat: 1.3217415140659803, lng: 103.9307261052985},
+{lat: 1.3158064821212765, lng: 103.93638256436276},
+{lat: 1.312601102039298, lng: 103.93755122039},
+{lat: 1.3089592676683, lng: 103.92756242721},
+{lat: 1.3073707227814448, lng: 103.92253500394726},
+{lat: 1.308724280377277, lng: 103.92223509818461},
+{lat: 1.3229066455685037, lng: 103.92154933736822},
+{lat: 1.3230106462407707, lng: 103.92663237481709},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0B00F4',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3089592676683, lng: 103.92756242721},
+    map: map,
+    radius: 100,
+    infotext: "Victoria School: 6-9",
+  });
+  circ.addListener('click', showInfo);
+// Anderson Secondary School
+var coords = [
+{lat: 1.3712075500459295, lng: 103.85998828450634},
+{lat: 1.3703421584883637, lng: 103.84796570643456},
+{lat: 1.3734212772876933, lng: 103.84559659968762},
+{lat: 1.3795113013742326, lng: 103.84780147060404},
+{lat: 1.392577210123338, lng: 103.85953522071696},
+{lat: 1.3849403450771796, lng: 103.86401430113142},
+{lat: 1.3712075500459295, lng: 103.85998828450634},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0D00F2',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3749482179327, lng: 103.85165035431},
+    map: map,
+    radius: 100,
+    infotext: "Anderson Secondary School: 5-10",
+  });
+  circ.addListener('click', showInfo);
+// Anglo-Chinese School (Barker Road)
+var coords = [
+{lat: 1.3031516933204617, lng: 103.8375331112932},
+{lat: 1.3029883537736044, lng: 103.83390357125342},
+{lat: 1.3050477415030994, lng: 103.82872886675982},
+{lat: 1.3052311762222666, lng: 103.8284584671169},
+{lat: 1.3291135520297366, lng: 103.83373612894819},
+{lat: 1.324591107770795, lng: 103.84174451978214},
+{lat: 1.3031516933204617, lng: 103.8375331112932},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1700E8',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.31966443526, lng: 103.83549669612},
+    map: map,
+    radius: 100,
+    infotext: "Anglo-Chinese School (Barker Road): 8-10",
+  });
+  circ.addListener('click', showInfo);
+// CHIJ Secondary (Toa Payoh)
+var coords = [
+{lat: 1.3291135520297366, lng: 103.83373612894819},
+{lat: 1.3440244180761662, lng: 103.82228206021722},
+{lat: 1.3439801045738868, lng: 103.83817152914663},
+{lat: 1.3394682622971505, lng: 103.84512993307688},
+{lat: 1.3314151842180755, lng: 103.85312817620203},
+{lat: 1.3264027454811587, lng: 103.85091457569557},
+{lat: 1.324591107770795, lng: 103.84174451978214},
+{lat: 1.3291135520297366, lng: 103.83373612894819},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1500EA',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3324855658604, lng: 103.8427369582},
+    map: map,
+    radius: 100,
+    infotext: "CHIJ Secondary (Toa Payoh): 7-10",
+  });
+  circ.addListener('click', showInfo);
+// St. Andrew’s Secondary School
+var coords = [
+{lat: 1.32343423302164, lng: 103.87347495905395},
+{lat: 1.3214555096812568, lng: 103.87186407327245},
+{lat: 1.3332061741327739, lng: 103.85666480539703},
+{lat: 1.3413216880238683, lng: 103.86273093234547},
+{lat: 1.340312037356998, lng: 103.86798091529369},
+{lat: 1.32343423302164, lng: 103.87347495905395},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1100EE',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3312925519437, lng: 103.86620413663},
+    map: map,
+    radius: 100,
+    infotext: "St. Andrew’s Secondary School: 6-10",
+  });
+  circ.addListener('click', showInfo);
+// St. Joseph’s Institution
+var coords = [
+{lat: 1.3031516933204617, lng: 103.8375331112932},
+{lat: 1.324591107770795, lng: 103.84174451978214},
+{lat: 1.3264027454811587, lng: 103.85091457569557},
+{lat: 1.2990609447144001, lng: 103.8630830318688},
+{lat: 1.2962288933775117, lng: 103.86238305930794},
+{lat: 1.3031516933204617, lng: 103.8375331112932},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1300EC',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3176671454612, lng: 103.8456644877},
+    map: map,
+    radius: 100,
+    infotext: "St. Joseph’s Institution: 7-10",
+  });
+  circ.addListener('click', showInfo);
+// Bukit Panjang Govt. High School
+var coords = [
+{lat: 1.3839870648830195, lng: 103.74670494059998},
+{lat: 1.3757186509975787, lng: 103.74745254971236},
+{lat: 1.3744518520461284, lng: 103.74562352789017},
+{lat: 1.3683613605519638, lng: 103.72897545336639},
+{lat: 1.3690039917101204, lng: 103.72687288787859},
+{lat: 1.3740079072157663, lng: 103.71797073669029},
+{lat: 1.3896059815702877, lng: 103.73130603791613},
+{lat: 1.3839870648830195, lng: 103.74670494059998},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1900E6',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3821729225544, lng: 103.73833140847},
+    map: map,
+    radius: 100,
+    infotext: "Bukit Panjang Govt. High School: 4-11",
+  });
+  circ.addListener('click', showInfo);
+// Chung Cheng High School (Main)
+var coords = [
+{lat: 1.3111043591147715, lng: 103.89145549671993},
+{lat: 1.2994436452180818, lng: 103.89744740681519},
+{lat: 1.2952770623454382, lng: 103.8842610147696},
+{lat: 1.3111043591147715, lng: 103.89145549671993},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2100DE',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3054418630029, lng: 103.89149388603},
+    map: map,
+    radius: 100,
+    infotext: "Chung Cheng High School (Main): 6-11",
+  });
+  circ.addListener('click', showInfo);
+// Chung Cheng High School (Yishun)
+var coords = [
+{lat: 1.4243568081250269, lng: 103.83406892179272},
+{lat: 1.426263866138373, lng: 103.83598593905467},
+{lat: 1.4261229309164993, lng: 103.83995021116093},
+{lat: 1.418034848203604, lng: 103.8417909575522},
+{lat: 1.4167993001625894, lng: 103.83429820687118},
+{lat: 1.4243568081250269, lng: 103.83406892179272},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1B00E4',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4194863859523, lng: 103.83761776954},
+    map: map,
+    radius: 100,
+    infotext: "Chung Cheng High School (Yishun): 5-11",
+  });
+  circ.addListener('click', showInfo);
+// Crescent Girls’ School
+var coords = [
+{lat: 1.3050477415030994, lng: 103.82872886675982},
+{lat: 1.2877389636716705, lng: 103.81832525064293},
+{lat: 1.2938543871980777, lng: 103.80842410795574},
+{lat: 1.3069078712884004, lng: 103.81412672904443},
+{lat: 1.3085760926699173, lng: 103.81956789850955},
+{lat: 1.3052311762222666, lng: 103.8284584671169},
+{lat: 1.3050477415030994, lng: 103.82872886675982},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1D00E2',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.2933559569007, lng: 103.81764945236},
+    map: map,
+    radius: 100,
+    infotext: "Crescent Girls’ School: 5-11",
+  });
+  circ.addListener('click', showInfo);
+// Fairfield Methodist School (Secondary)
+var coords = [
+{lat: 1.3130569087949013, lng: 103.78468270483499},
+{lat: 1.3176541927503562, lng: 103.78842088712977},
+{lat: 1.3177758833008333, lng: 103.79190868757765},
+{lat: 1.3145934445124425, lng: 103.79423482191413},
+{lat: 1.2893178277279074, lng: 103.79207825927081},
+{lat: 1.2947498161963384, lng: 103.78014945936248},
+{lat: 1.3130569087949013, lng: 103.78468270483499},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#0F00F0',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3017711483091, lng: 103.78436468422},
+    map: map,
+    radius: 100,
+    infotext: "Fairfield Methodist School (Secondary): 6-10",
+  });
+  circ.addListener('click', showInfo);
+// Nan Hua High School
+var coords = [
+{lat: 1.315284198003868, lng: 103.76870827647318},
+{lat: 1.3041692750586444, lng: 103.77354561495679},
+{lat: 1.3018709650064857, lng: 103.77240025682408},
+{lat: 1.308085048033568, lng: 103.7614998539111},
+{lat: 1.315284198003868, lng: 103.76870827647318},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#1F00E0',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.308333035609, lng: 103.76884937007},
+    map: map,
+    radius: 100,
+    infotext: "Nan Hua High School: 5-11",
+  });
+  circ.addListener('click', showInfo);
+// Paya Lebar Methodist Girls’ School (Secondary)
+var coords = [
+{lat: 1.3603211017829535, lng: 103.88068400049293},
+{lat: 1.3437836692358205, lng: 103.89974693890998},
+{lat: 1.3421610671396589, lng: 103.89738296971122},
+{lat: 1.346291919312093, lng: 103.88158652798607},
+{lat: 1.3463154541385542, lng: 103.88155774265395},
+{lat: 1.3553659603222914, lng: 103.87793597001843},
+{lat: 1.3603211017829535, lng: 103.88068400049293},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2500DA',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3509142288043, lng: 103.88537154416},
+    map: map,
+    radius: 100,
+    infotext: "Paya Lebar Methodist Girls’ School (Secondary): 8-11",
+  });
+  circ.addListener('click', showInfo);
+// St. Margaret’s Secondary School
+var coords = [
+{lat: 1.3085760926699173, lng: 103.81956789850955},
+{lat: 1.3069078712884004, lng: 103.81412672904443},
+{lat: 1.3145934445124425, lng: 103.79423482191413},
+{lat: 1.3177758833008333, lng: 103.79190868757765},
+{lat: 1.3488264079827195, lng: 103.80745781474272},
+{lat: 1.3444517575866224, lng: 103.81730369680132},
+{lat: 1.3085760926699173, lng: 103.81956789850955},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2700D8',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3201054434594, lng: 103.80944826221},
+    map: map,
+    radius: 100,
+    infotext: "St. Margaret’s Secondary School: 8-11",
+  });
+  circ.addListener('click', showInfo);
+// Swiss Cottage Secondary School
+var coords = [
+{lat: 1.3691737601697984, lng: 103.75790467021734},
+{lat: 1.3607439684303742, lng: 103.75978548112097},
+{lat: 1.358402314415001, lng: 103.7488707234338},
+{lat: 1.3744518520461284, lng: 103.74562352789017},
+{lat: 1.3757186509975787, lng: 103.74745254971236},
+{lat: 1.3739234227917898, lng: 103.75422672993687},
+{lat: 1.3691737601697984, lng: 103.75790467021734},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2300DC',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.364910517159, lng: 103.75028752446},
+    map: map,
+    radius: 100,
+    infotext: "Swiss Cottage Secondary School: 6-11",
+  });
+  circ.addListener('click', showInfo);
+// Anglican High School
+var coords = [
+{lat: 1.3251666501829873, lng: 103.9347648079355},
+{lat: 1.3328918107529033, lng: 103.93882854378737},
+{lat: 1.3328214050993896, lng: 103.94931129878799},
+{lat: 1.3286917154034912, lng: 103.94681970805594},
+{lat: 1.3251666501829873, lng: 103.9347648079355},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2900D6',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3306919380625, lng: 103.94177280357},
+    map: map,
+    radius: 100,
+    infotext: "Anglican High School: 4-12",
+  });
+  circ.addListener('click', showInfo);
+// Commonwealth Secondary School
+var coords = [
+{lat: 1.308110817305207, lng: 103.75129510718033},
+{lat: 1.3176423271200484, lng: 103.73108005786266},
+{lat: 1.3333620281192617, lng: 103.73921337471792},
+{lat: 1.3341107698271997, lng: 103.74346341040925},
+{lat: 1.3319515180111863, lng: 103.75193197647924},
+{lat: 1.3289633457587922, lng: 103.7567075576818},
+{lat: 1.308110817305207, lng: 103.75129510718033},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3100CE',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3195980557942, lng: 103.74571537917},
+    map: map,
+    radius: 100,
+    infotext: "Commonwealth Secondary School: 8-12",
+  });
+  circ.addListener('click', showInfo);
+// Kuo Chuan Presbyterian Secondary School
+var coords = [
+{lat: 1.3547297517790373, lng: 103.86267512738438},
+{lat: 1.3439966998181148, lng: 103.86158246426936},
+{lat: 1.3457116104557476, lng: 103.85561929238695},
+{lat: 1.350180924474583, lng: 103.84885176024984},
+{lat: 1.3583636369250462, lng: 103.85208268410814},
+{lat: 1.359626043451863, lng: 103.8600048264054},
+{lat: 1.3547297517790373, lng: 103.86267512738438},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3300CC',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3508684681557, lng: 103.85473288466},
+    map: map,
+    radius: 100,
+    infotext: "Kuo Chuan Presbyterian Secondary School: 10-12",
+  });
+  circ.addListener('click', showInfo);
+// Maris Stella High School
+var coords = [
+{lat: 1.346291919312093, lng: 103.88158652798607},
+{lat: 1.3367199439382187, lng: 103.87909112514275},
+{lat: 1.340722779182325, lng: 103.86922366171845},
+{lat: 1.3416291994033926, lng: 103.87008004606871},
+{lat: 1.3463154541385542, lng: 103.88155774265395},
+{lat: 1.346291919312093, lng: 103.88158652798607},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2F00D0',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3416639002495, lng: 103.87780849516},
+    map: map,
+    radius: 100,
+    infotext: "Maris Stella High School: 7-12",
+  });
+  circ.addListener('click', showInfo);
+// Nan Chiau High School SAP
+var coords = [
+{lat: 1.3815752721638666, lng: 103.88941376720847},
+{lat: 1.3852121023569532, lng: 103.88386743451485},
+{lat: 1.4057626068999307, lng: 103.88622398134855},
+{lat: 1.392169500887587, lng: 103.89548974965517},
+{lat: 1.3831257002220219, lng: 103.89238672227593},
+{lat: 1.3814673674355298, lng: 103.89082391778389},
+{lat: 1.3815752721638666, lng: 103.88941376720847},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2B00D4',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3895539099102, lng: 103.89010955196},
+    map: map,
+    radius: 100,
+    infotext: "Nan Chiau High School SAP: 5-12",
+  });
+  circ.addListener('click', showInfo);
+// Ngee Ann Secondary School
+var coords = [
+{lat: 1.3537390055445497, lng: 103.95985094684714},
+{lat: 1.3465649815375351, lng: 103.95761470878429},
+{lat: 1.3480299258964952, lng: 103.9523257864486},
+{lat: 1.357228014247455, lng: 103.9528079810717},
+{lat: 1.357600915731362, lng: 103.95751303149065},
+{lat: 1.3537390055445497, lng: 103.95985094684714},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#2D00D2',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3543164724315, lng: 103.95667570683},
+    map: map,
+    radius: 100,
+    infotext: "Ngee Ann Secondary School: 6-12",
+  });
+  circ.addListener('click', showInfo);
+// CHIJ St. Theresa’s Convent
+var coords = [
+{lat: 1.2830003906199223, lng: 103.820090303078},
+{lat: 1.2820815589652785, lng: 103.82881967046707},
+{lat: 1.2785706198812063, lng: 103.83138850346862},
+{lat: 1.2756402743047, lng: 103.82211455242},
+{lat: 1.278733797476183, lng: 103.81532108826984},
+{lat: 1.2830003906199223, lng: 103.820090303078},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3E00C1',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.2756402743047, lng: 103.82211455242},
+    map: map,
+    radius: 100,
+    infotext: "CHIJ St. Theresa’s Convent: 10-13",
+  });
+  circ.addListener('click', showInfo);
+// Fuhua Secondary School
+var coords = [
+{lat: 1.3509927852233008, lng: 103.72519930070204},
+{lat: 1.3462271550099136, lng: 103.73376176141933},
+{lat: 1.3377549951382879, lng: 103.7344446122711},
+{lat: 1.3385251275510195, lng: 103.72910009321683},
+{lat: 1.3435768254327045, lng: 103.72463405163727},
+{lat: 1.3502531530648647, lng: 103.72446950129749},
+{lat: 1.3509927852233008, lng: 103.72519930070204},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3600C9',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3473912985205, lng: 103.72662471518},
+    map: map,
+    radius: 100,
+    infotext: "Fuhua Secondary School: 7-13",
+  });
+  circ.addListener('click', showInfo);
+// Presbyterian High School
+var coords = [
+{lat: 1.3795113013742326, lng: 103.84780147060404},
+{lat: 1.382303921787309, lng: 103.83463483877411},
+{lat: 1.3957230929758002, lng: 103.82066147499918},
+{lat: 1.3967167934561566, lng: 103.82367062230345},
+{lat: 1.401316209205096, lng: 103.8565118172132},
+{lat: 1.401257284177136, lng: 103.85760069813168},
+{lat: 1.392577210123338, lng: 103.85953522071696},
+{lat: 1.3795113013742326, lng: 103.84780147060404},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4000BF',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3828492189944, lng: 103.8428523351},
+    map: map,
+    radius: 100,
+    infotext: "Presbyterian High School: 10-13",
+  });
+  circ.addListener('click', showInfo);
+// St. Patrick’s School
+var coords = [
+{lat: 1.3245185169405835, lng: 103.91696752948637},
+{lat: 1.3229066455685037, lng: 103.92154933736822},
+{lat: 1.308724280377277, lng: 103.92223509818461},
+{lat: 1.3053322417695754, lng: 103.90722706236606},
+{lat: 1.3166111399252352, lng: 103.90720167367995},
+{lat: 1.3245185169405835, lng: 103.91696752948637},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4200BD',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3084441877593, lng: 103.91690995014},
+    map: map,
+    radius: 100,
+    infotext: "St. Patrick’s School: 10-13",
+  });
+  circ.addListener('click', showInfo);
+// Tanjong Katong Girls’ School
+var coords = [
+{lat: 1.3111043591147715, lng: 103.89145549671993},
+{lat: 1.3154030390236304, lng: 103.89127807859707},
+{lat: 1.3174871230146208, lng: 103.89285479501156},
+{lat: 1.3002669808884917, lng: 103.90005309768154},
+{lat: 1.2994436452180818, lng: 103.89744740681519},
+{lat: 1.3111043591147715, lng: 103.89145549671993},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3A00C5',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.307776326867, lng: 103.8960369307},
+    map: map,
+    radius: 100,
+    infotext: "Tanjong Katong Girls’ School: 8-13",
+  });
+  circ.addListener('click', showInfo);
+// Temasek Secondary School
+var coords = [
+{lat: 1.3158064821212765, lng: 103.93638256436276},
+{lat: 1.3212875825241748, lng: 103.9477046284794},
+{lat: 1.32070127190875, lng: 103.94924119222},
+{lat: 1.3162429364103, lng: 103.94754001357},
+{lat: 1.312601102039298, lng: 103.93755122039},
+{lat: 1.3158064821212765, lng: 103.93638256436276},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3800C7',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3162429364103, lng: 103.94754001357},
+    map: map,
+    radius: 100,
+    infotext: "Temasek Secondary School: 7-13",
+  });
+  circ.addListener('click', showInfo);
+// Yishun Town Secondary School
+var coords = [
+{lat: 1.4318715674089382, lng: 103.83284198727608},
+{lat: 1.437269737910465, lng: 103.83514343942544},
+{lat: 1.4295371837116413, lng: 103.84582837985484},
+{lat: 1.4261229309164993, lng: 103.83995021116093},
+{lat: 1.426263866138373, lng: 103.83598593905467},
+{lat: 1.4318715674089382, lng: 103.83284198727608},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3400CB',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4329083547684, lng: 103.83809493864},
+    map: map,
+    radius: 100,
+    infotext: "Yishun Town Secondary School: 6-13",
+  });
+  circ.addListener('click', showInfo);
+// Zhonghua Secondary School
+var coords = [
+{lat: 1.3416291994033926, lng: 103.87008004606871},
+{lat: 1.340722779182325, lng: 103.86922366171845},
+{lat: 1.340312037356998, lng: 103.86798091529369},
+{lat: 1.3413216880238683, lng: 103.86273093234547},
+{lat: 1.3439966998181148, lng: 103.86158246426936},
+{lat: 1.3547297517790373, lng: 103.86267512738438},
+{lat: 1.3540573942231755, lng: 103.87495600369022},
+{lat: 1.3416291994033926, lng: 103.87008004606871},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#3C00C3',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3493471737637, lng: 103.8696763119},
+    map: map,
+    radius: 100,
+    infotext: "Zhonghua Secondary School: 8-13",
+  });
+  circ.addListener('click', showInfo);
+// CHIJ St. Joseph’s Convent
+var coords = [
+{lat: 1.3850754286243279, lng: 103.90582626765764},
+{lat: 1.391801050421902, lng: 103.89746158270269},
+{lat: 1.3964300310319104, lng: 103.90459207908427},
+{lat: 1.396401551204092, lng: 103.90645109384545},
+{lat: 1.383262000785339, lng: 103.91500973082222},
+{lat: 1.3833730050889024, lng: 103.9110962052497},
+{lat: 1.3850754286243279, lng: 103.90582626765764},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4E00B1',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3922208231293, lng: 103.90248798282},
+    map: map,
+    radius: 100,
+    infotext: "CHIJ St. Joseph’s Convent: 7-14",
+  });
+  circ.addListener('click', showInfo);
+// Clementi Town Secondary School
+var coords = [
+{lat: 1.3289633457587922, lng: 103.7567075576818},
+{lat: 1.329561495526182, lng: 103.76818369525193},
+{lat: 1.324345881673683, lng: 103.77249523456851},
+{lat: 1.315284198003868, lng: 103.76870827647318},
+{lat: 1.308085048033568, lng: 103.7614998539111},
+{lat: 1.3064832483191897, lng: 103.75474696191893},
+{lat: 1.308110817305207, lng: 103.75129510718033},
+{lat: 1.3289633457587922, lng: 103.7567075576818},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4A00B5',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3154342388987, lng: 103.76175730145},
+    map: map,
+    radius: 100,
+    infotext: "Clementi Town Secondary School: 7-14",
+  });
+  circ.addListener('click', showInfo);
+// Dunman Secondary School
+var coords = [
+{lat: 1.357600915731362, lng: 103.95751303149065},
+{lat: 1.357228014247455, lng: 103.9528079810717},
+{lat: 1.361183225014371, lng: 103.94966160456565},
+{lat: 1.3644356729207563, lng: 103.9529717285592},
+{lat: 1.3631899361940034, lng: 103.9602235553978},
+{lat: 1.361067492420075, lng: 103.96041941620747},
+{lat: 1.357600915731362, lng: 103.95751303149065},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5000AF',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3607124576949, lng: 103.95616878933},
+    map: map,
+    radius: 100,
+    infotext: "Dunman Secondary School: 9-14",
+  });
+  circ.addListener('click', showInfo);
+// Edgefield Secondary School
+var coords = [
+{lat: 1.3980911489797985, lng: 103.90688269585713},
+{lat: 1.396401551204092, lng: 103.90645109384545},
+{lat: 1.3964300310319104, lng: 103.90459207908427},
+{lat: 1.4079480336946808, lng: 103.8856686227005},
+{lat: 1.4173160483489624, lng: 103.88180026135878},
+{lat: 1.4047910196395546, lng: 103.90499632678068},
+{lat: 1.3980911489797985, lng: 103.90688269585713},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4C00B3',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4007017173667, lng: 103.90261790885},
+    map: map,
+    radius: 100,
+    infotext: "Edgefield Secondary School: 7-14",
+  });
+  circ.addListener('click', showInfo);
+// Kranji Secondary School
+var coords = [
+{lat: 1.3944748764328416, lng: 103.74528025123806},
+{lat: 1.3862177814041607, lng: 103.74784667133744},
+{lat: 1.3839870648830195, lng: 103.74670494059998},
+{lat: 1.3896059815702877, lng: 103.73130603791613},
+{lat: 1.3977986780264806, lng: 103.73831024065372},
+{lat: 1.3944748764328416, lng: 103.74528025123806},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5200AD',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3907677016437, lng: 103.7414675636},
+    map: map,
+    radius: 100,
+    infotext: "Kranji Secondary School: 10-14",
+  });
+  circ.addListener('click', showInfo);
+// Riverside Secondary School
+var coords = [
+{lat: 1.4346163131373855, lng: 103.7919531843795},
+{lat: 1.4339812729210886, lng: 103.79093386702212},
+{lat: 1.4317856087395613, lng: 103.78462234836236},
+{lat: 1.4422358456927302, lng: 103.78125009286433},
+{lat: 1.4423634026684446, lng: 103.78123893256684},
+{lat: 1.4456683545980429, lng: 103.79070905216541},
+{lat: 1.4346163131373855, lng: 103.7919531843795},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4800B7',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4411932202072, lng: 103.78843370852},
+    map: map,
+    radius: 100,
+    infotext: "Riverside Secondary School: 6-14",
+  });
+  circ.addListener('click', showInfo);
+// Tanjong Katong Secondary School
+var coords = [
+{lat: 1.3053322417695754, lng: 103.90722706236606},
+{lat: 1.3024550095775915, lng: 103.90697776592488},
+{lat: 1.3002669808884917, lng: 103.90005309768154},
+{lat: 1.3174871230146208, lng: 103.89285479501156},
+{lat: 1.319146345225815, lng: 103.89391457089559},
+{lat: 1.3166111399252352, lng: 103.90720167367995},
+{lat: 1.3053322417695754, lng: 103.90722706236606},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4400BB',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3084005642785, lng: 103.89753026287},
+    map: map,
+    radius: 100,
+    infotext: "Tanjong Katong Secondary School: 5-14",
+  });
+  circ.addListener('click', showInfo);
+// Xinmin Secondary School
+var coords = [
+{lat: 1.3755959323655995, lng: 103.88558314103523},
+{lat: 1.364993465536861, lng: 103.88694067061121},
+{lat: 1.36345287140774, lng: 103.88380483618592},
+{lat: 1.3749267590100476, lng: 103.87920704513218},
+{lat: 1.3755959323655995, lng: 103.88558314103523},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#4600B9',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3728160487914, lng: 103.88289235624},
+    map: map,
+    radius: 100,
+    infotext: "Xinmin Secondary School: 5-14",
+  });
+  circ.addListener('click', showInfo);
+// Bukit Batok Secondary School
+var coords = [
+{lat: 1.3497457322696575, lng: 103.74711127208171},
+{lat: 1.3341107698271997, lng: 103.74346341040925},
+{lat: 1.3333620281192617, lng: 103.73921337471792},
+{lat: 1.3377549951382879, lng: 103.7344446122711},
+{lat: 1.3462271550099136, lng: 103.73376176141933},
+{lat: 1.3578812344783944, lng: 103.73693399760042},
+{lat: 1.3555721582702622, lng: 103.7449506452697},
+{lat: 1.3497457322696575, lng: 103.74711127208171},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5C00A3',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3485193284213, lng: 103.74062023065},
+    map: map,
+    radius: 100,
+    infotext: "Bukit Batok Secondary School: 11-15",
+  });
+  circ.addListener('click', showInfo);
+// CHIJ Katong Convent
+var coords = [
+{lat: 1.3053322417695754, lng: 103.90722706236606},
+{lat: 1.308724280377277, lng: 103.92223509818461},
+{lat: 1.3073707227814448, lng: 103.92253500394726},
+{lat: 1.3024550095775915, lng: 103.90697776592488},
+{lat: 1.3053322417695754, lng: 103.90722706236606},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5E00A1',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3066870095838, lng: 103.91730709846},
+    map: map,
+    radius: 100,
+    infotext: "CHIJ Katong Convent: 11-15",
+  });
+  circ.addListener('click', showInfo);
+// Evergreen Secondary School
+var coords = [
+{lat: 1.4364729163316072, lng: 103.80227848241333},
+{lat: 1.4346163131373855, lng: 103.7919531843795},
+{lat: 1.4456683545980429, lng: 103.79070905216541},
+{lat: 1.447620521420079, lng: 103.79630285615255},
+{lat: 1.4364729163316072, lng: 103.80227848241333},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5600A9',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4418110816539, lng: 103.79392237785},
+    map: map,
+    radius: 100,
+    infotext: "Evergreen Secondary School: 9-15",
+  });
+  circ.addListener('click', showInfo);
+// Gan Eng Seng School
+var coords = [
+{lat: 1.2830003906199223, lng: 103.820090303078},
+{lat: 1.2877389636716705, lng: 103.81832525064293},
+{lat: 1.3050477415030994, lng: 103.82872886675982},
+{lat: 1.3029883537736044, lng: 103.83390357125342},
+{lat: 1.2820815589652785, lng: 103.82881967046707},
+{lat: 1.2830003906199223, lng: 103.820090303078},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5800A7',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.2897777408804, lng: 103.82360262724},
+    map: map,
+    radius: 100,
+    infotext: "Gan Eng Seng School: 10-15",
+  });
+  circ.addListener('click', showInfo);
+// Geylang Methodist School (Secondary)
+var coords = [
+{lat: 1.3174871230146208, lng: 103.89285479501156},
+{lat: 1.3154030390236304, lng: 103.89127807859707},
+{lat: 1.3048974022963304, lng: 103.86687376126426},
+{lat: 1.3214555096812568, lng: 103.87186407327245},
+{lat: 1.32343423302164, lng: 103.87347495905395},
+{lat: 1.3291606669759584, lng: 103.88516112952719},
+{lat: 1.3291637627873265, lng: 103.88858064568053},
+{lat: 1.319146345225815, lng: 103.89391457089559},
+{lat: 1.3174871230146208, lng: 103.89285479501156},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#60009F',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3179083142361, lng: 103.88264459681},
+    map: map,
+    radius: 100,
+    infotext: "Geylang Methodist School (Secondary): 11-15",
+  });
+  circ.addListener('click', showInfo);
+// Holy Innocents’ High School
+var coords = [
+{lat: 1.360041229057215, lng: 103.90582451959551},
+{lat: 1.3653866245267188, lng: 103.89062054074488},
+{lat: 1.3778072417764498, lng: 103.89360961804267},
+{lat: 1.3765888320470125, lng: 103.89734464740137},
+{lat: 1.360041229057215, lng: 103.90582451959551},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5A00A5',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3718977227577, lng: 103.8958931519},
+    map: map,
+    radius: 100,
+    infotext: "Holy Innocents’ High School: 10-15",
+  });
+  circ.addListener('click', showInfo);
+// Jurong Secondary School
+var coords = [
+{lat: 1.3334617882122048, lng: 103.71321514109032},
+{lat: 1.3385251275510195, lng: 103.72910009321683},
+{lat: 1.3377549951382879, lng: 103.7344446122711},
+{lat: 1.3333620281192617, lng: 103.73921337471792},
+{lat: 1.3176423271200484, lng: 103.73108005786266},
+{lat: 1.326783144965661, lng: 103.71169361362219},
+{lat: 1.3334617882122048, lng: 103.71321514109032},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#5400AB',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3307185437822, lng: 103.7242222111},
+    map: map,
+    radius: 100,
+    infotext: "Jurong Secondary School: 6-15",
+  });
+  circ.addListener('click', showInfo);
+// St. Hilda’s Secondary School
+var coords = [
+{lat: 1.3578160506884982, lng: 103.94075810587965},
+{lat: 1.3561059783315077, lng: 103.94135532603123},
+{lat: 1.3428086008511073, lng: 103.93925884141854},
+{lat: 1.342175775835783, lng: 103.93741864539535},
+{lat: 1.3424149291683272, lng: 103.93399177447469},
+{lat: 1.3503645676699714, lng: 103.93343144021259},
+{lat: 1.3578160506884982, lng: 103.94075810587965},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#62009D',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3504888795623, lng: 103.93649347673},
+    map: map,
+    radius: 100,
+    infotext: "St. Hilda’s Secondary School: 12-15",
+  });
+  circ.addListener('click', showInfo);
+// Ang Mo Kio Secondary School
+var coords = [
+{lat: 1.3703421584883637, lng: 103.84796570643456},
+{lat: 1.361835343202796, lng: 103.84651931638147},
+{lat: 1.3617694869959365, lng: 103.8461639915281},
+{lat: 1.3616296816473243, lng: 103.8386189669811},
+{lat: 1.3719070091086971, lng: 103.83916395431156},
+{lat: 1.373080093612829, lng: 103.84004375962874},
+{lat: 1.3734212772876933, lng: 103.84559659968762},
+{lat: 1.3703421584883637, lng: 103.84796570643456},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#6B0094',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3679610491473, lng: 103.84256915829},
+    map: map,
+    radius: 100,
+    infotext: "Ang Mo Kio Secondary School: 11-16",
+  });
+  circ.addListener('click', showInfo);
+// Bowen Secondary School
+var coords = [
+{lat: 1.36345287140774, lng: 103.88380483618592},
+{lat: 1.3606317219072788, lng: 103.88071907113476},
+{lat: 1.3650929393567286, lng: 103.87409958549718},
+{lat: 1.3791590893035595, lng: 103.87253037616303},
+{lat: 1.3749267590100476, lng: 103.87920704513218},
+{lat: 1.36345287140774, lng: 103.88380483618592},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#690096',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3708552220829, lng: 103.87799907053},
+    map: map,
+    radius: 100,
+    infotext: "Bowen Secondary School: 11-16",
+  });
+  circ.addListener('click', showInfo);
+// Hai Sing Catholic School
+var coords = [
+{lat: 1.3706652587724222, lng: 103.95607679431679},
+{lat: 1.3699140971282293, lng: 103.95353815204761},
+{lat: 1.386655698318734, lng: 103.93356971703774},
+{lat: 1.3877681806851805, lng: 103.93418571091055},
+{lat: 1.3741199728771862, lng: 103.95730357357655},
+{lat: 1.3706652587724222, lng: 103.95607679431679},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#670098',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3744687216677, lng: 103.95498214423},
+    map: map,
+    radius: 100,
+    infotext: "Hai Sing Catholic School: 10-16",
+  });
+  circ.addListener('click', showInfo);
+// Hua Yi Secondary School
+var coords = [
+{lat: 1.3690039917101204, lng: 103.72687288787859},
+{lat: 1.3509927852233008, lng: 103.72519930070204},
+{lat: 1.3502531530648647, lng: 103.72446950129749},
+{lat: 1.3480856307087765, lng: 103.71193716679474},
+{lat: 1.348130793688536, lng: 103.71145989759059},
+{lat: 1.3483836003186127, lng: 103.71133852272499},
+{lat: 1.3678531928410194, lng: 103.71270887113684},
+{lat: 1.3740079072157663, lng: 103.71797073669029},
+{lat: 1.3690039917101204, lng: 103.72687288787859},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#660099',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3523698752602, lng: 103.72157906094},
+    map: map,
+    radius: 100,
+    infotext: "Hua Yi Secondary School: 9-16",
+  });
+  circ.addListener('click', showInfo);
+// Pei Hwa Secondary School
+var coords = [
+{lat: 1.4079480336946808, lng: 103.8856686227005},
+{lat: 1.4057626068999307, lng: 103.88622398134855},
+{lat: 1.3852121023569532, lng: 103.88386743451485},
+{lat: 1.381681889123322, lng: 103.87103677800508},
+{lat: 1.3849403450771796, lng: 103.86401430113142},
+{lat: 1.392577210123338, lng: 103.85953522071696},
+{lat: 1.401257284177136, lng: 103.85760069813168},
+{lat: 1.4208926367532975, lng: 103.8751765018019},
+{lat: 1.4173160483489624, lng: 103.88180026135878},
+{lat: 1.4079480336946808, lng: 103.8856686227005},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#64009B',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3908542067398, lng: 103.8787701822},
+    map: map,
+    radius: 100,
+    infotext: "Pei Hwa Secondary School: 6-16",
+  });
+  circ.addListener('click', showInfo);
+// St. Anthony’s Canossian Secondary School
+var coords = [
+{lat: 1.3328918107529033, lng: 103.93882854378737},
+{lat: 1.342175775835783, lng: 103.93741864539535},
+{lat: 1.3428086008511073, lng: 103.93925884141854},
+{lat: 1.341757366131377, lng: 103.94535502237315},
+{lat: 1.3330648543750117, lng: 103.94957477862887},
+{lat: 1.3328214050993896, lng: 103.94931129878799},
+{lat: 1.3328918107529033, lng: 103.93882854378737},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#6D0092',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3350519375205, lng: 103.94180208677},
+    map: map,
+    radius: 100,
+    infotext: "St. Anthony’s Canossian Secondary School: 12-16",
+  });
+  circ.addListener('click', showInfo);
+// Ahmad Ibrahim Secondary School
+var coords = [
+{lat: 1.437269737910465, lng: 103.83514343942544},
+{lat: 1.4318715674089382, lng: 103.83284198727608},
+{lat: 1.4331541824072245, lng: 103.81811778749312},
+{lat: 1.446709913258253, lng: 103.82736349883655},
+{lat: 1.442361532899358, lng: 103.83541659936226},
+{lat: 1.437269737910465, lng: 103.83514343942544},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#770088',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4363795818861, lng: 103.82995300276},
+    map: map,
+    radius: 100,
+    infotext: "Ahmad Ibrahim Secondary School: 12-17",
+  });
+  circ.addListener('click', showInfo);
+// Mayflower Secondary School
+var coords = [
+{lat: 1.3616296816473243, lng: 103.8386189669811},
+{lat: 1.3597180509686848, lng: 103.8353061187382},
+{lat: 1.3706794037540995, lng: 103.8316690918167},
+{lat: 1.3719070091086971, lng: 103.83916395431156},
+{lat: 1.3616296816473243, lng: 103.8386189669811},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#73008C',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3683433092848, lng: 103.83536052721},
+    map: map,
+    radius: 100,
+    infotext: "Mayflower Secondary School: 11-17",
+  });
+  circ.addListener('click', showInfo);
+// Queensway Secondary School
+var coords = [
+{lat: 1.3145934445124425, lng: 103.79423482191413},
+{lat: 1.3069078712884004, lng: 103.81412672904443},
+{lat: 1.2938543871980777, lng: 103.80842410795574},
+{lat: 1.286306646813273, lng: 103.79869089750213},
+{lat: 1.2893178277279074, lng: 103.79207825927081},
+{lat: 1.3145934445124425, lng: 103.79423482191413},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#790086',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3002843826893, lng: 103.80179006167},
+    map: map,
+    radius: 100,
+    infotext: "Queensway Secondary School: 13-17",
+  });
+  circ.addListener('click', showInfo);
+// St. Gabriel’s Secondary School
+var coords = [
+{lat: 1.3463154541385542, lng: 103.88155774265395},
+{lat: 1.3416291994033926, lng: 103.87008004606871},
+{lat: 1.3540573942231755, lng: 103.87495600369022},
+{lat: 1.3553659603222914, lng: 103.87793597001843},
+{lat: 1.3463154541385542, lng: 103.88155774265395},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#75008A',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3470136186927, lng: 103.8756242465},
+    map: map,
+    radius: 100,
+    infotext: "St. Gabriel’s Secondary School: 11-17",
+  });
+  circ.addListener('click', showInfo);
+// West Spring Secondary School
+var coords = [
+{lat: 1.3822268191847742, lng: 103.76401369531965},
+{lat: 1.381468258741608, lng: 103.76138194151841},
+{lat: 1.3895306387994004, lng: 103.75474257177198},
+{lat: 1.3989765284188167, lng: 103.7602010458058},
+{lat: 1.3822268191847742, lng: 103.76401369531965},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#71008E',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3878974776926, lng: 103.76035997701},
+    map: map,
+    radius: 100,
+    infotext: "West Spring Secondary School: 9-17",
+  });
+  circ.addListener('click', showInfo);
+// Yusof Ishak Secondary School
+var coords = [
+{lat: 1.3319515180111863, lng: 103.75193197647924},
+{lat: 1.3490800181946545, lng: 103.75804001987898},
+{lat: 1.3550904478535073, lng: 103.76614698637505},
+{lat: 1.3522302614161472, lng: 103.77779515227141},
+{lat: 1.329561495526182, lng: 103.76818369525193},
+{lat: 1.3289633457587922, lng: 103.7567075576818},
+{lat: 1.3319515180111863, lng: 103.75193197647924},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#6F0090',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3429441159751, lng: 103.76032345435},
+    map: map,
+    radius: 100,
+    infotext: "Yusof Ishak Secondary School: 8-17",
+  });
+  circ.addListener('click', showInfo);
+// Beatty Secondary School
+var coords = [
+{lat: 1.3394682622971505, lng: 103.84512993307688},
+{lat: 1.3457116104557476, lng: 103.85561929238695},
+{lat: 1.3439966998181148, lng: 103.86158246426936},
+{lat: 1.3413216880238683, lng: 103.86273093234547},
+{lat: 1.3332061741327739, lng: 103.85666480539703},
+{lat: 1.3314151842180755, lng: 103.85312817620203},
+{lat: 1.3394682622971505, lng: 103.84512993307688},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#870078',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3418134729269, lng: 103.85212881623},
+    map: map,
+    radius: 100,
+    infotext: "Beatty Secondary School: 12-18",
+  });
+  circ.addListener('click', showInfo);
+// Bedok View Secondary School
+var coords = [
+{lat: 1.3212875825241748, lng: 103.9477046284794},
+{lat: 1.3158064821212765, lng: 103.93638256436276},
+{lat: 1.3217415140659803, lng: 103.9307261052985},
+{lat: 1.3251666501829873, lng: 103.9347648079355},
+{lat: 1.3286917154034912, lng: 103.94681970805594},
+{lat: 1.3212875825241748, lng: 103.9477046284794},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#8F0070',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3242875149622, lng: 103.94364556974},
+    map: map,
+    radius: 100,
+    infotext: "Bedok View Secondary School: 14-18",
+  });
+  circ.addListener('click', showInfo);
+// Compassvale Secondary School
+var coords = [
+{lat: 1.391801050421902, lng: 103.89746158270269},
+{lat: 1.392169500887587, lng: 103.89548974965517},
+{lat: 1.4057626068999307, lng: 103.88622398134855},
+{lat: 1.4079480336946808, lng: 103.8856686227005},
+{lat: 1.3964300310319104, lng: 103.90459207908427},
+{lat: 1.391801050421902, lng: 103.89746158270269},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#91006E',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3962213832238, lng: 103.89989089643},
+    map: map,
+    radius: 100,
+    infotext: "Compassvale Secondary School: 7-19",
+  });
+  circ.addListener('click', showInfo);
+// Deyi Secondary School
+var coords = [
+{lat: 1.3636723114325269, lng: 103.86158172967124},
+{lat: 1.359626043451863, lng: 103.8600048264054},
+{lat: 1.3583636369250462, lng: 103.85208268410814},
+{lat: 1.361835343202796, lng: 103.84651931638147},
+{lat: 1.3703421584883637, lng: 103.84796570643456},
+{lat: 1.3712075500459295, lng: 103.85998828450634},
+{lat: 1.3636723114325269, lng: 103.86158172967124},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#7B0084',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3663112944687, lng: 103.85227204465},
+    map: map,
+    radius: 100,
+    infotext: "Deyi Secondary School: 8-18",
+  });
+  circ.addListener('click', showInfo);
+// Greendale Secondary School
+var coords = [
+{lat: 1.3980911489797985, lng: 103.90688269585713},
+{lat: 1.401119799994674, lng: 103.91157022132337},
+{lat: 1.3877681806851805, lng: 103.93418571091055},
+{lat: 1.386655698318734, lng: 103.93356971703774},
+{lat: 1.3782969719832674, lng: 103.92672725100219},
+{lat: 1.383262000785339, lng: 103.91500973082222},
+{lat: 1.396401551204092, lng: 103.90645109384545},
+{lat: 1.3980911489797985, lng: 103.90688269585713},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#7D0082',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3983365088694, lng: 103.91187702004},
+    map: map,
+    radius: 100,
+    infotext: "Greendale Secondary School: 8-18",
+  });
+  circ.addListener('click', showInfo);
+// Jurong West Secondary School
+var coords = [
+{lat: 1.339049321798849, lng: 103.69509546101274},
+{lat: 1.3396823428243796, lng: 103.7110926290812},
+{lat: 1.3334617882122048, lng: 103.71321514109032},
+{lat: 1.326783144965661, lng: 103.71169361362219},
+{lat: 1.3349366642254226, lng: 103.69440109678587},
+{lat: 1.339049321798849, lng: 103.69509546101274},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#7F0080',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3357570527452, lng: 103.70210601237},
+    map: map,
+    radius: 100,
+    infotext: "Jurong West Secondary School: 8-18",
+  });
+  circ.addListener('click', showInfo);
+// Kent Ridge Secondary School
+var coords = [
+{lat: 1.3018709650064857, lng: 103.77240025682408},
+{lat: 1.2981283836033877, lng: 103.77273003003017},
+{lat: 1.3016344346223, lng: 103.76503064309},
+{lat: 1.3064832483191897, lng: 103.75474696191893},
+{lat: 1.308085048033568, lng: 103.7614998539111},
+{lat: 1.3018709650064857, lng: 103.77240025682408},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#85007A',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3016344346223, lng: 103.76503064309},
+    map: map,
+    radius: 100,
+    infotext: "Kent Ridge Secondary School: 11-18",
+  });
+  circ.addListener('click', showInfo);
+// North Vista Secondary Schoo
+var coords = [
+{lat: 1.3765888320470125, lng: 103.89734464740137},
+{lat: 1.3778072417764498, lng: 103.89360961804267},
+{lat: 1.3814673674355298, lng: 103.89082391778389},
+{lat: 1.3831257002220219, lng: 103.89238672227593},
+{lat: 1.3850754286243279, lng: 103.90582626765764},
+{lat: 1.3833730050889024, lng: 103.9110962052497},
+{lat: 1.3765888320470125, lng: 103.89734464740137},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#8B0074',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3812334759136, lng: 103.89893858244},
+    map: map,
+    radius: 100,
+    infotext: "North Vista Secondary Schoo: 12-18",
+  });
+  circ.addListener('click', showInfo);
+// Pasir Ris Crest Secondary School
+var coords = [
+{lat: 1.3706652587724222, lng: 103.95607679431679},
+{lat: 1.3741199728771862, lng: 103.95730357357655},
+{lat: 1.3729265416047, lng: 103.95932505366},
+{lat: 1.369427008144852, lng: 103.95964799340774},
+{lat: 1.3706652587724222, lng: 103.95607679431679},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#83007C',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3729265416047, lng: 103.95932505366},
+    map: map,
+    radius: 100,
+    infotext: "Pasir Ris Crest Secondary School: 11-18",
+  });
+  circ.addListener('click', showInfo);
+// Pasir Ris Secondary School
+var coords = [
+{lat: 1.3616450834923794, lng: 103.94042744141808},
+{lat: 1.361183225014371, lng: 103.94966160456565},
+{lat: 1.357228014247455, lng: 103.9528079810717},
+{lat: 1.3480299258964952, lng: 103.9523257864486},
+{lat: 1.3478299284510271, lng: 103.95163731045908},
+{lat: 1.3561059783315077, lng: 103.94135532603123},
+{lat: 1.3578160506884982, lng: 103.94075810587965},
+{lat: 1.3616450834923794, lng: 103.94042744141808},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#8D0072',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3547368385197, lng: 103.94865702675},
+    map: map,
+    radius: 100,
+    infotext: "Pasir Ris Secondary School: 12-18",
+  });
+  circ.addListener('click', showInfo);
+// Unity Secondary School
+var coords = [
+{lat: 1.3944748764328416, lng: 103.74528025123806},
+{lat: 1.3977986780264806, lng: 103.73831024065372},
+{lat: 1.4208259546527504, lng: 103.75799700859972},
+{lat: 1.413976689360624, lng: 103.76646411490705},
+{lat: 1.4082847964042304, lng: 103.76322919370604},
+{lat: 1.3944748764328416, lng: 103.74528025123806},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#890076',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3997709732368, lng: 103.74576097006},
+    map: map,
+    radius: 100,
+    infotext: "Unity Secondary School: 12-18",
+  });
+  circ.addListener('click', showInfo);
+// Bukit View Secondary School
+var coords = [
+{lat: 1.3341107698271997, lng: 103.74346341040925},
+{lat: 1.3497457322696575, lng: 103.74711127208171},
+{lat: 1.3490800181946545, lng: 103.75804001987898},
+{lat: 1.3319515180111863, lng: 103.75193197647924},
+{lat: 1.3341107698271997, lng: 103.74346341040925},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#95006A',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.345773417124, lng: 103.75238937758},
+    map: map,
+    radius: 100,
+    infotext: "Bukit View Secondary School: 13-19",
+  });
+  circ.addListener('click', showInfo);
+// Christ Church Secondary School
+var coords = [
+{lat: 1.4317856087395613, lng: 103.78462234836236},
+{lat: 1.4339812729210886, lng: 103.79093386702212},
+{lat: 1.405621038802134, lng: 103.80864509144448},
+{lat: 1.394589916457368, lng: 103.80643293263792},
+{lat: 1.3943752382720325, lng: 103.80615678974168},
+{lat: 1.4045690528201125, lng: 103.78349114301565},
+{lat: 1.4124493988677767, lng: 103.77305958633549},
+{lat: 1.4317856087395613, lng: 103.78462234836236},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#81007E',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4267747555021, lng: 103.79344963388},
+    map: map,
+    radius: 100,
+    infotext: "Christ Church Secondary School: 10-18",
+  });
+  circ.addListener('click', showInfo);
+// Hillgrove Secondary School
+var coords = [
+{lat: 1.3497457322696575, lng: 103.74711127208171},
+{lat: 1.3555721582702622, lng: 103.7449506452697},
+{lat: 1.358402314415001, lng: 103.7488707234338},
+{lat: 1.3607439684303742, lng: 103.75978548112097},
+{lat: 1.3550904478535073, lng: 103.76614698637505},
+{lat: 1.3490800181946545, lng: 103.75804001987898},
+{lat: 1.3497457322696575, lng: 103.74711127208171},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#970068',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3530480334555, lng: 103.75283250378},
+    map: map,
+    radius: 100,
+    infotext: "Hillgrove Secondary School: 13-19",
+  });
+  circ.addListener('click', showInfo);
+// Orchid Park Secondary School
+var coords = [
+{lat: 1.4167993001625894, lng: 103.83429820687118},
+{lat: 1.418034848203604, lng: 103.8417909575522},
+{lat: 1.401316209205096, lng: 103.8565118172132},
+{lat: 1.3967167934561566, lng: 103.82367062230345},
+{lat: 1.4167993001625894, lng: 103.83429820687118},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#990066',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4153202838307, lng: 103.83830475614},
+    map: map,
+    radius: 100,
+    infotext: "Orchid Park Secondary School: 13-19",
+  });
+  circ.addListener('click', showInfo);
+// Peirce Secondary School
+var coords = [
+{lat: 1.3444517575866224, lng: 103.81730369680132},
+{lat: 1.3488264079827195, lng: 103.80745781474272},
+{lat: 1.3617530751122102, lng: 103.79824441916408},
+{lat: 1.386071977755335, lng: 103.8050239882325},
+{lat: 1.3706794037540995, lng: 103.8316690918167},
+{lat: 1.3597180509686848, lng: 103.8353061187382},
+{lat: 1.3442614519298257, lng: 103.8217290604887},
+{lat: 1.3444517575866224, lng: 103.81730369680132},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#93006C',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3665999537303, lng: 103.83010636339},
+    map: map,
+    radius: 100,
+    infotext: "Peirce Secondary School: 10-19",
+  });
+  circ.addListener('click', showInfo);
+// Yuan Ching Secondary School
+var coords = [
+{lat: 1.3385251275510195, lng: 103.72910009321683},
+{lat: 1.3334617882122048, lng: 103.71321514109032},
+{lat: 1.3396823428243796, lng: 103.7110926290812},
+{lat: 1.348130793688536, lng: 103.71145989759059},
+{lat: 1.3480856307087765, lng: 103.71193716679474},
+{lat: 1.3435768254327045, lng: 103.72463405163727},
+{lat: 1.3385251275510195, lng: 103.72910009321683},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#9A0065',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3420688418478, lng: 103.72060429584},
+    map: map,
+    radius: 100,
+    infotext: "Yuan Ching Secondary School: 13-19",
+  });
+  circ.addListener('click', showInfo);
+// Bedok Green Secondary School
+var coords = [
+{lat: 1.3217415140659803, lng: 103.9307261052985},
+{lat: 1.3230106462407707, lng: 103.92663237481709},
+{lat: 1.342289536921919, lng: 103.93358807753775},
+{lat: 1.3424149291683272, lng: 103.93399177447469},
+{lat: 1.342175775835783, lng: 103.93741864539535},
+{lat: 1.3328918107529033, lng: 103.93882854378737},
+{lat: 1.3251666501829873, lng: 103.9347648079355},
+{lat: 1.3217415140659803, lng: 103.9307261052985},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#AE0051',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3340717594451, lng: 103.93534776419},
+    map: map,
+    radius: 100,
+    infotext: "Bedok Green Secondary School: 15-20",
+  });
+  circ.addListener('click', showInfo);
+// Bedok South Secondary School
+var coords = [
+{lat: 1.3212875825241748, lng: 103.9477046284794},
+{lat: 1.3286917154034912, lng: 103.94681970805594},
+{lat: 1.3328214050993896, lng: 103.94931129878799},
+{lat: 1.3330648543750117, lng: 103.94957477862887},
+{lat: 1.332609942163591, lng: 103.95326473864392},
+{lat: 1.3251596074072, lng: 103.95094237087},
+{lat: 1.32070127190875, lng: 103.94924119222},
+{lat: 1.3212875825241748, lng: 103.9477046284794},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A80057',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3251596074072, lng: 103.95094237087},
+    map: map,
+    radius: 100,
+    infotext: "Bedok South Secondary School: 14-20",
+  });
+  circ.addListener('click', showInfo);
+// Hougang Secondary School
+var coords = [
+{lat: 1.3791590893035595, lng: 103.87253037616303},
+{lat: 1.381681889123322, lng: 103.87103677800508},
+{lat: 1.3852121023569532, lng: 103.88386743451485},
+{lat: 1.3815752721638666, lng: 103.88941376720847},
+{lat: 1.3755959323655995, lng: 103.88558314103523},
+{lat: 1.3749267590100476, lng: 103.87920704513218},
+{lat: 1.3791590893035595, lng: 103.87253037616303},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B4004B',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3777566003889, lng: 103.88237384373},
+    map: map,
+    radius: 100,
+    infotext: "Hougang Secondary School: 16-20",
+  });
+  circ.addListener('click', showInfo);
+// Jurongville Secondary School
+var coords = [
+{lat: 1.3462271550099136, lng: 103.73376176141933},
+{lat: 1.3509927852233008, lng: 103.72519930070204},
+{lat: 1.3690039917101204, lng: 103.72687288787859},
+{lat: 1.3683613605519638, lng: 103.72897545336639},
+{lat: 1.3578812344783944, lng: 103.73693399760042},
+{lat: 1.3462271550099136, lng: 103.73376176141933},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B2004D',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3516792786436, lng: 103.72901128702},
+    map: map,
+    radius: 100,
+    infotext: "Jurongville Secondary School: 16-20",
+  });
+  circ.addListener('click', showInfo);
+// Meridian Secondary School
+var coords = [
+{lat: 1.3699140971282293, lng: 103.95353815204761},
+{lat: 1.3644356729207563, lng: 103.9529717285592},
+{lat: 1.361183225014371, lng: 103.94966160456565},
+{lat: 1.3616450834923794, lng: 103.94042744141808},
+{lat: 1.377032907668971, lng: 103.92653139047209},
+{lat: 1.3782969719832674, lng: 103.92672725100219},
+{lat: 1.386655698318734, lng: 103.93356971703774},
+{lat: 1.3699140971282293, lng: 103.95353815204761},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B0004F',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3676976787944, lng: 103.94930527975},
+    map: map,
+    radius: 100,
+    infotext: "Meridian Secondary School: 15-20",
+  });
+  circ.addListener('click', showInfo);
+// Naval Base Secondary School
+var coords = [
+{lat: 1.3957230929758002, lng: 103.82066147499918},
+{lat: 1.394589916457368, lng: 103.80643293263792},
+{lat: 1.405621038802134, lng: 103.80864509144448},
+{lat: 1.4203762004617289, lng: 103.81261126666219},
+{lat: 1.4243568081250269, lng: 103.83406892179272},
+{lat: 1.4167993001625894, lng: 103.83429820687118},
+{lat: 1.3967167934561566, lng: 103.82367062230345},
+{lat: 1.3957230929758002, lng: 103.82066147499918},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A0005F',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4192802066079, lng: 103.83082185396},
+    map: map,
+    radius: 100,
+    infotext: "Naval Base Secondary School: 11-20",
+  });
+  circ.addListener('click', showInfo);
+// New Town Secondary School
+var coords = [
+{lat: 1.324345881673683, lng: 103.77249523456851},
+{lat: 1.3176541927503562, lng: 103.78842088712977},
+{lat: 1.3130569087949013, lng: 103.78468270483499},
+{lat: 1.3041692750586444, lng: 103.77354561495679},
+{lat: 1.315284198003868, lng: 103.76870827647318},
+{lat: 1.324345881673683, lng: 103.77249523456851},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#AA0055',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3104436733247, lng: 103.77369905666},
+    map: map,
+    radius: 100,
+    infotext: "New Town Secondary School: 15-20",
+  });
+  circ.addListener('click', showInfo);
+// Punggol Secondary School
+var coords = [
+{lat: 1.3980911489797985, lng: 103.90688269585713},
+{lat: 1.4047910196395546, lng: 103.90499632678068},
+{lat: 1.4025433632321, lng: 103.90915893481},
+{lat: 1.401119799994674, lng: 103.91157022132337},
+{lat: 1.3980911489797985, lng: 103.90688269585713},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#9E0061',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4025433632321, lng: 103.90915893481},
+    map: map,
+    radius: 100,
+    infotext: "Punggol Secondary School: 11-20",
+  });
+  circ.addListener('click', showInfo);
+// Seng Kang Secondary School
+var coords = [
+{lat: 1.3831257002220219, lng: 103.89238672227593},
+{lat: 1.392169500887587, lng: 103.89548974965517},
+{lat: 1.391801050421902, lng: 103.89746158270269},
+{lat: 1.3850754286243279, lng: 103.90582626765764},
+{lat: 1.3831257002220219, lng: 103.89238672227593},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A4005B',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.386801741176, lng: 103.89813077201},
+    map: map,
+    radius: 100,
+    infotext: "Seng Kang Secondary School: 13-20",
+  });
+  circ.addListener('click', showInfo);
+// Tampines Secondary School
+var coords = [
+{lat: 1.3561059783315077, lng: 103.94135532603123},
+{lat: 1.3478299284510271, lng: 103.95163731045908},
+{lat: 1.341757366131377, lng: 103.94535502237315},
+{lat: 1.3428086008511073, lng: 103.93925884141854},
+{lat: 1.3561059783315077, lng: 103.94135532603123},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A60059',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3492654867709, lng: 103.94425309283},
+    map: map,
+    radius: 100,
+    infotext: "Tampines Secondary School: 14-20",
+  });
+  circ.addListener('click', showInfo);
+// Woodgrove Secondary School
+var coords = [
+{lat: 1.405621038802134, lng: 103.80864509144448},
+{lat: 1.4339812729210886, lng: 103.79093386702212},
+{lat: 1.4346163131373855, lng: 103.7919531843795},
+{lat: 1.4364729163316072, lng: 103.80227848241333},
+{lat: 1.4342262349598145, lng: 103.80878805956769},
+{lat: 1.4293510644555525, lng: 103.81278230859901},
+{lat: 1.4203762004617289, lng: 103.81261126666219},
+{lat: 1.405621038802134, lng: 103.80864509144448},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#AC0053',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4285582028052, lng: 103.79630539257},
+    map: map,
+    radius: 100,
+    infotext: "Woodgrove Secondary School: 15-20",
+  });
+  circ.addListener('click', showInfo);
+// Yishun Secondary School
+var coords = [
+{lat: 1.4203762004617289, lng: 103.81261126666219},
+{lat: 1.4293510644555525, lng: 103.81278230859901},
+{lat: 1.4331541824072245, lng: 103.81811778749312},
+{lat: 1.4318715674089382, lng: 103.83284198727608},
+{lat: 1.426263866138373, lng: 103.83598593905467},
+{lat: 1.4243568081250269, lng: 103.83406892179272},
+{lat: 1.4203762004617289, lng: 103.81261126666219},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#A2005D',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4279309761735, lng: 103.82921705048},
+    map: map,
+    radius: 100,
+    infotext: "Yishun Secondary School: 12-20",
+  });
+  circ.addListener('click', showInfo);
+// Zhenghua Secondary School
+var coords = [
+{lat: 1.4082847964042304, lng: 103.76322919370604},
+{lat: 1.413976689360624, lng: 103.76646411490705},
+{lat: 1.4124493988677767, lng: 103.77305958633549},
+{lat: 1.4045690528201125, lng: 103.78349114301565},
+{lat: 1.3820610515129663, lng: 103.76645010542914},
+{lat: 1.3822268191847742, lng: 103.76401369531965},
+{lat: 1.3989765284188167, lng: 103.7602010458058},
+{lat: 1.4082847964042304, lng: 103.76322919370604},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#9C0063',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3889202123018, lng: 103.76485304863},
+    map: map,
+    radius: 100,
+    infotext: "Zhenghua Secondary School: 11-20",
+  });
+  circ.addListener('click', showInfo);
+// Admiralty Secondary School
+var coords = [
+{lat: 1.4478166171304583, lng: 103.80977055054164},
+{lat: 1.4342262349598145, lng: 103.80878805956769},
+{lat: 1.4364729163316072, lng: 103.80227848241333},
+{lat: 1.447620521420079, lng: 103.79630285615255},
+{lat: 1.451499983585674, lng: 103.80741919656201},
+{lat: 1.4478166171304583, lng: 103.80977055054164},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#BA0045',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4463869472852, lng: 103.80245871208},
+    map: map,
+    radius: 100,
+    infotext: "Admiralty Secondary School: 14-21",
+  });
+  circ.addListener('click', showInfo);
+// Montfort Secondary School
+var coords = [
+{lat: 1.3815752721638666, lng: 103.88941376720847},
+{lat: 1.3814673674355298, lng: 103.89082391778389},
+{lat: 1.3778072417764498, lng: 103.89360961804267},
+{lat: 1.3653866245267188, lng: 103.89062054074488},
+{lat: 1.364993465536861, lng: 103.88694067061121},
+{lat: 1.3755959323655995, lng: 103.88558314103523},
+{lat: 1.3815752721638666, lng: 103.88941376720847},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B80047',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3735836622809, lng: 103.88888750854},
+    map: map,
+    radius: 100,
+    infotext: "Montfort Secondary School: 14-21",
+  });
+  circ.addListener('click', showInfo);
+// Regent Secondary School
+var coords = [
+{lat: 1.3895306387994004, lng: 103.75474257177198},
+{lat: 1.3862177814041607, lng: 103.74784667133744},
+{lat: 1.3944748764328416, lng: 103.74528025123806},
+{lat: 1.4082847964042304, lng: 103.76322919370604},
+{lat: 1.3989765284188167, lng: 103.7602010458058},
+{lat: 1.3895306387994004, lng: 103.75474257177198},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E70018',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3935821493271, lng: 103.75052265243},
+    map: map,
+    radius: 100,
+    infotext: "Regent Secondary School: 14-22",
+  });
+  circ.addListener('click', showInfo);
+// Serangoon Secondary School
+var coords = [
+{lat: 1.383262000785339, lng: 103.91500973082222},
+{lat: 1.3782969719832674, lng: 103.92672725100219},
+{lat: 1.377032907668971, lng: 103.92653139047209},
+{lat: 1.3646317826967664, lng: 103.91802912400213},
+{lat: 1.3567330794803656, lng: 103.91108017999672},
+{lat: 1.360041229057215, lng: 103.90582451959551},
+{lat: 1.3765888320470125, lng: 103.89734464740137},
+{lat: 1.3833730050889024, lng: 103.9110962052497},
+{lat: 1.383262000785339, lng: 103.91500973082222},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#BE0041',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3750273516689, lng: 103.90200030252},
+    map: map,
+    radius: 100,
+    infotext: "Serangoon Secondary School: 16-21",
+  });
+  circ.addListener('click', showInfo);
+// Teck Whye Secondary School
+var coords = [
+{lat: 1.381468258741608, lng: 103.76138194151841},
+{lat: 1.3739234227917898, lng: 103.75422672993687},
+{lat: 1.3757186509975787, lng: 103.74745254971236},
+{lat: 1.3839870648830195, lng: 103.74670494059998},
+{lat: 1.3862177814041607, lng: 103.74784667133744},
+{lat: 1.3895306387994004, lng: 103.75474257177198},
+{lat: 1.381468258741608, lng: 103.76138194151841},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#B60049',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3837042927782, lng: 103.75526807044},
+    map: map,
+    radius: 100,
+    infotext: "Teck Whye Secondary School: 12-21",
+  });
+  circ.addListener('click', showInfo);
+// Assumption English School
+var coords = [
+{lat: 1.3616683864094818, lng: 103.79781874719866},
+{lat: 1.3522302614161472, lng: 103.77779515227141},
+{lat: 1.3550904478535073, lng: 103.76614698637505},
+{lat: 1.3607439684303742, lng: 103.75978548112097},
+{lat: 1.3691737601697984, lng: 103.75790467021734},
+{lat: 1.3745621279279332, lng: 103.77187264209654},
+{lat: 1.3616683864094818, lng: 103.79781874719866},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#EB0014',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.368552656092, lng: 103.76661158587},
+    map: map,
+    radius: 100,
+    infotext: "Assumption English School: 14-22",
+  });
+  circ.addListener('click', showInfo);
+// Bartley Secondary School
+var coords = [
+{lat: 1.3291637627873265, lng: 103.88858064568053},
+{lat: 1.3291606669759584, lng: 103.88516112952719},
+{lat: 1.3367199439382187, lng: 103.87909112514275},
+{lat: 1.346291919312093, lng: 103.88158652798607},
+{lat: 1.3421610671396589, lng: 103.89738296971122},
+{lat: 1.3291637627873265, lng: 103.88858064568053},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#CD0032',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3404084446582, lng: 103.88262422663},
+    map: map,
+    radius: 100,
+    infotext: "Bartley Secondary School: 10-22",
+  });
+  circ.addListener('click', showInfo);
+// Bendemeer Secondary School
+var coords = [
+{lat: 1.3264027454811587, lng: 103.85091457569557},
+{lat: 1.3314151842180755, lng: 103.85312817620203},
+{lat: 1.3332061741327739, lng: 103.85666480539703},
+{lat: 1.3214555096812568, lng: 103.87186407327245},
+{lat: 1.3048974022963304, lng: 103.86687376126426},
+{lat: 1.2990609447144001, lng: 103.8630830318688},
+{lat: 1.3264027454811587, lng: 103.85091457569557},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#CF0030',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3244560723453, lng: 103.86091880457},
+    map: map,
+    radius: 100,
+    infotext: "Bendemeer Secondary School: 11-22",
+  });
+  circ.addListener('click', showInfo);
+// Boon Lay Secondary School
+var coords = [
+{lat: 1.3396823428243796, lng: 103.7110926290812},
+{lat: 1.339049321798849, lng: 103.69509546101274},
+{lat: 1.3450081394373035, lng: 103.69317789175217},
+{lat: 1.3482895704456552, lng: 103.69598329387769},
+{lat: 1.3483836003186127, lng: 103.71133852272499},
+{lat: 1.348130793688536, lng: 103.71145989759059},
+{lat: 1.3396823428243796, lng: 103.7110926290812},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D70028',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3428852556617, lng: 103.70182394355},
+    map: map,
+    radius: 100,
+    infotext: "Boon Lay Secondary School: 12-22",
+  });
+  circ.addListener('click', showInfo);
+// Broadrick Secondary School
+var coords = [
+{lat: 1.2952770623454382, lng: 103.8842610147696},
+{lat: 1.28927839263025, lng: 103.8652764384311},
+{lat: 1.2962288933775117, lng: 103.86238305930794},
+{lat: 1.2990609447144001, lng: 103.8630830318688},
+{lat: 1.3048974022963304, lng: 103.86687376126426},
+{lat: 1.3154030390236304, lng: 103.89127807859707},
+{lat: 1.3111043591147715, lng: 103.89145549671993},
+{lat: 1.2952770623454382, lng: 103.8842610147696},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D90026',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3074101125742, lng: 103.88716389114},
+    map: map,
+    radius: 100,
+    infotext: "Broadrick Secondary School: 12-22",
+  });
+  circ.addListener('click', showInfo);
+// Bukit Merah Secondary School
+var coords = [
+{lat: 1.2938543871980777, lng: 103.80842410795574},
+{lat: 1.2877389636716705, lng: 103.81832525064293},
+{lat: 1.2830003906199223, lng: 103.820090303078},
+{lat: 1.278733797476183, lng: 103.81532108826984},
+{lat: 1.286306646813273, lng: 103.79869089750213},
+{lat: 1.2938543871980777, lng: 103.80842410795574},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#BC0043',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.2858284467932, lng: 103.81300009886},
+    map: map,
+    radius: 100,
+    infotext: "Bukit Merah Secondary School: 5-22",
+  });
+  circ.addListener('click', showInfo);
+// Canberra Secondary School
+var coords = [
+{lat: 1.4478166171304583, lng: 103.80977055054164},
+{lat: 1.451499983585674, lng: 103.80741919656201},
+{lat: 1.4538472888033, lng: 103.8141452433},
+{lat: 1.450893388964772, lng: 103.81961579793855},
+{lat: 1.4478166171304583, lng: 103.80977055054164},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#DF0020',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4538472888033, lng: 103.8141452433},
+    map: map,
+    radius: 100,
+    infotext: "Canberra Secondary School: 13-22",
+  });
+  circ.addListener('click', showInfo);
+// Changkat Changi Secondary School
+var coords = [
+{lat: 1.3478299284510271, lng: 103.95163731045908},
+{lat: 1.3480299258964952, lng: 103.9523257864486},
+{lat: 1.3465649815375351, lng: 103.95761470878429},
+{lat: 1.332609942163591, lng: 103.95326473864392},
+{lat: 1.3330648543750117, lng: 103.94957477862887},
+{lat: 1.341757366131377, lng: 103.94535502237315},
+{lat: 1.3478299284510271, lng: 103.95163731045908},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F5000A',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3404012415467, lng: 103.95282141711},
+    map: map,
+    radius: 100,
+    infotext: "Changkat Changi Secondary School: 15-22",
+  });
+  circ.addListener('click', showInfo);
+// Damai Secondary School
+var coords = [
+{lat: 1.3470754052632294, lng: 103.90883746604827},
+{lat: 1.3485563638473703, lng: 103.90964952687607},
+{lat: 1.342289536921919, lng: 103.93358807753775},
+{lat: 1.3230106462407707, lng: 103.92663237481709},
+{lat: 1.3229066455685037, lng: 103.92154933736822},
+{lat: 1.3245185169405835, lng: 103.91696752948637},
+{lat: 1.3470754052632294, lng: 103.90883746604827},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C2003D',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3370883076555, lng: 103.9269868975},
+    map: map,
+    radius: 100,
+    infotext: "Damai Secondary School: 7-22",
+  });
+  circ.addListener('click', showInfo);
+// Dunearn Secondary School
+var coords = [
+{lat: 1.3555721582702622, lng: 103.7449506452697},
+{lat: 1.3578812344783944, lng: 103.73693399760042},
+{lat: 1.3683613605519638, lng: 103.72897545336639},
+{lat: 1.3744518520461284, lng: 103.74562352789017},
+{lat: 1.358402314415001, lng: 103.7488707234338},
+{lat: 1.3555721582702622, lng: 103.7449506452697},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#EF0010',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3638478888844, lng: 103.74503539466},
+    map: map,
+    radius: 100,
+    infotext: "Dunearn Secondary School: 14-22",
+  });
+  circ.addListener('click', showInfo);
+// East Spring Secondary School
+var coords = [
+{lat: 1.357600915731362, lng: 103.95751303149065},
+{lat: 1.361067492420075, lng: 103.96041941620747},
+{lat: 1.356820110603, lng: 103.960811368},
+{lat: 1.3537390055445497, lng: 103.95985094684714},
+{lat: 1.357600915731362, lng: 103.95751303149065},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#DB0024',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.356820110603, lng: 103.960811368},
+    map: map,
+    radius: 100,
+    infotext: "East Spring Secondary School: 13-22",
+  });
+  circ.addListener('click', showInfo);
+// Fajar Secondary School
+var coords = [
+{lat: 1.3820610515129663, lng: 103.76645010542914},
+{lat: 1.3745621279279332, lng: 103.77187264209654},
+{lat: 1.3691737601697984, lng: 103.75790467021734},
+{lat: 1.3739234227917898, lng: 103.75422672993687},
+{lat: 1.381468258741608, lng: 103.76138194151841},
+{lat: 1.3822268191847742, lng: 103.76401369531965},
+{lat: 1.3820610515129663, lng: 103.76645010542914},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C60039',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3754814206213, lng: 103.76393870453},
+    map: map,
+    radius: 100,
+    infotext: "Fajar Secondary School: 8-22",
+  });
+  circ.addListener('click', showInfo);
+// Greenridge Secondary School
+var coords = [
+{lat: 1.4045690528201125, lng: 103.78349114301565},
+{lat: 1.3943752382720325, lng: 103.80615678974168},
+{lat: 1.386071977755335, lng: 103.8050239882325},
+{lat: 1.3617530751122102, lng: 103.79824441916408},
+{lat: 1.3616683864094818, lng: 103.79781874719866},
+{lat: 1.3745621279279332, lng: 103.77187264209654},
+{lat: 1.3820610515129663, lng: 103.76645010542914},
+{lat: 1.4045690528201125, lng: 103.78349114301565},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F1000E',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3823846466202, lng: 103.77348530005},
+    map: map,
+    radius: 100,
+    infotext: "Greenridge Secondary School: 14-22",
+  });
+  circ.addListener('click', showInfo);
+// Guangyang Secondary School
+var coords = [
+{lat: 1.3457116104557476, lng: 103.85561929238695},
+{lat: 1.3394682622971505, lng: 103.84512993307688},
+{lat: 1.3439801045738868, lng: 103.83817152914663},
+{lat: 1.3458434146729712, lng: 103.8408111149469},
+{lat: 1.350180924474583, lng: 103.84885176024984},
+{lat: 1.3457116104557476, lng: 103.85561929238695},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#FB0004',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3445021183579, lng: 103.85052851358},
+    map: map,
+    radius: 100,
+    infotext: "Guangyang Secondary School: 16-22",
+  });
+  circ.addListener('click', showInfo);
+// Junyuan Secondary School
+var coords = [
+{lat: 1.3616450834923794, lng: 103.94042744141808},
+{lat: 1.3578160506884982, lng: 103.94075810587965},
+{lat: 1.3503645676699714, lng: 103.93343144021259},
+{lat: 1.3646317826967664, lng: 103.91802912400213},
+{lat: 1.377032907668971, lng: 103.92653139047209},
+{lat: 1.3616450834923794, lng: 103.94042744141808},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E90016',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3534282670959, lng: 103.93350401368},
+    map: map,
+    radius: 100,
+    infotext: "Junyuan Secondary School: 14-22",
+  });
+  circ.addListener('click', showInfo);
+// Juying Secondary School
+var coords = [
+{lat: 1.339049321798849, lng: 103.69509546101274},
+{lat: 1.3349366642254226, lng: 103.69440109678587},
+{lat: 1.3382412020646, lng: 103.68739261684},
+{lat: 1.3450081394373035, lng: 103.69317789175217},
+{lat: 1.339049321798849, lng: 103.69509546101274},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C4003B',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3382412020646, lng: 103.68739261684},
+    map: map,
+    radius: 100,
+    infotext: "Juying Secondary School: 8-22",
+  });
+  circ.addListener('click', showInfo);
+// Loyang View Secondary School
+var coords = [
+{lat: 1.3644356729207563, lng: 103.9529717285592},
+{lat: 1.3699140971282293, lng: 103.95353815204761},
+{lat: 1.3706652587724222, lng: 103.95607679431679},
+{lat: 1.369427008144852, lng: 103.95964799340774},
+{lat: 1.3631899361940034, lng: 103.9602235553978},
+{lat: 1.3644356729207563, lng: 103.9529717285592},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#CA0035',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3668785340685, lng: 103.95722801316},
+    map: map,
+    radius: 100,
+    infotext: "Loyang View Secondary School: 9-22",
+  });
+  circ.addListener('click', showInfo);
+// Manjusri Secondary School
+var coords = [
+{lat: 1.3470754052632294, lng: 103.90883746604827},
+{lat: 1.3245185169405835, lng: 103.91696752948637},
+{lat: 1.3166111399252352, lng: 103.90720167367995},
+{lat: 1.319146345225815, lng: 103.89391457089559},
+{lat: 1.3291637627873265, lng: 103.88858064568053},
+{lat: 1.3421610671396589, lng: 103.89738296971122},
+{lat: 1.3437836692358205, lng: 103.89974693890998},
+{lat: 1.3470754052632294, lng: 103.90883746604827},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#DD0022',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3278059049361, lng: 103.90123283997},
+    map: map,
+    radius: 100,
+    infotext: "Manjusri Secondary School: 13-22",
+  });
+  circ.addListener('click', showInfo);
+// Marsiling Secondary School
+var coords = [
+{lat: 1.4208259546527504, lng: 103.75799700859972},
+{lat: 1.4360492543475578, lng: 103.77101190277622},
+{lat: 1.4422358456927302, lng: 103.78125009286433},
+{lat: 1.4317856087395613, lng: 103.78462234836236},
+{lat: 1.4124493988677767, lng: 103.77305958633549},
+{lat: 1.413976689360624, lng: 103.76646411490705},
+{lat: 1.4208259546527504, lng: 103.75799700859972},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#ED0012',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4371908833162, lng: 103.77603092086},
+    map: map,
+    radius: 100,
+    infotext: "Marsiling Secondary School: 14-22",
+  });
+  circ.addListener('click', showInfo);
+// Northbrooks Secondary School
+var coords = [
+{lat: 1.401257284177136, lng: 103.85760069813168},
+{lat: 1.401316209205096, lng: 103.8565118172132},
+{lat: 1.418034848203604, lng: 103.8417909575522},
+{lat: 1.4261229309164993, lng: 103.83995021116093},
+{lat: 1.4295371837116413, lng: 103.84582837985484},
+{lat: 1.432223871116287, lng: 103.85419131608354},
+{lat: 1.4208926367532975, lng: 103.8751765018019},
+{lat: 1.401257284177136, lng: 103.85760069813168},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D1002E',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4211494106562, lng: 103.84492495831},
+    map: map,
+    radius: 100,
+    infotext: "Northbrooks Secondary School: 12-22",
+  });
+  circ.addListener('click', showInfo);
+// Northland Secondary School
+var coords = [
+{lat: 1.442361532899358, lng: 103.83541659936226},
+{lat: 1.432223871116287, lng: 103.85419131608354},
+{lat: 1.4295371837116413, lng: 103.84582837985484},
+{lat: 1.437269737910465, lng: 103.83514343942544},
+{lat: 1.442361532899358, lng: 103.83541659936226},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#FD0002',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4358293855612, lng: 103.84020885112},
+    map: map,
+    radius: 100,
+    infotext: "Northland Secondary School: 17-22",
+  });
+  circ.addListener('click', showInfo);
+// Outram Secondary School
+var coords = [
+{lat: 1.28927839263025, lng: 103.8652764384311},
+{lat: 1.2785706198812063, lng: 103.83138850346862},
+{lat: 1.2820815589652785, lng: 103.82881967046707},
+{lat: 1.3029883537736044, lng: 103.83390357125342},
+{lat: 1.3031516933204617, lng: 103.8375331112932},
+{lat: 1.2962288933775117, lng: 103.86238305930794},
+{lat: 1.28927839263025, lng: 103.8652764384311},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D5002A',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.2865227827849, lng: 103.83698816403},
+    map: map,
+    radius: 100,
+    infotext: "Outram Secondary School: 12-22",
+  });
+  circ.addListener('click', showInfo);
+// Peicai Secondary School
+var coords = [
+{lat: 1.3540573942231755, lng: 103.87495600369022},
+{lat: 1.3547297517790373, lng: 103.86267512738438},
+{lat: 1.359626043451863, lng: 103.8600048264054},
+{lat: 1.3636723114325269, lng: 103.86158172967124},
+{lat: 1.3650929393567286, lng: 103.87409958549718},
+{lat: 1.3606317219072788, lng: 103.88071907113476},
+{lat: 1.3603211017829535, lng: 103.88068400049293},
+{lat: 1.3553659603222914, lng: 103.87793597001843},
+{lat: 1.3540573942231755, lng: 103.87495600369022},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C0003F',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3593158434791, lng: 103.87022207999},
+    map: map,
+    radius: 100,
+    infotext: "Peicai Secondary School: 7-22",
+  });
+  circ.addListener('click', showInfo);
+// Sembawang Secondary School
+var coords = [
+{lat: 1.4331541824072245, lng: 103.81811778749312},
+{lat: 1.4293510644555525, lng: 103.81278230859901},
+{lat: 1.4342262349598145, lng: 103.80878805956769},
+{lat: 1.4478166171304583, lng: 103.80977055054164},
+{lat: 1.450893388964772, lng: 103.81961579793855},
+{lat: 1.446709913258253, lng: 103.82736349883655},
+{lat: 1.4331541824072245, lng: 103.81811778749312},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#D3002C',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4453501187404, lng: 103.81680072289},
+    map: map,
+    radius: 100,
+    infotext: "Sembawang Secondary School: 12-22",
+  });
+  circ.addListener('click', showInfo);
+// Serangoon Garden Secondary School
+var coords = [
+{lat: 1.381681889123322, lng: 103.87103677800508},
+{lat: 1.3791590893035595, lng: 103.87253037616303},
+{lat: 1.3650929393567286, lng: 103.87409958549718},
+{lat: 1.3636723114325269, lng: 103.86158172967124},
+{lat: 1.3712075500459295, lng: 103.85998828450634},
+{lat: 1.3849403450771796, lng: 103.86401430113142},
+{lat: 1.381681889123322, lng: 103.87103677800508},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E3001C',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3698542042338, lng: 103.86902610124},
+    map: map,
+    radius: 100,
+    infotext: "Serangoon Garden Secondary School: 13-22",
+  });
+  circ.addListener('click', showInfo);
+// Springfield Secondary School
+var coords = [
+{lat: 1.3646317826967664, lng: 103.91802912400213},
+{lat: 1.3503645676699714, lng: 103.93343144021259},
+{lat: 1.3424149291683272, lng: 103.93399177447469},
+{lat: 1.342289536921919, lng: 103.93358807753775},
+{lat: 1.3485563638473703, lng: 103.90964952687607},
+{lat: 1.3567330794803656, lng: 103.91108017999672},
+{lat: 1.3646317826967664, lng: 103.91802912400213},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F70008',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3500581260569, lng: 103.9303822412},
+    map: map,
+    radius: 100,
+    infotext: "Springfield Secondary School: 15-22",
+  });
+  circ.addListener('click', showInfo);
+// Westwood Secondary School
+var coords = [
+{lat: 1.3483836003186127, lng: 103.71133852272499},
+{lat: 1.3482895704456552, lng: 103.69598329387769},
+{lat: 1.3678531928410194, lng: 103.71270887113684},
+{lat: 1.3483836003186127, lng: 103.71133852272499},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F90006',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3537650093065, lng: 103.70175731987},
+    map: map,
+    radius: 100,
+    infotext: "Westwood Secondary School: 16-22",
+  });
+  circ.addListener('click', showInfo);
+// Whitley Secondary School
+var coords = [
+{lat: 1.3458434146729712, lng: 103.8408111149469},
+{lat: 1.3439801045738868, lng: 103.83817152914663},
+{lat: 1.3440244180761662, lng: 103.82228206021722},
+{lat: 1.3442614519298257, lng: 103.8217290604887},
+{lat: 1.3597180509686848, lng: 103.8353061187382},
+{lat: 1.3616296816473243, lng: 103.8386189669811},
+{lat: 1.3617694869959365, lng: 103.8461639915281},
+{lat: 1.3458434146729712, lng: 103.8408111149469},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#C80037',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.355449, lng: 103.842801},
+    map: map,
+    radius: 100,
+    infotext: "Whitley Secondary School: 8-22",
+  });
+  circ.addListener('click', showInfo);
+// Woodlands Secondary School
+var coords = [
+{lat: 1.4422358456927302, lng: 103.78125009286433},
+{lat: 1.4360492543475578, lng: 103.77101190277622},
+{lat: 1.4399615837568, lng: 103.77435668047},
+{lat: 1.4423634026684446, lng: 103.78123893256684},
+{lat: 1.4422358456927302, lng: 103.78125009286433},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E5001A',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.4399615837568, lng: 103.77435668047},
+    map: map,
+    radius: 100,
+    infotext: "Woodlands Secondary School: 13-22",
+  });
+  circ.addListener('click', showInfo);
+// Yio Chu Kang Secondary School
+var coords = [
+{lat: 1.3734212772876933, lng: 103.84559659968762},
+{lat: 1.373080093612829, lng: 103.84004375962874},
+{lat: 1.382303921787309, lng: 103.83463483877411},
+{lat: 1.3795113013742326, lng: 103.84780147060404},
+{lat: 1.3734212772876933, lng: 103.84559659968762},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#E1001E',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3784698014866, lng: 103.84192346803},
+    map: map,
+    radius: 100,
+    infotext: "Yio Chu Kang Secondary School: 13-22",
+  });
+  circ.addListener('click', showInfo);
+// Yuhua Secondary School
+var coords = [
+{lat: 1.3435768254327045, lng: 103.72463405163727},
+{lat: 1.3480856307087765, lng: 103.71193716679474},
+{lat: 1.3502531530648647, lng: 103.72446950129749},
+{lat: 1.3435768254327045, lng: 103.72463405163727},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#F3000C',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3472885994697, lng: 103.72245788993},
+    map: map,
+    radius: 100,
+    infotext: "Yuhua Secondary School: 15-22",
+  });
+  circ.addListener('click', showInfo);
+// Yuying Secondary School
+var coords = [
+{lat: 1.3603211017829535, lng: 103.88068400049293},
+{lat: 1.3606317219072788, lng: 103.88071907113476},
+{lat: 1.36345287140774, lng: 103.88380483618592},
+{lat: 1.364993465536861, lng: 103.88694067061121},
+{lat: 1.3653866245267188, lng: 103.89062054074488},
+{lat: 1.360041229057215, lng: 103.90582451959551},
+{lat: 1.3567330794803656, lng: 103.91108017999672},
+{lat: 1.3485563638473703, lng: 103.90964952687607},
+{lat: 1.3470754052632294, lng: 103.90883746604827},
+{lat: 1.3437836692358205, lng: 103.89974693890998},
+{lat: 1.3603211017829535, lng: 103.88068400049293},
+];
+  var poly = new google.maps.Polygon({
+    paths: coords,
+    strokeColor: '#000000',
+    strokeOpacity: 0.5,
+    fillColor: '#CC0033',
+    fillOpacity: 0.3,
+  });
+  poly.setOptions({zIndex:-1});
+  poly.setMap(map);
+  var circ = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    center: {lat: 1.3570084746978, lng: 103.89065840908},
+    map: map,
+    radius: 100,
+    infotext: "Yuying Secondary School: 10-22",
+  });
+  circ.addListener('click', showInfo);
+}
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJvBveKdnhCw9MaDwzFb_7cTnXWNohROU&callback=initMap">
+    </script>
+  </body>
+</html>
