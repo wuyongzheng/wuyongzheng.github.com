@@ -30,8 +30,18 @@ function onDocLoad () {
 	    options: {
 	        responsive: false,
 	        scales: {
+	            x: {
+	                title: {
+						display: true,
+						text: 'Forward Current'
+					}
+	            },
 	            y: {
-	                beginAtZero: false
+					type: 'logarithmic',
+	                title: {
+						display: true,
+						text: 'Forward Voltage'
+					}
 	            }
 	        }
 	    }
@@ -204,7 +214,7 @@ Output:
 
 <p>Credits:
 <ul>
-	<li><a href="https://github.com/Pterodactylus/Alglib.js">Alglib.js</a> is used as solve the Shockley diode model.</li>
+	<li><a href="https://github.com/Pterodactylus/Alglib.js">Alglib.js</a> is used to solve the Shockley diode model.</li>
 	<li><a href="https://www.chartjs.org">chart.js</a> is used to plot the model and input data.</li>
 </ul>
 </p>
