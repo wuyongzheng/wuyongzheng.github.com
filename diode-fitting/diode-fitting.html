@@ -1,0 +1,212 @@
+<html>
+<head>
+<title>Diode Spice Model Calculater</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script src="chart.js"></script>
+<script>
+var myChart = null
+function onDocLoad () {
+	const ctx = document.getElementById('myChart');
+	myChart = new Chart(ctx, {
+	    type: "scatter",
+	    data: {
+	        datasets: [
+	          {
+	            data: {},
+	            label: 'Actual',
+	            showLine: false,
+	            fill: false,
+	            borderColor: 'red'
+	          },
+	          {
+	            data: {},
+	            label: 'Shockley Model',
+	            showLine: true,
+	            fill: false,
+	            borderColor: 'blue'
+	          }
+	        ]
+	    },
+	    options: {
+	        responsive: false,
+	        scales: {
+	            y: {
+	                beginAtZero: false
+	            }
+	        }
+	    }
+	});
+}
+</script>
+<script type="module">
+	import {Alglib} from './Alglib-v1.1.0.js'
+	const VT = 25.85 * 0.001
+
+	// compute forward voltage from current
+	function shockley_diode (IsRsN, I) {
+		console.assert(I >= 0)
+		if (I == 0)
+			return 0
+		console.assert(IsRsN[0] > 0)
+		return I * IsRsN[1] + IsRsN[2] * VT * Math.log(I / IsRsN[0] + 1)
+	}
+
+	// Lis = log(Is), Is = exp(Lis)
+	function shockley_diode2 (LisRsN, I) {
+		const IsRsN = [Math.exp(LisRsN[0]), LisRsN[1], LisRsN[2]]
+		return shockley_diode(IsRsN, I)
+	}
+
+	// compute current from forward voltage
+	function sd_I (LisRsN, V) {
+		var Imin = 0
+		var Imax = V / LisRsN[1]
+		while (Imin * 1.001 < Imax) { // 0.1% error tolerance
+			const Imid = (Imin + Imax) / 2
+			const Vmid = shockley_diode2(LisRsN, Imid)
+			if (Vmid < V)
+				Imin = Imid
+			else if (Vmid > V)
+				Imax = Imid
+			else
+				return Imid
+		}
+		return Imin
+	}
+
+	// return NaN on error
+	function parseSufix(str) {
+		str = str.trim()
+		if (str.endsWith("A") || str.endsWith("V")) {
+			str = str.substring(0, str.length - 1)
+		}
+		if (str.endsWith("k")) return parseFloat(str) * 1000
+		if (str.endsWith("m")) return parseFloat(str) / 1000.0
+		if (str.endsWith("u")) return parseFloat(str) / 1000000.0
+		if (str.endsWith("n")) return parseFloat(str) / 1000000000.0
+		if (str.endsWith("p")) return parseFloat(str) / 1000000000000.0
+		return parseFloat(str)
+	}
+
+	function parseInput() {
+			const lines = document.getElementById("input_iv").value.split("\n")
+			const result = []
+			for (var line of lines) {
+				line = line.trim()
+				if (line.length == 0 || line.startsWith("#"))
+					continue
+				const fields = line.split(",")
+				if (fields.length < 2)
+					continue
+				if (isNaN(parseSufix(fields[0])) || isNaN(parseSufix(fields[1])))
+					return null
+				result.push([parseSufix(fields[0]), parseSufix(fields[1])])
+			}
+			//return [[2, 51.896*0.1**6], [2.4, 257.073*0.1**6], [2.8, 1.241*0.1**3], [3.2, 5.399*0.1**3]]
+			return result
+	}
+
+	// val: floating point number, e.g 0.0000031
+	// return: string, e.g. 3.1u
+	function add_sufix(val) {
+		if (Math.abs(val) >= 1000) {
+			return (val/1000).toPrecision(3) + "k"
+		} else if (Math.abs(val) >= 1) {
+			return val.toPrecision(3)
+		} else if (Math.abs(val) >= 0.001) {
+			return (val*1000).toPrecision(3) + "m"
+		} else if (Math.abs(val) >= 0.000001) {
+			return (val*1000000).toPrecision(3) + "u"
+		} else if (Math.abs(val) >= 0.000000001) {
+			return (val*1000000000).toPrecision(3) + "n"
+		} else {
+			return (val*1000000000000).toPrecision(3) + "p"
+		}
+	}
+
+	window.solve = function solve() {
+		let data = parseInput()
+		if (data == null) {
+			document.getElementById("output").value = "Error parsing input"
+			return
+		} else if (data.length < 3) {
+			document.getElementById("output").value = "At least 3 data samples needed"
+			return
+		}
+
+		var fn1 = function(a){
+			let sum = 0
+			for (let i = 0; i < data.length; ++i) {
+				sum = sum + Math.pow(data[i][0] - shockley_diode2(a, data[i][1]), 2)
+			}
+			let sse = Math.sqrt(sum)
+			return sse
+		}
+
+		let solver = new Alglib()
+		solver.add_function(fn1) //Add the first equation to the solver.
+
+		solver.promise.then(function(result) {
+			var x_guess = [-20, 1, 2] //Guess the initial values of the solution.
+			var s = solver.solve("min", x_guess) //Solve the equation
+	
+			//Update the chart
+			let actual_data = []
+			let spline_data = []
+			let a=solver.get_results()
+			for (let i = 0; i < data.length; ++i) {
+				actual_data.push({x:data[i][0], y:data[i][1]})
+			}
+			let x_values = data.map(function(elt) { return elt[0]; });
+			let x_min = Math.min.apply(null,x_values)
+			let x_max = Math.max.apply(null,x_values)
+			let n = 20
+			let r = (x_max-x_min)/n
+			for (let i = 0; i <= n; ++i) {
+				let x = x_min + i * r
+				spline_data.push({x:x, y:sd_I(a,x)})
+			}
+			myChart.data.datasets[0].data = actual_data;
+			myChart.data.datasets[1].data = spline_data;
+			myChart.update();
+	
+			document.getElementById("output").value = "Is=" + Math.exp(a[0]) + " Rs=" + a[1] + " N=" + a[2] + "\n"
+			document.getElementById("output").value += "LTSpice standard.dio line: .model [name] D(Is=" + add_sufix(Math.exp(a[0])) + " Rs=" + add_sufix(a[1]) + " N=" + add_sufix(a[2]) + " Cjo=[] M=[] tt=[] Iave=[] Vpk=[] mfg=[] type=[])\n\n"
+			document.getElementById("output").value += solver.get_report()
+			solver.remove() //required to free the memory in C++
+		})
+	}
+</script>
+</head>
+<body onload="onDocLoad()">
+<h1>Diode Spice Model Calculater</h1>
+<p>This is an online tool to calculate diode models for Spice simulator.
+At lease three I/V data points must be measured.
+More data points give more accurate model parameters.
+Replace the data points in the input area below and click "run".
+If everything is correct, three model parameters (Is, Rs and N) will be computed.
+The rest of the parameters such as Cjo and Iave have to be obtained from the datasheet.
+</p>
+
+Input:
+<textarea id="input_iv" rows="8" cols="80">
+# voltage, current
+2V, 51.9uA
+2.4V, 257uA
+2.8V, 1.24mA
+3.2V, 5.4mA
+</textarea>
+<button id="btnRun" onclick="solve()">run</button>
+<br/>
+Output:
+<textarea id="output" rows="10" cols="80" readonly="true"></textarea>
+<canvas id="myChart" height="400" width="800"></canvas>
+
+<p>Credits:
+<ul>
+	<li><a href="https://github.com/Pterodactylus/Alglib.js">Alglib.js</a> is used as solve the Shockley diode model.</li>
+	<li><a href="https://www.chartjs.org">chart.js</a> is used to plot the model and input data.</li>
+</ul>
+</p>
+</body>
+</html>
