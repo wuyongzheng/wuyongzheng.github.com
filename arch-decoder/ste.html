@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARM SMMUv3 Stream Table Entry (STE) Parser</title>
+  <style>
+    :root { --bg:#0b1020; --card:#121833; --ink:#e6ecff; --muted:#9fb0ff66; --accent:#7aa2ff; }
+    html,body{margin:0;height:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:var(--bg);color:var(--ink)}
+    .wrap{max-width:1100px;margin:24px auto;padding:0 16px}
+    .card{background:var(--card);border:1px solid #2a3566;border-radius:16px;box-shadow:0 10px 24px #0005}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:16px}
+    h1{font-size:18px;margin:0;color:var(--ink)}
+    .muted{color:var(--muted)}
+    .row{display:flex;flex-wrap:wrap;gap:16px}
+    .col{flex:1 1 360px}
+    textarea{width:100%;min-height:140px;background:#0b1126;color:var(--ink);border:1px solid #2a3566;border-radius:12px;padding:12px;font-size:14px;letter-spacing:0.3px}
+    .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 0}
+    button,select,input[type="checkbox"]{background:#1a2250;border:1px solid #2a3566;color:var(--ink);border-radius:10px;padding:10px 12px;font-weight:600;cursor:pointer}
+    button:hover{border-color:#3b51aa}
+    .out{padding:16px}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{border-bottom:1px solid #2a3566;padding:8px 6px;text-align:left;font-size:13px}
+    th{color:#bcd0ff}
+    .pos{color:#9ec1ff}
+    .k{color:#eaf2ff}
+    .v{font-size:12px;color:#9fb0ffbd}
+    .pill{display:inline-block;padding:2px 8px;border:1px solid #2a3566;border-radius:999px;font-size:12px;margin-right:6px}
+    .addr{font-variant-numeric:tabular-nums}
+    details{margin-top:8px}
+    code{background:#0b1126;padding:3px 6px;border:1px solid #2a3566;border-radius:6px}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>ARM SMMUv3 Stream Table Entry (STE) Parser</h1>
+    <div class="muted">Paste up to eight 64-bit hex words (W0..W7). Uses latest public SMMUv3 (ARM IHI 0070, G.b)</div>
+  </header>
+
+  <div class="row">
+    <div class="col card">
+      <div class="out">
+        <label for="hex">STE words (hex u64, W0 first):</label>
+        <textarea id="hex" placeholder="e.g.\nW0: 0000000000000001\nW1: 0000000000000000\n... up to W7"></textarea>
+        <div class="controls">
+          <label class="pill"><input type="checkbox" id="strip0x" checked> Accept 0x prefixes</label>
+          <button id="example">Fill Example</button>
+          <button id="parse">Parse</button>
+          <button id="clear">Clear</button>
+        </div>
+        <details>
+          <summary>Input tips</summary>
+          <ul>
+            <li>Accepts spaces/newlines/commas; optional labels like <code>W3:</code> are ignored.</li>
+            <li>W0 covers bits [63:0], W1 → [127:64], … W7 → [511:448]. Missing words default to 0.</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <div class="col card">
+      <div class="out" id="words"></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="out" id="result">
+      <div class="muted">No data yet.</div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import { BitStructDecoder, helpers } from "./smmu-bitdecoder.js";
+
+  const $ = (sel)=>document.querySelector(sel);
+  const hexIn = document.querySelector("#hex");
+  const result = document.querySelector("#result");
+  const wordsOut = document.querySelector("#words");
+
+  function renderWords(W){
+    const rows = W.map((w,i)=>`<tr><td>W${i}</td><td class="addr">${helpers.fmtHex(w,16)}</td></tr>`).join('');
+    wordsOut.innerHTML = `<div><b>64-bit words (W0..W7)</b><table><thead><tr><th>Word</th><th>Value</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  }
+
+  const STE = {
+    name:'STE', totalBits:512, wordBits:64,
+    fields:[
+      {t:'u', k:'V', h:0},
+      {t:'u', k:'Config', h:3, l:1},
+      {t:'u', k:'S1Fmt', h:5, l:4},
+      {t:'u', k:'S1ContextPtr', h:55, l:6},
+      {t:'u', k:'S1CDMax', h:63, l:59},
+      {t:'u', k:'S1DSS', h:65, l:64},
+      {t:'u', k:'S1CIR', h:67, l:66},
+      {t:'u', k:'S1COR', h:69, l:68},
+      {t:'u', k:'S1CSH', h:71, l:70},
+      {t:'u', k:'S2HWU59', h:72},
+      {t:'u', k:'S2HWU60', h:73},
+      {t:'u', k:'S2HWU61', h:74},
+      {t:'u', k:'S2HWU62', h:75},
+      {t:'u', k:'DRE', h:76},
+      {t:'u', k:'CONT', h:80, l:77},
+      {t:'u', k:'DCP', h:81},
+      {t:'u', k:'PPAR', h:82},
+      {t:'u', k:'MEV', h:83},
+      {t:'u', k:'SW_RESERVED', h:87, l:84},
+      {t:'u', k:'S1PIE', h:88},
+      {t:'u', k:'S2FWB', h:89},
+      {t:'u', k:'S1MPAM', h:90},
+      {t:'u', k:'S1STALLD', h:91},
+      {t:'u', k:'EATS', h:93, l:92},
+      {t:'u', k:'STRW', h:95, l:94},
+      {t:'u', k:'MemAttr', h:99, l:96},
+      {t:'u', k:'MTCFG', h:100},
+      {t:'u', k:'ALLOCCFG', h:104, l:101},
+      {t:'u', k:'SHCFG', h:109, l:108},
+      {t:'u', k:'NSCFG', h:111, l:110},
+      {t:'u', k:'PRIVCFG', h:113, l:112},
+      {t:'u', k:'INSTCFG', h:115, l:114},
+      {t:'u', k:'IMPLEMENTATION DEFINED 1', h:127, l:116},
+      {t:'u', k:'S2VMID', h:143, l:128},
+      {t:'u', k:'IMPLEMENTATION DEFINED 2', h:159, l:144},
+      {t:'u', k:'S2T0SZ', h:165, l:160},
+      {t:'u', k:'S2SL0', h:167, l:166},
+      {t:'u', k:'S2IR0', h:169, l:168},
+      {t:'u', k:'S2OR0', h:171, l:170},
+      {t:'u', k:'S2SH0', h:173, l:172},
+      {t:'u', k:'S2TG', h:175, l:174},
+      {t:'u', k:'S2PS', h:178, l:176},
+      {t:'u', k:'S2AA64', h:179},
+      {t:'u', k:'S2ENDI', h:180},
+      {t:'u', k:'S2AFFD', h:181},
+      {t:'u', k:'S2PTW', h:182},
+      {t:'u', k:'S2HD', h:183},
+      {t:'u', k:'S2HA', h:184},
+      {t:'u', k:'S2S', h:185},
+      {t:'u', k:'S2R', h:186},
+      {t:'u', k:'S2HAFT', h:187},
+      {t:'u', k:'S2PIE', h:188},
+      {t:'u', k:'S2POE', h:189},
+      {t:'u', k:'DPT_VMATCH', h:191, l:190},
+      {t:'u', k:'S2NSW', h:192},
+      {t:'u', k:'S2NSA', h:193},
+      {t:'u', k:'S2SL0_2', h:194},
+      {t:'u', k:'S2DS', h:195},
+      {t:'u', k:'S2TTB', h:247, l:196},
+      {t:'u', k:'S2SKL', h:254, l:253},
+      {t:'u', k:'IMPLEMENTATION DEFINED 3', h:271, l:256},
+      {t:'u', k:'PARTID', h:287, l:272},
+      {t:'u', k:'S_S2T0SZ', h:293, l:288},
+      {t:'u', k:'S_S2SL0', h:295, l:294},
+      {t:'u', k:'S_S2TG', h:303, l:302},
+      {t:'u', k:'MECID', h:319, l:304},
+      {t:'u', k:'PMG', h:327, l:320},
+      {t:'u', k:'MPAM_NS', h:328},
+      {t:'u', k:'AssuredOnly', h:329},
+      {t:'u', k:'TL0', h:330},
+      {t:'u', k:'TL1', h:331},
+      {t:'u', k:'VMSPtr', h:375, l:332},
+      {t:'u', k:'S2SW', h:384},
+      {t:'u', k:'S2SA', h:385},
+      {t:'u', k:'S_S2SL0_2', h:386},
+      {t:'u', k:'S_S2TTB', h:439, l:388},
+      {t:'u', k:'S_S2SKL', h:446, l:445},
+    ]
+  };
+
+  function parseHexWords(input, accept0x=true) {
+    // up to 8 words, tolerant of W#: labels
+    let t = input.replace(/W[0-7]:/gi,' ').replace(/[,\n\r\t]/g,' ').replace(/\s+/g,' ').trim();
+    if(!t) return [];
+    const parts = t.split(' ').filter(Boolean);
+    if(parts.length>8) throw new Error(`Provide at most 8 words; got ${parts.length}`);
+    return parts.map(p=>{
+      if(accept0x && /^0x/i.test(p)) p=p.slice(2);
+      if(!/^[0-9a-fA-F]{1,16}$/.test(p)) throw new Error(`Bad u64 '${p}'`);
+      return BigInt('0x'+p);
+    });
+  }
+
+  function renderTable(vals) {
+    const rows = vals.map(([pos, k, text]) =>
+      `<tr><td class="pos">${pos}</td><td class="k">${k}</td><td class="v">${text}</td></tr>`
+    ).join('');
+    result.innerHTML = `<div><b>Decoded fields</b>
+      <table><thead><tr><th>Position</th><th>Field</th><th>Value</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>`;
+  }
+
+  document.querySelector("#parse").addEventListener("click", ()=>{
+    try {
+      const W = parseHexWords(hexIn.value, /*accept0x*/ true);
+      while (W.length < 8) W.push(0n);
+      renderWords(W);
+
+      // Construct decoder with totalBits for STE (512). For CDE you'd pass 256, etc.
+      const dec = new BitStructDecoder({ words: W, totalBits: 512, wordBits: 64 });
+      const vals = dec.decode(STE);
+      renderTable(vals);
+    } catch (e) {
+      result.innerHTML = `<div style="color:#ff8a8a"><b>Error:</b> ${e.message}</div>`;
+    }
+  });
+
+  document.querySelector("#example").addEventListener("click", ()=>{
+    // fabricate a tiny example (V=1, Config=6 (S2), S2VMID and S2TTB set)
+    const W = new Array(8).fill(0n);
+    W[0] = 1n | (6n<<1n);                   // V, Config
+    W[2] |= 0x1234n;                        // S2VMID [143:128] → low of W2 for demo format
+    W[3] |= (0x40000000n>>4n) << 4n;        // S2TTB [223:196]
+    hexIn.value = W.map(x=>x.toString(16).padStart(16,'0')).join("\\n");
+  });
+
+  document.querySelector("#clear").addEventListener("click", ()=>{
+    hexIn.value=''; wordsOut.innerHTML=''; result.innerHTML='<div class="muted">Cleared.</div>';
+  });
+</script>
+
+</body>
+</html>
