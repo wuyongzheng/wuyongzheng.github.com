@@ -48,12 +48,13 @@ export class BitStructDecoder {
       const pos = f.l ? `${h}:${l}` : `${h}`;
       const raw = this.absBits(h, l);
       const num = Number(raw);
-      let text;
+      let text, x;
       switch(t){
-        case 'f': text = (raw===1n); break;
         case 'u': text = num < 10 ? num : `${num} (0x${num.toString(16)})`; break;
         case 'i': text = signExtend(raw, (h-l+1)); break;
-        case 'e': text = `${num} (${f.enum[val]})`; break;
+        case 'e': text = `${num}: ${f.enum[num] ? f.enum[num] : 'unknown'}`; break;
+        case 'b': text = `0b${num.toString(2)}`; break;
+        case 'a': x = f.lshift ? num << f.lshift : num; text = `0x${x.toString(16)}`; break;
         default: text = raw; break;
       }
       vals.push([pos, k, text]);

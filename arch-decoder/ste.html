@@ -22,9 +22,9 @@
     table{width:100%;border-collapse:collapse;margin-top:12px}
     th,td{border-bottom:1px solid #2a3566;padding:8px 6px;text-align:left;font-size:13px}
     th{color:#bcd0ff}
-    .pos{color:#9ec1ff}
-    .k{color:#eaf2ff}
-    .v{font-size:12px;color:#9fb0ffbd}
+    .pos{color:#9fb0ffbd}
+    .k{color:#9ec1ff}
+    .v{color:#eaf2ff}
     .pill{display:inline-block;padding:2px 8px;border:1px solid #2a3566;border-radius:999px;font-size:12px;margin-right:6px}
     .addr{font-variant-numeric:tabular-nums}
     details{margin-top:8px}
@@ -87,15 +87,15 @@
   const STE = {
     name:'STE', totalBits:512, wordBits:64,
     fields:[
-      {t:'u', k:'V', h:0},
-      {t:'u', k:'Config', h:3, l:1},
-      {t:'u', k:'S1Fmt', h:5, l:4},
-      {t:'u', k:'S1ContextPtr', h:55, l:6},
+      {t:'e', k:'V', h:0, enum:{0:'invalid', 1:'valid'}},
+      {t:'e', k:'Config', h:3, l:1, enum:{0:'Report abort to device, no event recorded.', 4:'Bypass', 5:'Stage 1', 6:'Stage 2', 7:'Stage 1 & 2'}},
+      {t:'e', k:'S1Fmt', h:5, l:4, enum:{0:'linear table', 1:'2-level table with 4KB L2 leaf tables.', 2:'2-level table with 64KB L2 leaf tables.'}},
+      {t:'a', k:'S1ContextPtr', h:55, l:6, lshift:6},
       {t:'u', k:'S1CDMax', h:63, l:59},
-      {t:'u', k:'S1DSS', h:65, l:64},
-      {t:'u', k:'S1CIR', h:67, l:66},
-      {t:'u', k:'S1COR', h:69, l:68},
-      {t:'u', k:'S1CSH', h:71, l:70},
+      {t:'e', k:'S1DSS', h:65, l:64, enum:{0:'Terminate', 1:'Bypass stage 1', 2:'Use substream 0'}},
+      {t:'e', k:'S1CIR', h:67, l:66, enum:{0:'Normal, non-cacheable', 1:'Normal, Write-Back cacheable, Read-Allocate', 2:'Normal, Write-Through cacheable, Read-Allocate', 3:'Normal, Write-Back cacheable, no Read-Allocate'}},
+      {t:'e', k:'S1COR', h:69, l:68, enum:{0:'Normal, non-cacheable', 1:'Normal, Write-Back cacheable, Read-Allocate', 2:'Normal, Write-Through cacheable, Read-Allocate', 3:'Normal, Write-Back cacheable, no Read-Allocate'}},
+      {t:'e', k:'S1CSH', h:71, l:70, enum:{0:'Non-shareable', 2:'Outer Shareable', 3:'Inner Shareable'}},
       {t:'u', k:'S2HWU59', h:72},
       {t:'u', k:'S2HWU60', h:73},
       {t:'u', k:'S2HWU61', h:74},
@@ -110,13 +110,13 @@
       {t:'u', k:'S2FWB', h:89},
       {t:'u', k:'S1MPAM', h:90},
       {t:'u', k:'S1STALLD', h:91},
-      {t:'u', k:'EATS', h:93, l:92},
+      {t:'e', k:'EATS', h:93, l:92, enum:{0:'ATS Translation Requests are returned unsuccessful or aborted (UR) and F_BAD_ATS_TREQ is recorded.', 1:'Full ATS', 2:'Split-stage ATS', 3:'Enable Full ATS with DPT checks'}},
       {t:'u', k:'STRW', h:95, l:94},
       {t:'u', k:'MemAttr', h:99, l:96},
       {t:'u', k:'MTCFG', h:100},
       {t:'u', k:'ALLOCCFG', h:104, l:101},
       {t:'u', k:'SHCFG', h:109, l:108},
-      {t:'u', k:'NSCFG', h:111, l:110},
+      {t:'e', k:'NSCFG', h:111, l:110, enum:{0:'Use incoming NS attribute', 2:'Secure/Realm', 3:'Non-secure'}},
       {t:'u', k:'PRIVCFG', h:113, l:112},
       {t:'u', k:'INSTCFG', h:115, l:114},
       {t:'u', k:'IMPLEMENTATION DEFINED 1', h:127, l:116},
@@ -127,9 +127,9 @@
       {t:'u', k:'S2IR0', h:169, l:168},
       {t:'u', k:'S2OR0', h:171, l:170},
       {t:'u', k:'S2SH0', h:173, l:172},
-      {t:'u', k:'S2TG', h:175, l:174},
-      {t:'u', k:'S2PS', h:178, l:176},
-      {t:'u', k:'S2AA64', h:179},
+      {t:'e', k:'S2TG', h:175, l:174, enum:{0:'4KB', 1:'64KB', 2:'16KB'}},
+      {t:'e', k:'S2PS', h:178, l:176, enum:{0:'32 bits', 1:'36 bits', 2:'40 bits', 3:'42 bits', 4:'44 bits', 5:'48 bits', 6:'52 bits', 7:'56 bits'}},
+      {t:'e', k:'S2AA64', h:179, enum:{0:'VMSAv8-32 LPAE or VMSAv9-128', 1:'VMSAv8-64'}},
       {t:'u', k:'S2ENDI', h:180},
       {t:'u', k:'S2AFFD', h:181},
       {t:'u', k:'S2PTW', h:182},
@@ -145,7 +145,7 @@
       {t:'u', k:'S2NSA', h:193},
       {t:'u', k:'S2SL0_2', h:194},
       {t:'u', k:'S2DS', h:195},
-      {t:'u', k:'S2TTB', h:247, l:196},
+      {t:'a', k:'S2TTB', h:247, l:196, lshift:4},
       {t:'u', k:'S2SKL', h:254, l:253},
       {t:'u', k:'IMPLEMENTATION DEFINED 3', h:271, l:256},
       {t:'u', k:'PARTID', h:287, l:272},
@@ -162,7 +162,7 @@
       {t:'u', k:'S2SW', h:384},
       {t:'u', k:'S2SA', h:385},
       {t:'u', k:'S_S2SL0_2', h:386},
-      {t:'u', k:'S_S2TTB', h:439, l:388},
+      {t:'a', k:'S_S2TTB', h:439, l:388, lshift:4},
       {t:'u', k:'S_S2SKL', h:446, l:445},
     ]
   };
