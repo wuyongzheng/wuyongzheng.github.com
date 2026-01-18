@@ -5,4 +5,5 @@ window.APP_CONFIG = {
   TAX_TSV: "tax-en-animal.tsv",
   PAGE_TSV: "page-en-animal.tsv",
   LANGUAGE: "English",
+  WIKIDUMP_DATE: "2026-01-01",
 };

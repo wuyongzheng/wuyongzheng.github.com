@@ -6,6 +6,7 @@ const TREE = document.getElementById("tree");
 const TAX_LINK = document.getElementById("tax-link");
 const PAGE_LINK = document.getElementById("page-link");
 const LANGUAGE_LABEL = document.getElementById("language");
+const WIKIDUMP_DATE_LABEL = document.getElementById("wikidump-date");
 const COPY_LINK = document.getElementById("copy-link");
 
 const CONFIG = window.APP_CONFIG || {};
@@ -14,6 +15,7 @@ const WIKI_FILE = CONFIG.WIKI_FILE || "https://en.wikipedia.org/wiki/Special:Fil
 const TAX_TSV = CONFIG.TAX_TSV || "tax-en.tsv";
 const PAGE_TSV = CONFIG.PAGE_TSV || "page-en.tsv";
 const LANGUAGE = CONFIG.LANGUAGE || "English";
+const WIKIDUMP_DATE = CONFIG.WIKIDUMP_DATE || "";
 const TAX_TSV_GZ = `${TAX_TSV}.gz`;
 const PAGE_TSV_GZ = `${PAGE_TSV}.gz`;
 const SEARCH_LENGTH_WEIGHT = 1;
@@ -41,6 +43,10 @@ const state = {
   selected: new Set(),
   ready: false,
 };
+
+if (WIKIDUMP_DATE_LABEL) {
+  WIKIDUMP_DATE_LABEL.textContent = WIKIDUMP_DATE || "Unknown";
+}
 
 function getSelectionFromUrl() {
   const params = new URLSearchParams(window.location.search);
