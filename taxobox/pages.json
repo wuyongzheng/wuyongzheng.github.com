@@ -1,0 +1,32 @@
+{
+  "languages": [
+    {
+      "code": "en",
+      "label": "English",
+      "wiki": "https://en.wikipedia.org/wiki/",
+      "file": "https://en.wikipedia.org/wiki/Special:FilePath/"
+    },
+    {
+      "code": "zh",
+      "label": "Chinese",
+      "wiki": "https://zh.wikipedia.org/wiki/",
+      "file": "https://zh.wikipedia.org/wiki/Special:FilePath/"
+    }
+  ],
+  "domains": [
+    {
+      "id": "plant",
+      "label": "Plants",
+      "noun": "plant"
+    },
+    {
+      "id": "animal",
+      "label": "Animals",
+      "noun": "animal"
+    }
+  ],
+  "default": {
+    "lang": "en",
+    "domain": "plant"
+  }
+}

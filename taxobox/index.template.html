@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{{GENERATED_COMMENT}}
+<html lang="{{LANG_CODE}}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TaxoBox</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">TaxoBox</p>
+        <h1>Grow a living map of {{DOMAIN_NOUN}} ancestry.</h1>
+        <p class="subhead">
+          Add {{DOMAIN_LABEL_LOWER}}, watch the taxonomy reweave itself, and jump straight to
+          Wikipedia for every node.
+        </p>
+      </div>
+      <div class="legend">
+        <div class="legend-item">
+          <span class="dot dot-leaf"></span>
+          <span>{{DOMAIN_NOUN_CAP}} page</span>
+        </div>
+        <div class="legend-item">
+          <span class="dot dot-tax"></span>
+          <span>Taxonomy node</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-label">Browse:</span>
+      <div class="nav-groups">
+        {{NAV}}
+      </div>
+    </div>
+  </nav>
+
+  <main class="app">
+    <section class="panel panel-left">
+      <div class="card">
+        <div class="card-header">
+          <h2>Selected {{DOMAIN_LABEL}}</h2>
+          <button id="copy-link" class="ghost-button" type="button">Copy share link</button>
+        </div>
+        <p class="muted">Click a {{DOMAIN_NOUN}} to remove it.</p>
+        <div id="selected" class="selected"></div>
+      </div>
+
+      <div class="card">
+        <h2>Add a {{DOMAIN_NOUN}}</h2>
+        <input id="search" type="search" placeholder="Search {{DOMAIN_NOUN}} names..." autocomplete="off" />
+        <div id="results" class="results"></div>
+      </div>
+
+      <div class="card meta">
+        <p>
+          <strong>Data source:</strong> Wikipedia
+          (<a id="tax-link" href="#">tax.tsv</a> + <a id="page-link" href="#">page.tsv</a>)
+        </p>
+        <p><strong>Language:</strong> <span id="language">{{LANG_LABEL}}</span></p>
+        <p id="status" class="muted">Loading taxonomy data...</p>
+      </div>
+    </section>
+
+    <section class="panel panel-right">
+      <div class="card tree-card">
+        <div id="tree" class="tree"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{CONFIG_JS}}"></script>
+  <script src="app.js"></script>
+</body>
+</html>
