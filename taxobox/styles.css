@@ -347,3 +347,39 @@ input[type="search"]:focus {
     border-radius: var(--radius);
   }
 }
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .hero,
+  .site-nav,
+  .panel-left {
+    display: none !important;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .panel-right {
+    gap: 0;
+  }
+
+  .card {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .tree-card {
+    min-height: 0;
+  }
+
+  .tree {
+    min-height: 0;
+    padding: 0;
+  }
+}
